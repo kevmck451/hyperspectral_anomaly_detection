@@ -1,0 +1,3263 @@
+1MM0001 : White Marble
+1MM0002 : Bare Red Brick
+1MM0003 : Oxidized Galvanized Steel Metal
+1MM0004 : Black paint
+1MM0005 : Asphalt Shingle
+1MM0006 : Construction Asphalt
+1MM0007 : Cinders, ashen
+1MM0008 : Weathered Red Brick
+1MM0009 : White rubberized coating
+1MM0010 : Reddish asphalt Shingle
+1MM0011 : Construction Concrete
+1MM0012 : Black tar paper
+1MM0013 : Asphaltic concrete
+1MM0014 : Terra cotta Tiles
+1MM0015 : Olive green paint
+1MM0016 : Asphalt roofing shingle
+1MM0017 : Galvanized Steel Metal
+1MM0018 : Plate Window Glass
+1MM0019 : Reddish Asphalt roofing shingle
+1MM0020 : Black unspecified rubber
+1MM0021 : Olive green gloss paint
+1MM0022 : Red smooth-faced Brick
+1MM0023 : Black gloss paint
+1MM0024 : Pine Wood
+1MM0025 : Slate stone Shingle
+1MM0026 : White fiberglass unspecified rubber
+1MM0027 : Construction Tar
+1MM0028 : Copper Metal
+1MM0029 : Construction  Concrete
+2WR0001 : Coarse Granular Snow
+2WR0002 : Ice
+2WR0003 : Tap water
+2WR0004 : Frost
+2WR0005 : Sea Foam
+2WR0006 : Distilled Water
+2WR0007 : Medium Granular Snow
+2WR0008 : Fine Snow
+2WR0009 : Sea water
+3SL0001 : Brown loamy fine sand
+3SL0002 : 64801.34
+3SL0003 : 12030.135
+3SL0004 : Brown to dark brown sand
+3SL0005 : Brown to dark brown clay
+3SL0006 : Light yellowish brown loam
+3SL0007 : Black loam
+3SL0008 : Dark brown interior moist clay loam
+3SL0009 : Pale brown dry silty clay loam
+3SL0010 : 67701.36
+3SL0011 : Dark reddish brown, organic-rich, silty loam
+3SL0012 : Grey calcareous silty soil
+3SL0013 : Brown silty loam
+3SL0014 : Sandy Loam/alluvium
+3SL0015 : White gypsum dune sand.
+3SL0016 : Brown to dark brown sandy loam
+3SL0017 : Brown gravelly sandy loam
+3SL0018 : 14141.146
+3SL0019 : Red-orange sandy loam
+3SL0020 : 10084.1939
+3SL0021 : Red-orange sandy loam
+3SL0022 : Gray silty clay
+3SL0023 : Red-orange sandy soil.
+3SL0024 : Brown sandy loam
+3SL0025 : 14148.183
+3SL0026 : Brown fine sandy loam
+3SL0027 : Light yellowish brown loamy sand
+3SL0028 : Dark brown fine sandy loam
+3SL0029 : Very dark grayish brown loam
+3SL0030 : Red-orange sandy loam
+3SL0031 : Light yellowish brown interior dry gravelly loam
+3SL0032 : Very dark grayish brown loamy sand
+3SL0033 : Dark yellowish brown silty clay
+3SL0034 : Reddish brown fine sandy loam
+3SL0035 : 67941.72
+3SL0036 : Reddish brown fine sandy loam
+3SL0037 : Very dark grayish brown silty loam
+3SL0038 : Dark reddish brown fine sandy loam
+3SL0039 : Grey calcareous silty soil
+3SL0040 : 61221.79
+3SL0041 : 12024.69
+3SL0042 : 12023.139
+3SL0043 : 12070.405
+3SL0044 : Very pale brown to brownish yellow interior dry gravelly silt loam
+3SL0045 : Fluvial deposit
+3SL0046 : 14149.18
+3SL0047 : Red-orange sandy loam/alluvium
+3SL0048 : Brown sandy loam
+3SL0049 : Very dark grayish brown silty loam
+3SL0050 : 62231.15
+3SL0051 : Brown to dark brown silt loam
+3SL0052 : 61241.98
+3SL0053 : Pale brown silty loam
+3SL0054 : Brown fine sandy loam
+3SL0055 : Grayish brown loam
+3SL0056 : Dark grayish brown silty loam
+3SL0057 : Brown to dark brown loamy sand
+3SL0058 : Vary dark grayish brown loam
+3SL0059 : 14259.61
+3SL0060 : Brown to dark brown gravelly loam
+3SL0061 : Alluvial sand
+3SL0062 : 60051.19
+3SL0063 : Red-orange sandy soil
+3SL0064 : Light yellowish brown clay
+3SL0065 : Very dark grayish brown loam
+3SL0066 : Dark yellowish brown micaceous loam
+3SL0067 : 68501.609
+3SL0068 : Gray/dark brown extremely stoney coarse sandy
+3SL0069 : Brown to dark brown gravelly fine sandy loam
+4RK0001 : Rhyolite
+4RK0002 : Norite
+4RK0003 : Pyroxenite
+4RK0004 : Scoria
+4RK0005 : Alkali Basalt
+4RK0006 : Monzonite
+4RK0007 : Ferruginous Sandstone
+4RK0008 : Basalt
+4RK0009 : Lamprophyre
+4RK0010 : Aplite
+4RK0011 : Green Quartzite
+4RK0012 : Basalt
+4RK0013 : Rhyolite
+4RK0014 : Gypsum
+4RK0015 : Basalt
+4RK0016 : Aporhyolite (felsite)
+4RK0017 : Limestone CaCO3
+4RK0018 : Dolomitic Marble
+4RK0019 : Gray Sandstone
+4RK0020 : Pink Marble
+4RK0021 : Biotite Gneiss
+4RK0022 : Granite
+4RK0023 : Olivine Basalt Porphyry
+4RK0024 : Syenite
+4RK0025 : Rhyolite
+4RK0026 : Olivine Gabbro
+4RK0027 : Rhyolite
+4RK0028 : Travertine
+4RK0029 : Rhyolite
+4RK0030 : Quartzite
+4RK0031 : Dolomite  CaMgCO3
+4RK0032 : Granodiorite
+4RK0033 : Pink Marble
+4RK0034 : Quartz Conglomerate
+4RK0035 : Obsidian
+4RK0036 : Basalt
+4RK0037 : Rhyolitic obsidian
+4RK0038 : Tuff
+4RK0039 : Banded Hornfels
+4RK0040 : Rhyolite
+4RK0041 : Felsitic Gneiss
+4RK0042 : Basalt
+4RK0043 : Siltstone
+4RK0044 : Dacite
+4RK0045 : Picrite
+4RK0046 : Travertine (Calcareous Tufa)
+4RK0047 : Limestone Breccia
+4RK0048 : Hornfels
+4RK0049 : Granodiorite
+4RK0050 : Granodiorite
+4RK0051 : Rhyolite
+4RK0052 : Altered volcanic tuff
+4RK0053 : Andesite Breccia
+4RK0054 : Diorite Gneiss
+4RK0055 : Olivine Basalt Porphyry
+4RK0056 : Phyllite
+4RK0057 : Nepheline-Sodalite Syenite
+4RK0058 : Rhyolite
+4RK0059 : Quartz-Sericite Schist
+4RK0060 : Mica Peridotite
+4RK0061 : Quartzite
+4RK0062 : Quartz Monzonite
+4RK0063 : Quartz Felsite Porphyry
+4RK0064 : Basalt
+4RK0065 : Rhyolite
+4RK0066 : Fossiliferous Limestone
+4RK0067 : Basalt
+4RK0068 : Diatomaceous Earth
+4RK0069 : Dacite
+4RK0070 : Diorite
+4RK0071 : Calcareous Shale
+4RK0072 : Chiastolic Slate
+4RK0073 : Altered volcanic tuff
+4RK0074 : Limestone Conglomerate-Breccia
+4RK0075 : Argillaceous Limestone
+4RK0076 : Dacite
+4RK0077 : Sillimanite-Garnet Gneiss
+4RK0078 : Rhyolite
+4RK0079 : Chloritic Gneiss
+4RK0080 : Marble
+4RK0081 : Basalt
+4RK0082 : Travertine (Calcareous Tufa)
+4RK0083 : Alkali Granite
+4RK0084 : Basalt
+4RK0085 : Lithographic Limestone
+4RK0086 : Anorthosite
+4RK0087 : Tourmaline Schist
+4RK0088 : Chiastolic Slate
+4RK0089 : Limestone CaCO3
+4RK0090 : Diorite Porphyry
+4RK0091 : Oil Shale (Kerogen Shale)
+4RK0092 : Gray Sandstone
+4RK0093 : Arkose
+4RK0094 : Limestone CaCO3
+4RK0095 : Desert varnished ferruginous sandstone
+4RK0096 : Albite Gneiss
+4RK0097 : Pink Marble
+4RK0098 : Basalt
+4RK0099 : Oolitic Limestone
+4RK0100 : Augite-hypersthene Andesite
+4RK0101 : Hornblende Schist
+4RK0102 : Alkali Basalt
+4RK0103 : Norite
+4RK0104 : Basalt
+4RK0105 : Carbonaceous Shale
+4RK0106 : Argillaceous Shale
+4RK0107 : Argillaceous Sandstone
+4RK0108 : Spotted Hornfels
+4RK0109 : Black Shale
+4RK0110 : Travertine
+4RK0111 : Basalt
+4RK0112 : Limestone Conglomerate-Breccia
+4RK0113 : Chlorite Schist
+4RK0114 : Anthophyllite Mica Schist
+4RK0115 : Phosphorite
+4RK0116 : Basalt
+4RK0117 : Quartzite
+4RK0118 : Quartz Monzonite
+4RK0119 : Aplite
+4RK0120 : Anorthosite
+4RK0121 : Purple Quartzite
+4RK0122 : Basalt
+4RK0123 : Alkali Granite
+4RK0124 : Oolitic Iron Ore
+4RK0125 : Arkosic Sandstone
+4RK0126 : Rhyolite
+4RK0127 : Shale (Calcareous)
+4RK0128 : Mica Schist
+4RK0129 : Basalt
+4RK0130 : Red Sandstone
+4RK0131 : Phosphorite
+4RK0132 : Syenite Gneiss
+4RK0133 : White Marble
+4RK0134 : Green Slate
+4RK0135 : Carbonaceous Shale
+4RK0136 : Chlorite Schist
+4RK0137 : Oolitic Limestone
+4RK0138 : Basalt
+4RK0139 : Muscovite-Biotite Granite
+4RK0140 : Serpentine Marble
+4RK0141 : Biotite Granite
+4RK0142 : Grey-green shale
+4RK0143 : Picrite
+4RK0144 : Basalt
+4RK0145 : Green Slate
+4RK0146 : Hornblende Syenite
+4RK0147 : Chocolate "Marble" Limestone
+4RK0148 : Green Schist
+4RK0149 : Phyllite
+4RK0150 : Aplite
+4RK0151 : Sillimanite-Garnet Gneiss
+4RK0152 : Basalt
+4RK0153 : Alkalic Syenite
+4RK0154 : Nepheline Syenite
+4RK0155 : Hornblende Schist
+4RK0156 : Siliceous Oolite
+4RK0157 : Quartzite
+4RK0158 : Shale (Arenaceous)
+4RK0159 : Diabase
+4RK0160 : Diorite Porphyry
+4RK0161 : Shale (Phosphatic)
+4RK0162 : Augite-hypersthene Andesite
+4RK0163 : Mica Schist
+4RK0164 : Gray Quartzite
+4RK0165 : Fossiliferous Limestone
+4RK0166 : Tremolite Schist
+4RK0167 : Hornblende Schist
+4RK0168 : Altered volcanic tuff
+4RK0169 : Basanite
+4RK0170 : Hypersthene Gabbro (Norite)
+4RK0171 : Carbonaceous Shale
+4RK0172 : Arkose
+4RK0173 : Hornfels
+4RK0174 : Illite-bearing Shale
+4RK0175 : Ferruginous Sandstone
+4RK0176 : Augen Gneiss
+4RK0177 : Grey limestone
+4RK0178 : Gray Limestone (Birdseye Limestone)
+4RK0179 : Basalt
+4RK0180 : Basalt
+4RK0181 : Sandstone (Flagstone)
+4RK0182 : Lithographic Limestone
+4RK0183 : Basalt
+4RK0184 : Rhyolite
+4RK0185 : Diabase
+4RK0186 : Basalt
+4RK0187 : Siliceous Oolite
+4RK0188 : Limestone CaCO3
+4RK0189 : Dolomitic Marble
+4RK0190 : Chocolate "Marble" Limestone
+4RK0191 : Rhyolite
+4RK0192 : Hornblende Granite
+4RK0193 : Nepheline-Sodalite Syenite
+4RK0194 : Biotite Gneiss
+4RK0195 : Red Quartzite
+4RK0196 : Dolomite Marble
+4RK0197 : Arkosic Sandstone
+4RK0198 : Quartz Monzonite Porphyry
+4RK0199 : Altered volcanic tuff
+4RK0200 : Rhyolite
+4RK0201 : Augite-Mica Peridotie
+4RK0202 : Rhyolitic obsidian
+4RK0203 : Serpentine Marble
+4RK0204 : Granite
+4RK0205 : Hornblende Syenite
+4RK0206 : Pink Quartzite
+4RK0207 : Tuff
+4RK0208 : Arenaceous Shale
+4RK0209 : Augite-Mica Peridotie
+4RK0210 : Chalk
+4RK0211 : Amygdaloidal Basalt
+4RK0212 : Quartz-Sericite Schist
+4RK0213 : Quartz Monzonite Porphyry
+4RK0214 : Dolomitic Limestone
+4RK0215 : Graphite Schist
+4RK0216 : Diabase
+4RK0217 : Mica Schist
+4RK0218 : Basalt
+4RK0219 : Basalt
+4RK0220 : Graphite Schist
+4RK0221 : Basalt
+4RK0222 : White Marble
+4RK0223 : Limestone CaCO3
+4RK0224 : Hornblende Gneiss
+4RK0225 : Alkalic Granite
+4RK0226 : Oolitic Iron Ore
+4RK0227 : Limestone-Siltstone
+4RK0228 : Vesicular Basalt
+4RK0229 : Spotted Hornfels
+4RK0230 : Garnet Gneiss
+4RK0231 : Gray Slate
+4RK0232 : Oolitic Limestone
+4RK0233 : Rhyolite
+4RK0234 : Phosphorite
+4RK0235 : Granite
+4RK0236 : Limestone CaCO3
+4RK0237 : Norite
+4RK0238 : Basaltic Andesite
+4RK0239 : Dunite
+4RK0240 : Oolitic Limestone
+4RK0241 : Augite-hypersthene Andesite
+4RK0242 : Basalt
+4RK0243 : Quartzite
+4RK0244 : Gray Quartzite
+4RK0245 : Tourmaline Schist
+4RK0246 : Greywacke Sandstone
+4RK0247 : Muscovite-Biotite Granite
+4RK0248 : Basalt
+4RK0249 : Rhyolite
+4RK0250 : Lamprophyre
+4RK0251 : Black Shale
+4RK0252 : Micaceous Sandstone (Brownstone)
+4RK0253 : Argillaceous Shale
+4RK0254 : Phosphorite
+4RK0255 : Purple-banded Sandstone
+4RK0256 : Rhyolite
+4RK0257 : Oil Shale (Kerogen Shale)
+4RK0258 : Limestone
+4RK0259 : Scoria
+4RK0260 : Ecrinal Limestone
+4RK0261 : Gypsum
+4RK0262 : Diatomaceous Earth
+4RK0263 : Glauconitic Sandstone
+4RK0264 : Shale (Calcareous)
+4RK0265 : Glauconitic Sandstone
+4RK0266 : Rhyolite
+4RK0267 : Red Slate
+4RK0268 : Dolomitic Limestone
+4RK0269 : Argillaceous Sandstone
+4RK0270 : Diorite
+4RK0271 : Hornblende Granite
+4RK0272 : Vesicular Basalt
+4RK0273 : Granitoid Gneiss
+4RK0274 : Garnet Gneiss
+4RK0275 : White siltstone
+4RK0276 : Tonalite (Bonsall Tonalite)
+4RK0277 : Basalt
+4RK0278 : Basalt
+4RK0279 : Oolitic Limestone
+4RK0280 : Limestone CaCO3
+4RK0281 : Rhyolite
+4RK0282 : Anorthosite
+4RK0283 : Mica Schist
+4RK0284 : Basalt
+4RK0285 : Obsidian
+4RK0286 : Basalt
+4RK0287 : Argillaceous Limestone
+4RK0288 : Tourmaline-Mica Schist
+4RK0289 : Hypersthene Gabbro
+4RK0290 : Rhyolite
+4RK0291 : Biotite Granite
+4RK0292 : Basalt
+4RK0293 : Biotite Schist
+4RK0294 : Basalt
+4RK0295 : White kaolinitic sandstone
+4RK0296 : Dolomitic Marble
+4RK0297 : Hornblende Gneiss
+4RK0298 : Chlorite Schist
+4RK0299 : Andesite Porphyry
+4RK0300 : Anthophyllite Mica Schist
+4RK0301 : Rhyolite
+4RK0302 : Altered volcanic tuff
+4RK0303 : Dunite (Olivine Peridotite)
+4RK0304 : Phosphorite
+4RK0305 : Quartz Conglomerate
+4RK0306 : Limestone Siltstone
+4RK0307 : Picrite
+4RK0308 : Calcareous Shale
+4RK0309 : Gray Limestone (Birdseye Limestone)
+4RK0310 : Rhyolite
+4RK0311 : Monzonite
+4RK0312 : Phyllite
+4RK0313 : Basalt
+4RK0314 : Banded Hornfels
+4RK0315 : Andesite Breccia
+4RK0316 : Dolomitic Limestone
+4RK0317 : Mica Dacite Porphyry
+4RK0318 : Ijolite
+4RK0319 : Limestone CaCO3
+4RK0320 : Garnetiferous Mica Schist
+4RK0321 : Syenite Gneiss
+4RK0322 : Dolomite  CaMgCO3
+4RK0323 : Granodiorite
+4RK0324 : Granite
+4RK0325 : Rhyolite Porphyry
+4RK0326 : Altered volcanic tuff
+4RK0327 : Limestone Breccia
+4RK0328 : Aplite
+4RK0329 : Basalt
+4RK0330 : Basalt
+4RK0331 : Trachyte
+4RK0332 : Sandstone (Red)
+4RK0333 : Monzonite
+4RK0334 : Quartz Conglomerate
+4RK0335 : Norite
+4RK0336 : Mica Dacite Porphyry
+4RK0337 : Augen Gneiss
+4RK0338 : Aporhyolite (felsite)
+4RK0339 : Pink Marble
+4RK0340 : Olivine Gabbro
+4RK0341 : Alkalic Granite
+4RK0342 : Red Quartzite
+4RK0343 : Diabase Porphyry
+4RK0344 : Serpentine
+4RK0345 : Verde Antique
+4RK0346 : Red Sandstone
+4RK0347 : Dolomite Marble
+4RK0348 : Phosphorite
+4RK0349 : Rhyolite Porphyry
+4RK0350 : Pink Quartzite
+4RK0351 : White Marble
+4RK0352 : Granodiorite
+4RK0353 : Sandstone (Micaceous Red)
+4RK0354 : Diabase
+4RK0355 : Basalt
+4RK0356 : Basalt
+4RK0357 : Dunite (Olivine Peridotite)
+4RK0358 : Rhyolite
+4RK0359 : Granite
+4RK0360 : Anorthosite
+4RK0361 : Marble
+4RK0362 : Limestone CaCO3
+4RK0363 : Basalt
+4RK0364 : Granite
+4RK0365 : Dunite
+4RK0366 : Basalt
+4RK0367 : Basalt
+4RK0368 : Albite Gneiss
+4RK0369 : Glauconitic Sandstone
+4RK0370 : Unaltered volcanic tuff
+4RK0371 : Siltstone
+4RK0372 : Basalt
+4RK0373 : Verde Antique
+4RK0374 : Chloritic Gneiss
+4RK0375 : Basalt
+4RK0376 : Quartz Conglomerate
+4RK0377 : Basalt
+4RK0378 : Red Slate
+4RK0379 : Basalt
+4RK0380 : Cherty Limestone
+4RK0381 : Phosphorite
+4RK0382 : Quartz Felsite Porphyry
+4RK0383 : Diabase
+4RK0384 : Ecrinal Limestone
+4RK0385 : Serpentine Marble
+4RK0386 : Rhyolite
+4RK0387 : Basalt
+4RK0388 : Mica Peridotite
+4RK0389 : Green Quartzite
+4RK0390 : Glauconitic Sandstone
+4RK0391 : Gabbro
+4RK0392 : Amygdaloidal Basalt
+4RK0393 : Rhyolite
+4RK0394 : White Marble
+4RK0395 : Serpentine
+4RK0396 : Diabase Porphyry
+4RK0397 : Basalt
+4RK0398 : Monzonite
+4RK0399 : Argillaceous Limestone
+4RK0400 : Greywacke Sandstone
+4RK0401 : Rhyolite
+4RK0402 : Altered volcanic tuff
+4RK0403 : Granodiorite
+4RK0404 : Pegmatite
+4RK0405 : Basalt
+4RK0406 : Purple-banded Sandstone
+4RK0407 : Grey-green phyllite
+4RK0408 : Dacite
+4RK0409 : Sandstone (Micaceous Red)
+4RK0410 : Diabase
+4RK0411 : Shale (Phosphatic)
+4RK0412 : Limestone CaCO3
+4RK0413 : Shale (Arenaceous)
+4RK0414 : Basalt
+4RK0415 : Gray Slate
+4RK0416 : Micaceous Sandstone (Brownstone)
+4RK0417 : Nepheline Syenite
+4RK0418 : Chalk
+4RK0419 : Alkalic Syenite
+4RK0420 : Altered volcanic tuff
+4RK0421 : Green Schist
+4RK0422 : Hypersthene Gabbro
+4RK0423 : Green Quartzite
+4RK0424 : Cherty Limestone
+4RK0425 : Basaltic Andesite
+4RK0426 : Dolomitic Limestone
+4RK0427 : Hornblende Schist
+4RK0428 : Augite-hypersthene Andesite
+4RK0429 : Basalt
+4RK0430 : Tourmaline-Mica Schist
+4RK0431 : Illite-bearing Shale
+4RK0432 : Granitoid Gneiss
+4RK0433 : Sandstone (Flagstone)
+4RK0434 : Carbonaceous Shale
+4RK0435 : Sandstone (Red)
+4RK0436 : Purple Quartzite
+4RK0437 : Graphite Schist
+4RK0438 : Gabbro
+4RK0439 : Argillaceous Limestone
+4RK0440 : Garnetiferous Mica Schist
+4RK0441 : Tremolite Schist
+4RK0442 : Hornblende Schist
+4RK0443 : Gray Slate
+4RK0444 : Tonalite (Bonsall Tonalite)
+4RK0445 : Andesite Porphyry
+4RK0446 : Serpentine Marble
+4RK0447 : Diorite Gneiss
+4RK0448 : Ijolite
+4RK0449 : Dolomite  CaMgCO3
+4RK0450 : Basalt
+4RK0451 : Syenite
+4RK0452 : Phyllite
+4RK0453 : Basanite
+4RK0454 : Oolitic Limestone
+4RK0455 : Hypersthene Gabbro (Norite)
+4RK0456 : Arenaceous Shale
+4RK0457 : Gray Slate
+4RK0458 : Pyroxenite
+4RK0459 : Basalt
+4RK0460 : Hornblende Schist
+4RK0461 : Dolomitic Marble
+4RK0462 : Trachyte
+4RK0463 : Felsitic Gneiss
+4RK0464 : Basalt
+4RK0465 : Picrite
+4RK0466 : Rhyolite
+4RK0467 : Pegmatite
+4RK0468 : Basalt
+4RK0469 : Basalt
+4RK0470 : Limestone
+5NV0001 : Misc Grass Litter - Mostly decomposed
+5NV0002 : Quercus sp. litter
+5NV0003 : Calocedrus decrruens
+5NV0004 : Calocedrus decrruens
+5NV0005 : Adenostoma fasciculatum branch
+5NV0006 : Abies concolor dry needles
+5NV0007 : Salvia leucophylla 2
+5NV0008 : Quercus rubra
+5NV0009 : Pinus ponderosa dry needles
+5NV0010 : Quercus rubra
+5NV0011 : Pinus strobus
+5NV0012 : Pinus coulteri dry needles
+5NV0013 : Quercus sp. litter
+5NV0014 : Dry grass
+5NV0015 : Pinus coulteri bark
+5NV0016 : Pinus strobus
+5NV0017 : Ceanothus megacarpus branch
+5NV0018 : Pinus coulteri dry needles
+5NV0019 : Abies concolor dry needles
+5NV0020 : Quercus sp. litter
+5NV0021 : Pinus coulteri bark
+5NV0022 : lichen off trees
+5NV0023 : Pinus ponderosa bark
+5NV0024 : Pinus lambertiana dry needles
+5NV0025 : Adenostoma fasciculatum branch
+5NV0026 : dry brown lichen
+5NV0027 : Avena fatua litter
+5NV0028 : Pinus ponderosa dry needles
+5NV0029 : Calocedrus decurrens bark
+5NV0030 : Abies concolor bark
+5NV0031 : Abies concolor dry needles
+5NV0032 : Pinus lambertiana dry needles
+5NV0033 : Betula papyrifera
+5NV0034 : Ceanothus megacarpus branch
+5NV0035 : Adenostoma fasciculatum branch
+5NV0036 : Misc Grass Litter - Mostly decomposed
+5NV0037 : Pinus ponderosa bark
+5NV0038 : Pinus ponderosa Bark
+5NV0039 : Foeniculum vulgare litter
+5NV0040 : Calocedrus decrruens
+5NV0041 : lichen off trees
+5NV0042 : Misc Leaf Litter
+5NV0043 : Misc Grass Litter
+5NV0044 : Avena fatua litter
+5NV0045 : Misc Grass Litter - Mostly decomposed
+5NV0046 : Pinus ponderosa dry needles
+5NV0047 : Foeniculum vulgare litter
+5NV0048 : Pinus coulteri dry needles
+5NV0049 : Salvia leucophylla 2
+5NV0050 : Acer rubrum
+5NV0051 : Quercus rubra
+5NV0052 : Pinus ponderosa dry needles
+5NV0053 : Quercus rubra
+5NV0054 : Pinus ponderosa dry needles
+5NV0055 : Salvia leucophylla 1
+5NV0056 : Calocedrus decurrens bark
+5NV0057 : Foeniculum vulgare litter
+5NV0058 : Salvia leucophylla 1
+5NV0059 : Pinus coulteri bark
+5NV0060 : Misc Grass Litter - Mostly decomposed
+5NV0061 : Avena fatua litter
+5NV0062 : Misc Grass Litter
+5NV0063 : Pinus lambertiana bark
+5NV0064 : lichen off trees
+5NV0065 : Calocedrus decrruens
+5NV0066 : Misc Grass Litter
+5NV0067 : Betula papyrifera
+5NV0068 : Ceanothus megacarpus branch
+5NV0069 : dry brown lichen
+5NV0070 : lichen off trees
+5NV0071 : Avena fatua litter
+5NV0072 : Abies concolor dry needles
+5NV0073 : Betula papyrifera
+5NV0074 : Pinus lambertiana dry needles
+5NV0075 : Salvia leucophylla 3
+5NV0076 : Acer rubrum
+5NV0077 : Quercus sp. litter
+5NV0078 : lichen off trees
+5NV0079 : Pinus strobus
+5NV0080 : Abies concolor dry needles
+5NV0081 : Adenostoma fasciculatum branch
+5NV0082 : Pinus ponderosa dry needles
+5NV0083 : Abies concolor bark
+5NV0084 : Pinus lambertiana dry needles
+5NV0085 : Quercus sp. litter
+5NV0086 : Acer rubrum
+5NV0087 : Pinus lambertiana dry needles
+5NV0088 : Calocedrus decurrens bark
+5NV0089 : Misc Leaf Litter
+5NV0090 : Pinus ponderosa Bark
+5NV0091 : Calocedrus decrruens
+5NV0092 : Abies concolor bark
+5NV0093 : Salvia leucophylla 3
+5NV0094 : Pinus lambertiana dry needles
+5NV0095 : Calocedrus decrruens
+5NV0096 : Calocedrus decurrens bark
+5NV0097 : Betula papyrifera
+5NV0098 : Pinus coulteri bark
+5NV0099 : lichen off trees
+5NV0100 : Pinus coulteri dry needles
+5NV0101 : Pinus coulteri bark
+5NV0102 : Quercus sp. litter
+5NV0103 : Pinus coulteri dry needles
+5NV0104 : Ceanothus megacarpus branch
+5NV0105 : Abies concolor bark
+5NV0106 : Abies concolor dry needles
+5NV0107 : Misc Leaf Litter
+5NV0108 : Pinus coulteri dry needles
+5NV0109 : Pinus strobus
+5NV0110 : Foeniculum vulgare litter
+5NV0111 : Misc Leaf Litter
+5NV0112 : Pinus coulteri bark
+5NV0113 : Calocedrus decrruens
+5NV0114 : Misc Grass Litter
+5NV0115 : Acer rubrum
+5NV0116 : Pinus lambertiana bark
+5NV0117 : Calocedrus decrruens
+6VG0001 : Arctostaphylos glandulosa 2
+6VG0002 : Quercus douglasii 2
+6VG0003 : Ceanothus megacarpus 3
+6VG0004 : Pinus lambertiana 1
+6VG0005 : Quercus agrifolia 3
+6VG0006 : Umbellularia californica 1
+6VG0007 : Aloe bainesii
+6VG0008 : Abies concolor 1
+6VG0009 : Agave attenuata
+6VG0010 : Macadamia integrifolia
+6VG0011 : Ceanothus spinosus 1
+6VG0012 : Heteromeles arbutifolia 2
+6VG0013 : Bromus diandrus
+6VG0014 : Heteromeles arbutifolia 3
+6VG0015 : Citharexylum montevidense
+6VG0016 : Fagus grandifolia
+6VG0017 : Eucalyptus maculata
+6VG0018 : Cedrus atlantica
+6VG0019 : Arctostaphylos glandulosa 3
+6VG0020 : Brachychiton rupestris
+6VG0021 : Bambusa tuldoides
+6VG0022 : Pinus ponderosa 3
+6VG0023 : Ehretia austin-smithii
+6VG0024 : Calocedrus decrruens 3
+6VG0025 : Quercus douglasii 1
+6VG0026 : Heteromeles arbutifolia 2
+6VG0027 : Caesalpinia cacalaco
+6VG0028 : Pinus ponderosa 3
+6VG0029 : Quercus agrifolia
+6VG0030 : Salix babylonica
+6VG0031 : Pinus ponderosa 2
+6VG0032 : Umbellularia californica 1
+6VG0033 : Ceanothus megacarpus 2
+6VG0034 : Tipuana tipu
+6VG0035 : Ceanothus megacarpus 3
+6VG0036 : Adenostoma fasciculatum 1
+6VG0037 : Arctostaphylos glandulosa 2
+6VG0038 : Adenostoma fasciculatum 1
+6VG0039 : Uvularia sessifolia
+6VG0040 : Arctostaphylos glandulosa 3
+6VG0041 : Betula papyrifera
+6VG0042 : Quercus agrifolia 1
+6VG0043 : Juniperus chinensis
+6VG0044 : Arctostaphylos glandulosa 1
+6VG0045 : Ceanothus spinosus 3
+6VG0046 : Bambusa tuldoides
+6VG0047 : Jacaranda mimosifolia
+6VG0048 : Abies concolor 2
+6VG0049 : Calocedrus decrruens 1
+6VG0050 : Baccharis pilularis 3
+6VG0051 : Agave attenuata
+6VG0052 : Agave attenuata
+6VG0053 : Arctostaphylos glandulosa 3
+6VG0054 : Jacaranda mimosifolia
+6VG0055 : Phyllostachys aurea
+6VG0056 : Bambusa beecheyana
+6VG0057 : Lagerstroemia indica
+6VG0058 : Acer rubrum
+6VG0059 : Juniperus chinensis
+6VG0060 : Pinus ponderosa 3
+6VG0061 : Abies concolor 3
+6VG0062 : Pinus ponderosa 1
+6VG0063 : Juniperus chinensis
+6VG0064 : Tsuga canadensis
+6VG0065 : Brachychiton discolor
+6VG0066 : Baccharis pilularis 2
+6VG0067 : Pyllostachys vivax
+6VG0068 : Adenostoma fasciculatum 1
+6VG0069 : Quercus lobata 1
+6VG0070 : Arctostaphylos glandulosa 2
+6VG0071 : Taxodium mucronatum
+6VG0072 : Chorisia speciosa
+6VG0073 : Jacaranda mimosifolia
+6VG0074 : Bambusa beecheyana
+6VG0075 : Beaucarnea recurvata
+6VG0076 : Abies concolor 2
+6VG0077 : Abies concolor 3
+6VG0078 : Caesalpina cacalaco
+6VG0079 : Brachychiton rupestris
+6VG0080 : Aloe arborescens
+6VG0081 : Quercus agrifolia 1
+6VG0082 : Abies concolor 1
+6VG0083 : Abies concolor 1
+6VG0084 : Salvia leucophylla 1
+6VG0085 : Quercus agrifolia 2
+6VG0086 : Calocedrus decrruens 1
+6VG0087 : Calocedrus decrruens 3
+6VG0088 : Umbellularia californica 2
+6VG0089 : Quercus douglasii 3
+6VG0090 : Agave attenuata
+6VG0091 : Adenostoma fasciculatum 2
+6VG0092 : Salix babylonica
+6VG0093 : Calocedrus decrruens 3
+6VG0094 : Ceanothus megacarpus 1
+6VG0095 : Eucalyptus ficifolia
+6VG0096 : Bambusa beecheyana
+6VG0097 : Arctostaphylos glandulosa 3
+6VG0098 : Ceanothus megacarpus 1
+6VG0099 : Arctostaphylos glandulosa 1
+6VG0100 : Magnolia grandiflora
+6VG0101 : Cassia leptophylla
+6VG0102 : Lagerstroemia indica
+6VG0103 : Baccharis pilularis 1
+6VG0104 : Pinus lambertiana 3
+6VG0105 : Puya venusta
+6VG0106 : Quercus lobata 1
+6VG0107 : Quercus douglasii 1
+6VG0108 : Quercus rubra
+6VG0109 : Pinus strobus
+6VG0110 : Calocedrus decrruens 2
+6VG0111 : Salvia leucophylla 3
+6VG0112 : Caesalpinia cacalaco
+6VG0113 : Acacia visco
+6VG0114 : Jacaranda mimosifolia
+6VG0115 : Umbellularia californica 3
+6VG0116 : Baccharis pilularis 2
+6VG0117 : Quercus douglasii 1
+6VG0118 : Ceanothus spinosus 1
+6VG0119 : Salvia leucophylla 1
+6VG0120 : Brachychiton discolor
+6VG0121 : Acer paxii
+6VG0122 : Pinus lambertiana 3
+6VG0123 : Metrosideros excelsa
+6VG0124 : Melaleuca linariifolia
+6VG0125 : Quercus lobata 3
+6VG0126 : Quercus douglasii 1
+6VG0127 : Ficus craterostoma
+6VG0128 : Arctostaphylos glandulosa 1
+6VG0129 : Ficus macrophylla f. columnaris
+6VG0130 : Baccharis pilularis 1
+6VG0131 : Calocedrus decrruens 2
+6VG0132 : Quercus douglasii 3
+6VG0133 : Tsuga canadensis
+6VG0134 : Abies concolor 3
+6VG0135 : Aloe arborescens flower
+6VG0136 : Pyllostachys vivax
+6VG0137 : Baccharis pilularis 1
+6VG0138 : Abies concolor 3
+6VG0139 : Arctostaphylos glandulosa 3
+6VG0140 : Arctostaphylos glandulosa 3
+6VG0141 : Podocarpus gracilior
+6VG0142 : Abies concolor 1
+6VG0143 : Acer rubrum
+6VG0144 : Pinus lambertiana 2
+6VG0145 : Calodendrum capense
+6VG0146 : Cedrus atlantica 'glauca'
+6VG0147 : Umbellularia californica 2
+6VG0148 : Pinus ponderosa 3
+6VG0149 : Arctostaphylos glandulosa 2
+6VG0150 : Bambusa beecheyana
+6VG0151 : Arctostaphylos glandulosa 3
+6VG0152 : Arctostaphylos glandulosa 1
+6VG0153 : Ficus thonningii
+6VG0154 : Baccharis pilularis 2
+6VG0155 : Heteromeles arbutifolia 2
+6VG0156 : Magnolia grandiflora
+6VG0157 : Heteromeles arbutifolia 3
+6VG0158 : Chorisia insignis
+6VG0159 : Olea africana
+6VG0160 : Quercus rubra
+6VG0161 : Calocedrus decrruens 2
+6VG0162 : Rubus occidentalis
+6VG0163 : Salvia leucophylla 1
+6VG0164 : Arctostaphylos glandulosa 1
+6VG0165 : Ficus platypoda
+6VG0166 : Caesalpinia cacalaco
+6VG0167 : Bambusa tuldoides
+6VG0168 : Ceanothus spinosus 3
+6VG0169 : Heteromeles arbutifolia 3
+6VG0170 : Abies concolor 1
+6VG0171 : Brachychiton discolor
+6VG0172 : Ceanothus spinosus 1
+6VG0173 : Quercus agrifolia 1
+6VG0174 : Arctostaphylos glandulosa 1
+6VG0175 : Arctostaphylos glandulosa 2
+6VG0176 : Baccharis pilularis 1
+6VG0177 : Arctostaphylos glandulosa 2
+6VG0178 : Arctostaphylos glandulosa 2
+6VG0179 : Pinus lambertiana 3
+6VG0180 : Acacia caven
+6VG0181 : Pinus ponderosa 3
+6VG0182 : Acacia caven
+6VG0183 : Arctostaphylos glandulosa 3
+6VG0184 : Baccharis pilularis 3
+6VG0185 : Acer rubrum
+6VG0186 : Ceanothus spinosus 3
+6VG0187 : Tipuana tipu
+6VG0188 : Melaleuca linariifolia
+6VG0189 : Baccharis pilularis 3
+6VG0190 : Taxodium mucronatum
+6VG0191 : Quercus lobata 1
+6VG0192 : Calodendrum capense
+6VG0193 : Pinus ponderosa 1
+6VG0194 : Fagus sylvatica 'atropurpurea'
+6VG0195 : Quercus agrifolia 3
+6VG0196 : Ceanothus megacarpus 2
+6VG0197 : Taxodium mucronatum
+6VG0198 : Umbellularia californica 1
+6VG0199 : Quercus agrifolia 3
+6VG0200 : Pinus lambertiana 2
+6VG0201 : Pinus ponderosa 2
+6VG0202 : Baccharis pilularis 1
+6VG0203 : Quercus lobata 3
+6VG0204 : Ceanothus spinosus 1
+6VG0205 : Peltophorum africanum
+6VG0206 : Abies concolor 2
+6VG0207 : Pinus ponderosa 1
+6VG0208 : Arctostaphylos glandulosa 2
+6VG0209 : Calocedrus decrruens 2
+6VG0210 : Cassia leptophylla
+6VG0211 : Umbellularia californica 3
+6VG0212 : Taxodium mucronatum
+6VG0213 : Pinus lambertiana 2
+6VG0214 : Quercus agrifolia 2
+6VG0215 : Baccharis pilularis 3
+6VG0216 : Quercus agrifolia 1
+6VG0217 : Ceanothus megacarpus 3
+6VG0218 : Baccharis pilularis 3
+6VG0219 : Abies concolor 1
+6VG0220 : Ceanothus spinosus 1
+6VG0221 : Adenostoma fasciculatum 3
+6VG0222 : Baccharis pilularis 1
+6VG0223 : Portulacaria afra 'Variegata'
+6VG0224 : Quercus douglasii 3
+6VG0225 : Quercus lobata 3
+6VG0226 : Calocedrus decrruens 3
+6VG0227 : Salvia leucophylla 3
+6VG0228 : Quercus virginana
+6VG0229 : Ceanothus megacarpus 2
+6VG0230 : Tsuga canadensis
+6VG0231 : Baccharis pilularis 1
+6VG0232 : Puya venusta
+6VG0233 : Quercus lobata 2
+6VG0234 : Eucalyptus ficifolia
+6VG0235 : Ceanothus spinosus 1
+6VG0236 : Acer pensylvanicum
+6VG0237 : Salvia leucophylla 3
+6VG0238 : Quercus douglasii 1
+6VG0239 : Baccharis pilularis 2
+6VG0240 : Eucalyptus rudius
+6VG0241 : Quercus robur
+6VG0242 : Adenostoma fasciculatum 1
+6VG0243 : Pinus ponderosa 2
+6VG0244 : Bromus diandrus
+6VG0245 : Ceanothus megacarpus 3
+6VG0246 : Eucalyptus kartzoffiana
+6VG0247 : Fagus grandifolia
+6VG0248 : Tsuga canadensis
+6VG0249 : Ficus macrophylla f. columnaris
+6VG0250 : Baccharis pilularis 1
+6VG0251 : Arctostaphylos glandulosa 3
+6VG0252 : Umbellularia californica 1
+6VG0253 : Casimiroa edulis
+6VG0254 : Adenostoma fasciculatum 3
+6VG0255 : Quercus lobata 3
+6VG0256 : Podocarpus gracilior
+6VG0257 : Salix babylonica
+6VG0258 : Pinus lambertiana 1
+6VG0259 : Ceanothus spinosus 2
+6VG0260 : Melaleuca linariifolia
+6VG0261 : Salvia leucophylla 2
+6VG0262 : Quercus agrifolia 1
+6VG0263 : Cassia leptophylla
+6VG0264 : Quercus agrifolia 3
+6VG0265 : Salvia leucophylla 2
+6VG0266 : Baccharis pilularis 3
+6VG0267 : Aloe arborescens
+6VG0268 : Pinus ponderosa 2
+6VG0269 : Ginkgo biloba
+6VG0270 : Quercus rubra
+6VG0271 : Ginkgo biloba
+6VG0272 : Fagus grandifolia
+6VG0273 : Quercus douglasii 3
+6VG0274 : Ehretia austin-smithii
+6VG0275 : Arctostaphylos glandulosa 5
+6VG0276 : Baccharis pilularis 1
+6VG0277 : Bambusa tuldoides
+6VG0278 : Ceanothus megacarpus 3
+6VG0279 : Quercus agrifolia 1
+6VG0280 : Quercus agrifolia 3
+6VG0281 : Umbellularia californica 2
+6VG0282 : Quercus lobata 3
+6VG0283 : Casimiroa edulis
+6VG0284 : Pinus lambertiana 3
+6VG0285 : Pyllostachys vivax
+6VG0286 : Heteromeles arbutifolia 1
+6VG0287 : Heteromeles arbutifolia 3
+6VG0288 : Ceanothus spinosus 3
+6VG0289 : Acacia visco
+6VG0290 : Calocedrus decrruens 3
+6VG0291 : Bambusa beecheyana
+6VG0292 : Lagerstroemia indica
+6VG0293 : Arctostaphylos glandulosa 2
+6VG0294 : Ficus thonningii
+6VG0295 : Chorisia speciosa
+6VG0296 : Magnolia grandiflora
+6VG0297 : Betula papyrifera
+6VG0298 : Quercus lobata 2
+6VG0299 : Ceanothus megacarpus 1
+6VG0300 : Abies concolor 3
+6VG0301 : Ceanothus spinosus 2
+6VG0302 : Heteromeles arbutifolia 2
+6VG0303 : Ceanothus megacarpus 3
+6VG0304 : Aloe arborescens flower
+6VG0305 : Pinus lambertiana 2
+6VG0306 : Calocedrus decrruens 1
+6VG0307 : Pyllostachys vivax
+6VG0308 : Adenostoma fasciculatum 2
+6VG0309 : Fagus sylvatica 'atropurpurea'
+6VG0310 : Ceanothus megacarpus 3
+6VG0311 : Olea africana
+6VG0312 : Adenostoma fasciculatum 2
+6VG0313 : Abies concolor 2
+6VG0314 : Baccharis pilularis 2
+6VG0315 : Calocedrus decrruens 2
+6VG0316 : Heteromeles arbutifolia 3
+6VG0317 : Baccharis pilularis 2
+6VG0318 : Pinus ponderosa 2
+6VG0319 : Magnolia grandiflora
+6VG0320 : Ficus craterostoma
+6VG0321 : Umbellularia californica 3
+6VG0322 : Brachychiton discolor
+6VG0323 : Pinus lambertiana 2
+6VG0324 : Macadamia integrifolia
+6VG0325 : Casimiroa edulis
+6VG0326 : Macadamia integrifolia
+6VG0327 : Citharexylum montevidense
+6VG0328 : Phytolacca dioica
+6VG0329 : Brachychiton discolor
+6VG0330 : Bambusa beecheyana
+6VG0331 : Quercus ilex
+6VG0332 : Quercus agrifolia 2
+6VG0333 : Ficus macrophylla f. columnaris
+6VG0334 : Brachychiton rupestris
+6VG0335 : Melateuca lanceolata
+6VG0336 : Pinus lambertiana 3
+6VG0337 : Quercus douglasii 3
+6VG0338 : Quercus douglasii 1
+6VG0339 : Quercus robur
+6VG0340 : Abies concolor 2
+6VG0341 : Baccharis pilularis 1
+6VG0342 : Arctostaphylos glandulosa 1
+6VG0343 : Cedrus deodara
+6VG0344 : Baccharis pilularis 2
+6VG0345 : Umbellularia californica 3
+6VG0346 : Tipuana tipu
+6VG0347 : Calocedrus decrruens 2
+6VG0348 : Quercus douglasii 2
+6VG0349 : Puya venusta
+6VG0350 : Acer rubrum
+6VG0351 : Betula lenta
+6VG0352 : Quercus rubra
+6VG0353 : Abies concolor 2
+6VG0354 : Eucalyptus saligna
+6VG0355 : Agave attenuata
+6VG0356 : Quercus lobata 1
+6VG0357 : Pinus ponderosa 1
+6VG0358 : Adenostoma fasciculatum 3
+6VG0359 : Adenostoma fasciculatum 3
+6VG0360 : Salvia leucophylla 3
+6VG0361 : Acer paxii
+6VG0362 : Baccharis pilularis 2
+6VG0363 : Arctostaphylos glandulosa 1
+6VG0364 : Quercus douglasii 3
+6VG0365 : Acacia visco
+6VG0366 : Baccharis pilularis 2
+6VG0367 : Abies concolor 3
+6VG0368 : Bambusa beecheyana
+6VG0369 : Umbellularia californica 1
+6VG0370 : Caesalpinia cacalaco
+6VG0371 : Magnolia grandiflora
+6VG0372 : Metrosideros excelsa
+6VG0373 : Arctostaphylos glandulosa 2
+6VG0374 : Taxodium mucronatum
+6VG0375 : Heteromeles arbutifolia 1
+6VG0376 : Salvia leucophylla 2
+6VG0377 : Arctostaphylos glandulosa 5
+6VG0378 : Cedrus atlantica
+6VG0379 : Pinus ponderosa 1
+6VG0380 : Quercus agrifolia 3
+6VG0381 : Quercus lobata 2
+6VG0382 : Quercus lobata 2
+6VG0383 : Adenostoma fasciculatum 1
+6VG0384 : Umbellularia californica 2
+6VG0385 : Cedrus deodara
+6VG0386 : Quercus rubra
+6VG0387 : Betula papyrifera
+6VG0388 : Ceanothus megacarpus 2
+6VG0389 : Phyllostachys aurea
+6VG0390 : Agave attenuata
+6VG0391 : Quercus lobata 1
+6VG0392 : Prunus serotina
+6VG0393 : Quercus lobata 2
+6VG0394 : Calocedrus decrruens 1
+6VG0395 : Arctostaphylos glandulosa 3
+6VG0396 : Ceanothus spinosus 2
+6VG0397 : Adenostoma fasciculatum 3
+6VG0398 : Phyllostachys vivax
+6VG0399 : Podocarpus gracilior
+6VG0400 : Baccharis pilularis 3
+6VG0401 : Quercus ilex
+6VG0402 : Pinus ponderosa 1
+6VG0403 : Ceanothus spinosus 3
+6VG0404 : Pinus lambertiana 1
+6VG0405 : Ceanothus megacarpus 2
+6VG0406 : Heteromeles arbutifolia 1
+6VG0407 : Arctostaphylos glandulosa 1
+6VG0408 : Cedrus deodara
+6VG0409 : Baccharis pilularis 3
+6VG0410 : Acer pensylvanicum
+6VG0411 : Calocedrus decrruens 2
+6VG0412 : Quercus rubra
+6VG0413 : Taxodium mucronatum
+6VG0414 : Heteromeles arbutifolia 1
+6VG0415 : Quercus agrifolia 2
+6VG0416 : Bambusa beecheyana
+6VG0417 : Pinus lambertiana 2
+6VG0418 : Pinus lambertiana 3
+6VG0419 : Umbellularia californica 1
+6VG0420 : Quercus agrifolia
+6VG0421 : Pinus ponderosa 3
+6VG0422 : Acer rubrum
+6VG0423 : Aloe arborescens
+6VG0424 : Salvia leucophylla 1
+6VG0425 : Abies concolor 1
+6VG0426 : Salvia leucophylla 1
+6VG0427 : Adenostoma fasciculatum 2
+6VG0428 : Acer paxii
+6VG0429 : Rubus occidentalis
+6VG0430 : Jacaranda mimosifolia
+6VG0431 : Quercus rubra
+6VG0432 : Quercus douglasii 2
+6VG0433 : Calocedrus decrruens 1
+6VG0434 : Quercus lobata 3
+6VG0435 : Salvia leucophylla 3
+6VG0436 : Baccharis pilularis 2
+6VG0437 : Bambusa beecheyana
+6VG0438 : Quercus rubra
+6VG0439 : Baccharis pilularis 2
+6VG0440 : Abies concolor 3
+6VG0441 : Baccharis pilularis 1
+6VG0442 : Ceanothus spinosus 2
+6VG0443 : Arctostaphylos glandulosa 3
+6VG0444 : Chorisia insignis
+6VG0445 : Arctostaphylos glandulosa 1
+6VG0446 : Heteromeles arbutifolia 2
+6VG0447 : Ceanothus spinosus 2
+6VG0448 : Arctostaphylos glandulosa 3
+6VG0449 : Acer rubrum
+6VG0450 : Aloe bainesii
+6VG0451 : Quercus douglasii 2
+6VG0452 : Portulacaria afra 'Low Form'
+6VG0453 : Umbellularia californica 2
+6VG0454 : Calocedrus decrruens 3
+6VG0455 : Ficus craterostoma
+6VG0456 : Betula lenta
+6VG0457 : Ceanothus spinosus 2
+6VG0458 : Eucalyptus rudius
+6VG0459 : Arctostaphylos glandulosa 5
+6VG0460 : Adenostoma fasciculatum 1
+6VG0461 : Calocedrus decrruens 1
+6VG0462 : Calocedrus decrruens 3
+6VG0463 : Puya venusta
+6VG0464 : Heteromeles arbutifolia 3
+6VG0465 : Aloe arborescens flower
+6VG0466 : Quercus douglasii 2
+6VG0467 : Arctostaphylos glandulosa 1
+6VG0468 : Arctostaphylos glandulosa 2
+6VG0469 : Quercus lobata 1
+6VG0470 : Conifer
+6VG0471 : Peltophorum dubium
+6VG0472 : Ombu tree
+6VG0473 : Pinus ponderosa 2
+6VG0474 : Ceanothus megacarpus 2
+6VG0475 : Phyllostachys aurea
+6VG0476 : Melaleuca linariifolia
+6VG0477 : Baccharis pilularis 2
+6VG0478 : Avena fatua
+6VG0479 : Betula lenta
+6VG0480 : Adenostoma fasciculatum 2
+6VG0481 : Betula papyrifera
+6VG0482 : Ceanothus megacarpus 3
+6VG0483 : Pinus lambertiana 1
+6VG0484 : Podocarpus gracilior
+6VG0485 : Heteromeles arbutifolia 1
+6VG0486 : Decidous
+6VG0487 : Caesalpinia cacalaco
+6VG0488 : Heteromeles arbutifolia 1
+6VG0489 : Taxodium mucronatum
+6VG0490 : Grass
+6VG0491 : Quercus douglasii 1
+6VG0492 : Umbellularia californica 2
+6VG0493 : Brachychiton rupestris
+6VG0494 : Salvia leucophylla 2
+6VG0495 : Avena fatua
+6VG0496 : Umbellularia californica 1
+6VG0497 : Eucalyptus rudis
+6VG0498 : Brachychiton discolor
+6VG0499 : Quercus agrifolia 3
+6VG0500 : Umbellularia californica 3
+6VG0501 : Ceanothus megacarpus 1
+6VG0502 : Ceanothus megacarpus 2
+6VG0503 : Magnolia grandiflora
+6VG0504 : Ficus socotrana
+6VG0505 : Quercus agrifolia 2
+6VG0506 : Quercus agrifolia
+6VG0507 : Arctostaphylos glandulosa 3
+6VG0508 : Beaucarnea recurvata
+6VG0509 : Arctostaphylos glandulosa 2
+6VG0510 : Tsuga canadensis
+6VG0511 : Ceanothus megacarpus 1
+6VG0512 : Baccharis pilularis 3
+6VG0513 : Quercus ilex
+6VG0514 : Adenostoma fasciculatum 2
+6VG0515 : Pinus ponderosa 2
+6VG0516 : Aloe arborescens flower
+6VG0517 : Quercus douglasii 2
+6VG0518 : Heteromeles arbutifolia 2
+6VG0519 : Umbellularia californica 3
+6VG0520 : Cercidium pennisulare
+6VG0521 : Fagus sylvatica 'atropurpurea'
+6VG0522 : Umbellularia californica 1
+6VG0523 : Umbellularia californica 2
+6VG0524 : Pinus ponderosa 1
+6VG0525 : Salvia leucophylla 3
+6VG0526 : Cedrus atlantica
+6VG0527 : Avena fatua
+6VG0528 : Betula lenta
+6VG0529 : Quercus robur
+6VG0530 : Ceanothus megacarpus 1
+6VG0531 : Pinus strobus
+6VG0532 : Quercus agrifolia
+6VG0533 : Fagus grandifolia
+6VG0534 : Pinus strobus
+6VG0535 : Pinus ponderosa 2
+6VG0536 : Salvia leucophylla 3
+6VG0537 : Quercus rubra
+6VG0538 : Macadamia integrifolia
+6VG0539 : Ficus craterostoma
+6VG0540 : Baccharis pilularis 2
+6VG0541 : Chorisia insignis
+6VG0542 : Adenostoma fasciculatum 2
+6VG0543 : Abies concolor 2
+6VG0544 : Ceanothus spinosus 3
+6VG0545 : Baccharis pilularis 1
+6VG0546 : Pinus lambertiana 2
+6VG0547 : Quercus douglasii 2
+6VG0548 : Umbellularia californica 3
+6VG0549 : Magnolia grandiflora
+6VG0550 : Calocedrus decrruens 2
+6VG0551 : Arctostaphylos glandulosa 1
+6VG0552 : Quercus lobata 2
+6VG0553 : Melateuca lanceolata
+6VG0554 : Calocedrus decrruens 3
+6VG0555 : Baccharis pilularis 3
+6VG0556 : Pinus strobus
+6VG0557 : Quercus agrifolia 1
+6VG0558 : Quercus douglasii 1
+6VG0559 : Arctostaphylos glandulosa 3
+6VG0560 : Quercus suber
+6VG0561 : Betula lenta
+6VG0562 : Ceanothus megacarpus 1
+6VG0563 : Chorisia speciosa
+6VG0564 : Adenostoma fasciculatum 3
+6VG0565 : Adenostoma fasciculatum 3
+6VG0566 : Ceanothus megacarpus 2
+6VG0567 : Tsuga canadensis
+6VG0568 : Baccharis pilularis 1
+6VG0569 : Ficus macrophylla f. columnaris
+6VG0570 : Chorisia speciosa
+6VG0571 : Ceanothus megacarpus 1
+6VG0572 : Quercus lobata 1
+6VG0573 : Pinus ponderosa 2
+6VG0574 : Ficus macrophylla f. columnaris
+6VG0575 : Heteromeles arbutifolia 1
+6VG0576 : Eucalyptus saligna
+6VG0577 : Ceanothus megacarpus 2
+6VG0578 : Quercus lobata 3
+6VG0579 : Quercus agrifolia 2
+6VG0580 : Cassia leptophylla
+6VG0581 : Rubus occidentalis
+6VG0582 : Quercus rubra
+6VG0583 : Quercus rubra
+6VG0584 : Quercus ilex
+6VG0585 : Arctostaphylos glandulosa 2
+6VG0586 : Quercus agrifolia 2
+6VG0587 : Umbellularia californica 1
+6VG0588 : Quercus robur
+6VG0589 : Salvia leucophylla 2
+6VG0590 : Quercus suber
+6VG0591 : Arctostaphylos glandulosa 2
+6VG0592 : Baccharis pilularis 1
+6VG0593 : Uvularia sessifolia
+6VG0594 : Pinus lambertiana 1
+6VG0595 : Quercus lobata 2
+6VG0596 : Beaucarnea recurvata
+6VG0597 : Baccharis pilularis 3
+6VG0598 : Arctostaphylos glandulosa 3
+6VG0599 : Ceanothus spinosus 3
+6VG0600 : Bambusa beecheyana
+6VG0601 : Baccharis pilularis 3
+6VG0602 : Arctostaphylos glandulosa 1
+6VG0603 : Gasteria acinacifolia
+6VG0604 : Heteromeles arbutifolia 1
+6VG0605 : Quercus agrifolia 1
+6VG0606 : Ceanothus spinosus 3
+6VG0607 : Pyllostachys vivax
+6VG0608 : Acer rubrum
+6VG0609 : Betula papyrifera
+6VG0610 : Bambusa beecheyana
+6VG0611 : Bromus diandrus
+6VG0612 : Heteromeles arbutifolia 2
+6VG0613 : Ceanothus megacarpus 3
+6VG0614 : Arctostaphylos glandulosa 2
+6VG0615 : Quercus douglasii 2
+6VG0616 : Calocedrus decrruens 2
+6VG0617 : Bambusa tuldoides
+6VG0618 : Quercus lobata 3
+6VG0619 : Peltophorum africanum
+6VG0620 : Arctostaphylos glandulosa 3
+6VG0621 : Pinus lambertiana 1
+6VG0622 : Quercus virginana
+6VG0623 : Chorisia speciosa
+6VG0624 : Calodendrum capense
+6VG0625 : Phyllostachys vivax
+6VG0626 : Peltophorum africanum
+6VG0627 : Ceanothus spinosus 1
+6VG0628 : Podocarpus gracilior
+6VG0629 : Melaleuca linariifolia
+6VG0630 : Quercus agrifolia 3
+6VG0631 : Adenostoma fasciculatum 1
+6VG0632 : Baccharis pilularis 2
+6VG0633 : Cedrus atlantica 'glauca'
+6VG0634 : Heteromeles arbutifolia 2
+6VG0635 : Baccharis pilularis 3
+6VG0636 : Quercus douglasii 2
+6VG0637 : Peltophorum africanum
+6VG0638 : Umbellularia californica 2
+6VG0639 : Pinus lambertiana 2
+6VG0640 : Pinus ponderosa 3
+6VG0641 : Baccharis pilularis 1
+6VG0642 : Aloe arborescens flower
+6VG0643 : Baccharis pilularis 1
+6VG0644 : Abies concolor 3
+6VG0645 : Pinus lambertiana 3
+6VG0646 : Cedrus deodara
+6VG0647 : Aloe bainesii
+6VG0648 : Baccharis pilularis 1
+6VG0649 : Arctostaphylos glandulosa 1
+6VG0650 : Baccharis pilularis 2
+6VG0651 : Salvia leucophylla 1
+6VG0652 : Arctostaphylos glandulosa 5
+6VG0653 : Acer rubrum
+6VG0654 : Bambusa tuldoides
+6VG0655 : Magnolia grandiflora
+6VG0656 : Eucalyptus maculata
+6VG0657 : Arctostaphylos glandulosa 3
+6VG0658 : Quercus agrifolia
+6VG0659 : Quercus agrifolia 2
+6VG0660 : Ceanothus megacarpus 1
+6VG0661 : Quercus lobata 2
+6VG0662 : Citharexylum montevidense
+6VG0663 : Pinus lambertiana 1
+6VG0664 : Ceanothus megacarpus 3
+6VG0665 : Ficus platypoda
+6VG0666 : Quercus douglasii 2
+6VG0667 : Ehretia austin-smithii
+6VG0668 : Baccharis pilularis 1
+6VG0669 : Umbellularia californica 2
+6VG0670 : Rubus occidentalis
+6VG0671 : Cedrus deodara
+6VG0672 : Cassia leptophylla
+6VG0673 : Quercus rubra
+6VG0674 : Ficus craterostoma
+6VG0675 : Quercus lobata 2
+6VG0676 : Adenostoma fasciculatum 1
+6VG0677 : Quercus lobata 1
+6VG0678 : Quercus agrifolia 1
+6VG0679 : Portulacaria afra
+6VG0680 : Prunus serotina
+6VG0681 : Ceanothus spinosus 3
+6VG0682 : Quercus ilex
+6VG0683 : Abies concolor 3
+6VG0684 : Arctostaphylos glandulosa 1
+6VG0685 : Baccharis pilularis 2
+6VG0686 : Betula lenta
+6VG0687 : Bambusa beecheyana
+6VG0688 : Pinus strobus
+6VG0689 : Calocedrus decrruens 3
+6VG0690 : Uvularia sessifolia
+6VG0691 : Umbellularia californica 3
+6VG0692 : Quercus virginana
+6VG0693 : Eucalyptus maculata
+6VG0694 : Bambusa tuldoides
+6VG0695 : Brachychiton rupestris
+6VG0696 : Quercus agrifolia 2
+6VG0697 : Puya venusta
+6VG0698 : Lagerstroemia indica
+6VG0699 : Peltophorum dubium
+6VG0700 : Quercus lobata 2
+6VG0701 : Agave attenuata
+6VG0702 : Baccharis pilularis 3
+6VG0703 : Calocedrus decrruens 2
+6VG0704 : Calocedrus decrruens 1
+6VG0705 : Adenostoma fasciculatum 2
+6VG0706 : Quercus douglasii 1
+6VG0707 : Ceanothus spinosus 1
+6VG0708 : Abies concolor 1
+6VG0709 : Quercus lobata 1
+6VG0710 : Adenostoma fasciculatum 1
+6VG0711 : Adenostoma fasciculatum 2
+6VG0712 : Salvia leucophylla 2
+6VG0713 : Quercus rubra
+6VG0714 : Salvia leucophylla 2
+6VG0715 : Quercus agrifolia 3
+6VG0716 : Fagus grandifolia
+6VG0717 : Arctostaphylos glandulosa 2
+6VG0718 : Quercus agrifolia 1
+6VG0719 : Arctostaphylos glandulosa 1
+6VG0720 : Arctostaphylos glandulosa 3
+6VG0721 : Quercus ilex
+6VG0722 : Cedrus deodara
+6VG0723 : Jacaranda mimosifolia
+6VG0724 : Ficus thonningii
+6VG0725 : Quercus suber
+6VG0726 : Pinus ponderosa 3
+6VG0727 : Adenostoma fasciculatum 1
+6VG0728 : Arctostaphylos glandulosa 3
+6VG0729 : Aloe arborescens
+6VG0730 : Eucalyptus saligna
+6VG0731 : Ceanothus spinosus 2
+6VG0732 : Acer rubrum
+6VG0733 : Heteromeles arbutifolia 2
+6VG0734 : Quercus douglasii 2
+6VG0735 : Ceanothus spinosus 3
+6VG0736 : Salix babylonica
+6VG0737 : Baccharis pilularis 3
+6VG0738 : Bambusa beecheyana
+6VG0739 : Ceanothus spinosus 3
+6VG0740 : Umbellularia californica 2
+6VG0741 : Baccharis pilularis 2
+6VG0742 : Pinus ponderosa 2
+6VG0743 : Lagerstroemia indica
+6VG0744 : Betula papyrifera
+6VG0745 : Juniperus chinensis
+6VG0746 : Abies concolor 2
+6VG0747 : Baccharis pilularis 1
+6VG0748 : Baccharis pilularis 2
+6VG0749 : Pinus lambertiana 1
+6VG0750 : Arctostaphylos glandulosa 3
+6VG0751 : Taxodium mucronatum
+6VG0752 : Jacaranda mimosifolia
+6VG0753 : Baccharis pilularis 2
+6VG0754 : Hetrosideros excelsa
+6VG0755 : Olea africana
+6VG0756 : Acer pensylvanicum
+6VG0757 : Arctostaphylos glandulosa 1
+6VG0758 : Pinus ponderosa 1
+6VG0759 : Melateuca lanceolata
+6VG0760 : Agave attenuata
+6VG0761 : Salvia leucophylla 2
+6VG0762 : Puya venusta
+6VG0763 : Abies concolor 1
+6VG0764 : Salix babylonica
+6VG0765 : Umbellularia californica 1
+6VG0766 : Pinus lambertiana 1
+6VG0767 : Quercus douglasii 3
+6VG0768 : Arctostaphylos glandulosa 4
+6VG0769 : Betula papyrifera
+6VG0770 : Heteromeles arbutifolia 2
+6VG0771 : Beaucarnea recurvata
+6VG0772 : Acer rubrum
+6VG0773 : Macadamia integrifolia
+6VG0774 : Calocedrus decrruens 3
+6VG0775 : Lagerstroemia indica
+6VG0776 : Eucalyptus maculata
+6VG0777 : Heteromeles arbutifolia 2
+6VG0778 : Pyllostachys vivax
+6VG0779 : Quercus lobata 2
+6VG0780 : Arctostaphylos glandulosa 1
+6VG0781 : Quercus agrifolia
+6VG0782 : Ceanothus spinosus 2
+6VG0783 : Bambusa beecheyana
+6VG0784 : Eucalyptus ficifolia
+6VG0785 : Acer pensylvanicum
+6VG0786 : Umbellularia californica 1
+6VG0787 : Ceanothus megacarpus 1
+6VG0788 : Arctostaphylos glandulosa 2
+6VG0789 : Quercus robur
+6VG0790 : Abies concolor 2
+6VG0791 : Heteromeles arbutifolia 1
+6VG0792 : Quercus rubra
+6VG0793 : Lagerstroemia indica
+6VG0794 : Heteromeles arbutifolia 1
+6VG0795 : Pinus ponderosa 2
+6VG0796 : Baccharis pilularis 3
+6VG0797 : Prunus serotina
+6VG0798 : Quercus rubra
+6VG0799 : Bambusa beecheyana
+6VG0800 : Fagus grandifolia
+6VG0801 : Pinus lambertiana 3
+6VG0802 : Beaucarnea recurvata
+6VG0803 : Quercus robur
+6VG0804 : Baccharis pilularis 3
+6VG0805 : Calocedrus decrruens 3
+6VG0806 : Ceanothus spinosus 1
+6VG0807 : Eucalyptus kartzoffiana
+6VG0808 : Arctostaphylos glandulosa 3
+6VG0809 : Aloe bainesii
+6VG0810 : Ficus socotrana
+6VG0811 : Bromus diandrus
+6VG0812 : Ceanothus megacarpus 2
+6VG0813 : Umbellularia californica 2
+6VG0814 : Baccharis pilularis 1
+6VG0815 : Quercus agrifolia 2
+6VG0816 : Abies concolor 1
+6VG0817 : Brachychiton rupestris
+6VG0818 : Quercus lobata 1
+6VG0819 : Betula lenta
+6VG0820 : Calocedrus decrruens 3
+6VG0821 : Phytolacca dioica
+6VG0822 : Quercus lobata 3
+6VG0823 : Abies concolor 2
+6VG0824 : Adenostoma fasciculatum 2
+6VG0825 : Pinus ponderosa 1
+6VG0826 : Baccharis pilularis 2
+6VG0827 : Peltophorum africanum
+6VG0828 : Ceanothus spinosus 2
+6VG0829 : Ceanothus megacarpus 1
+6VG0830 : Pinus lambertiana 2
+6VG0831 : Abies concolor 1
+6VG0832 : Umbellularia californica 3
+6VG0833 : Pinus ponderosa 1
+6VG0834 : Phyllostachys vivax
+6VG0835 : Ficus thonningii
+6VG0836 : Salix babylonica
+6VG0837 : Baccharis pilularis 3
+6VG0838 : Melaleuca linariifolia
+6VG0839 : Quercus ilex
+6VG0840 : Quercus douglasii 1
+6VG0841 : Quercus douglasii 3
+6VG0842 : Arctostaphylos glandulosa 1
+6VG0843 : Arctostaphylos glandulosa 4
+6VG0844 : Quercus agrifolia
+6VG0845 : Salvia leucophylla 3
+6VG0846 : Pinus ponderosa 3
+6VG0847 : Ceanothus megacarpus 2
+6VG0848 : Quercus lobata 3
+6VG0849 : Melaleuca linariifolia
+6VG0850 : Quercus lobata 3
+6VG0851 : Quercus virginana
+6VG0852 : Melaleuca linariifolia
+6VG0853 : Portulacaria afra
+6VG0854 : Chorisia insignis
+6VG0855 : Jacaranda mimosifolia
+6VG0856 : Adenostoma fasciculatum 3
+6VG0857 : Quercus douglasii 3
+6VG0858 : Baccharis pilularis 1
+6VG0859 : Salvia leucophylla 1
+6VG0860 : Pinus lambertiana 3
+6VG0861 : Salvia leucophylla 1
+6VG0862 : Adenostoma fasciculatum 1
+6VG0863 : Agave attenuata
+6VG0864 : Heteromeles arbutifolia 3
+6VG0865 : Salvia leucophylla 1
+6VG0866 : Baccharis pilularis 1
+6VG0867 : Salix babylonica
+6VG0868 : Ceanothus megacarpus 1
+6VG0869 : Ceanothus spinosus 2
+6VG0870 : Arctostaphylos glandulosa 3
+6VG0871 : Quercus lobata 2
+6VG0872 : Arctostaphylos glandulosa 2
+6VG0873 : Arctostaphylos glandulosa 3
+6VG0874 : Salvia leucophylla 1
+6VG0875 : Ceanothus spinosus 1
+6VG0876 : Arctostaphylos glandulosa 1
+6VG0877 : Arctostaphylos glandulosa 3
+6VG0878 : Salvia leucophylla 3
+6VG0879 : Baccharis pilularis 2
+6VG0880 : Chorisia speciosa
+6VG0881 : Magnolia grandiflora
+6VG0882 : Lagerstroemia indica
+6VG0883 : Betula lenta
+6VG0884 : Aloe arborescens flower
+6VG0885 : Tipuana tipu
+6VG0886 : Pinus ponderosa 2
+6VG0887 : Acer rubrum
+6VG0888 : Calocedrus decrruens 1
+6VG0889 : Pinus lambertiana 3
+6VG0890 : Quercus agrifolia 2
+6VG0891 : Pinus lambertiana 1
+6VG0892 : Pinus lambertiana 2
+6VG0893 : Pinus lambertiana 1
+6VG0894 : Acer rubrum
+6VG0895 : Fagus grandifolia
+6VG0896 : Baccharis pilularis 1
+6VG0897 : Ceanothus spinosus 1
+6VG0898 : Baccharis pilularis 3
+6VG0899 : Calocedrus decrruens 2
+6VG0900 : Baccharis pilularis 1
+6VG0901 : Aloe arborescens
+6VG0902 : Ficus macrophylla f. columnaris
+6VG0903 : Heteromeles arbutifolia 3
+6VG0904 : Pinus lambertiana 2
+6VG0905 : Calocedrus decrruens 1
+6VG0906 : Pinus lambertiana 3
+6VG0907 : Podocarpus gracilior
+6VG0908 : Umbellularia californica 3
+6VG0909 : Quercus agrifolia 3
+6VG0910 : Quercus lobata 1
+6VG0911 : Baccharis pilularis 3
+6VG0912 : Arctostaphylos glandulosa 1
+6VG0913 : Abies concolor 3
+6VG0914 : Heteromeles arbutifolia 3
+6VG0915 : Arctostaphylos glandulosa 2
+6VG0916 : Heteromeles arbutifolia 3
+6VG0917 : Quercus douglasii 1
+6VG0918 : Quercus virginana
+6VG0919 : Abies concolor 3
+6VG0920 : Pinus ponderosa 1
+6VG0921 : Pinus strobus
+6VG0922 : Uvularia sessifolia
+6VG0923 : Baccharis pilularis 3
+6VG0924 : Ceanothus spinosus 3
+6VG0925 : Arctostaphylos glandulosa 1
+6VG0926 : Pinus lambertiana 3
+6VG0927 : Fagus grandifolia
+6VG0928 : Cedrus deodara
+6VG0929 : Portulacaria afra 'Low Form'
+6VG0930 : Podocarpus gracilior
+6VG0931 : Chorisia insignis
+6VG0932 : Arctostaphylos glandulosa 2
+6VG0933 : Tsuga canadensis
+6VG0934 : Salix babylonica
+6VG0935 : Arctostaphylos glandulosa 2
+6VG0936 : Avena fatua
+6VG0937 : Tipuana tipu
+6VG0938 : Cedrus atlantica
+6VG0939 : Ceanothus megacarpus 2
+6VG0940 : Quercus douglasii 3
+6VG0941 : Phyllostachys aurea
+6VG0942 : Calocedrus decrruens 1
+6VG0943 : Quercus suber
+6VG0944 : Podocarpus gracilior
+6VG0945 : Salix babylonica
+6VG0946 : Baccharis pilularis 2
+6VG0947 : Eucalyptus kartzoffiana
+6VG0948 : Pinus lambertiana 1
+6VG0949 : Ficus thonningii
+6VG0950 : Cassia leptophylla
+6VG0951 : Salvia leucophylla 2
+6VG0952 : Chorisia speciosa
+6VG0953 : Quercus douglasii 3
+6VG0954 : Caesalpinia cacalaco
+6VG0955 : Pinus ponderosa 3
+6VG0956 : Umbellularia californica 3
+6VG0957 : Tsuga canadensis
+6VG0958 : Baccharis pilularis 3
+6VG0959 : Quercus agrifolia
+6VG0960 : Abies concolor 3
+6VG0961 : Melaleuca linariifolia
+6VG0962 : Umbellularia californica 3
+6VG0963 : Aloe bainesii
+6VG0964 : Arctostaphylos glandulosa 3
+6VG0965 : Quercus douglasii 3
+6VG0966 : Puya venusta
+6VG0967 : Baccharis pilularis 3
+6VG0968 : Quercus virginana
+6VG0969 : Arctostaphylos glandulosa 2
+6VG0970 : Adenostoma fasciculatum 3
+6VG0971 : Heteromeles arbutifolia 3
+6VG0972 : Adenostoma fasciculatum 3
+6VG0973 : Salvia leucophylla 2
+6VG0974 : Salvia leucophylla 3
+6VG0975 : Adenostoma fasciculatum 1
+6VG0976 : Ginko biloba
+6VG0977 : Portulacaria afra 'Variegata'
+6VG0978 : Aloe arborescens
+6VG0979 : Quercus douglasii 2
+6VG0980 : Pinus ponderosa 1
+6VG0981 : Prosopis articulata
+6VG0982 : Arctostaphylos glandulosa 1
+6VG0983 : Umbellularia californica 1
+6VG0984 : Taxodium mucronatum
+6VG0985 : Quercus lobata 1
+6VG0986 : Umbellularia californica 2
+6VG0987 : Quercus douglasii 1
+6VG0988 : Quercus agrifolia 3
+6VG0989 : Adenostoma fasciculatum 3
+6VG0990 : Arctostaphylos glandulosa 2
+6VG0991 : Baccharis pilularis 2
+6VG0992 : Adenostoma fasciculatum 2
+6VG0993 : Tipuana tipu
+6VG0994 : Pinus lambertiana 2
+6VG0995 : Quercus agrifolia 3
+6VG0996 : Quercus suber
+6VG0997 : Calocedrus decrruens 1
+6VG0998 : Bambusa tuldoides
+6VG0999 : Baccharis pilularis 2
+6VG1000 : Ceanothus spinosus 2
+6VG1001 : Peltophorum africanum
+6VG1002 : Quercus robur
+6VG1003 : Arctostaphylos glandulosa 1
+6VG1004 : Aloe bainesii
+6VG1005 : Cedrus deodara
+6VG1006 : Ficus thonningii
+6VG1007 : Adenostoma fasciculatum 2
+6VG1008 : Ceanothus megacarpus 3
+6VG1009 : Heteromeles arbutifolia 2
+6VG1010 : Calocedrus decrruens 1
+6VG1011 : Quercus suber
+6VG1012 : Calocedrus decrruens 2
+6VG1013 : Quercus agrifolia 1
+6VG1014 : Arctostaphylos glandulosa 2
+6VG1015 : Podocarpus gracilior
+6VG1016 : Quercus agrifolia 1
+6VG1017 : Beaucarnea recurvata
+6VG1018 : Quercus virginana
+6VG1019 : Ceanothus spinosus 1
+6VG1020 : Pinus ponderosa 3
+6VG1021 : Heteromeles arbutifolia 1
+6VG1022 : Betula papyrifera
+6VG1023 : Agave attenuata
+6VG1024 : Ceanothus spinosus 2
+6VG1025 : Baccharis pilularis 3
+6VG1026 : Chorisia insignis
+6VG1027 : Quercus virginana
+6VG1028 : Peltophorum dubium
+6VG1029 : Pinus ponderosa 3
+6VG1030 : Chorisia insignis
+6VG1031 : Bambusa tuldoides
+6VG1032 : Heteromeles arbutifolia 1
+6VG1033 : Puya venusta
+6VG1034 : Ficus platypoda
+6VG1035 : Quercus lobata 3
+6VG1036 : Adenostoma fasciculatum 3
+6VG1037 : Jacaranda mimosifolia
+6VG1038 : Heteromeles arbutifolia 3
+6VG1039 : Abies concolor 2
+6VG1040 : Arctostaphylos glandulosa 3
+6VG1041 : Quercus agrifolia 2
+6VG1042 : Ceanothus megacarpus 3
+6VG1043 : Quercus suber
+6VG1044 : Abies concolor 2
+6VG1045 : Abies concolor 1
+6VG1046 : Quercus agrifolia
+7MI0001 : Hypersthene (Mg,Fe+2)2Si2O6
+7MI0002 : Ilmenite Fe+2TiO3
+7MI0003 : Staurolite (Fe+2,Mg,Zn)2Al9(Si,Al)4O22(OH)2
+7MI0004 : Calcite CaCO_3
+7MI0005 : Phlogopite KMg3Si3Al010(F,OH)2
+7MI0006 : Tremolite Ca_2(Mg,Fe^2+)_5Si_8O_22(OH)_2
+7MI0007 : Wollastonite CaSiO3
+7MI0008 : Triphylite Li(Mn,Fe)PO_4
+7MI0009 : Strontianite SrCO_3
+7MI0010 : Anhydrite CaSO_4
+7MI0011 : Prehnite Ca_2Al_2Si_3O_10(OH)_2
+7MI0012 : Cummingtonite (Mg,Fe^2+)_7Si_8O_22(OH)_2
+7MI0013 : Sulphur S
+7MI0014 : Tremolite Ca_2(Mg,Fe^2+)_5Si_8O_22(OH)_2
+7MI0015 : Gibbsite Al(OH)_3
+7MI0016 : Alunite KAl_3(SO_4)_2(OH)_6
+7MI0017 : Chalcopyrite CuFeS_2
+7MI0018 : Olivine (Fo88) (Fe+2,Mg)2SiO4
+7MI0019 : Quartz SiO_2
+7MI0020 : Anatase TiO_2
+7MI0021 : Quartz SiO_2
+7MI0022 : Chalcopyrite CuFeS_2
+7MI0023 : Anorthite (Feldspar) (NaSi,CaAl)AlSi_2O_8
+7MI0024 : Titanite (Sphene) CaTiSiO_5
+7MI0025 : Wollastonite CaSiO_3
+7MI0026 : Zoisite (var. tanzanite) Ca2Al3(SiO4)3(OH)
+7MI0027 : Titanite (Sphene) CaTiSiO_5
+7MI0028 : Stilbite NaCa_2Al_5Si_3O_36.14H_2O
+7MI0029 : Wollastonite CaSiO3
+7MI0030 : Smithsonite PbCO_3
+7MI0031 : Chlorite (Mg,Al)_6(Si,Al)_4O_10(OH)_8
+7MI0032 : Montmorillonite (Na,Ca)_0.33(Al,Mg)_2Si_4O_10(OH)_2.H_2O
+7MI0033 : Goethite a-Fe+3O(OH)
+7MI0034 : Augite (Ca,Na)(Mg,Fe,Al,Ti)(Si,Al)2O6
+7MI0035 : Jarosite KFe_3^3+(SO_4)_2(OH)_6
+7MI0036 : Cassiterite SnO_2
+7MI0037 : Antlerite Cu_3(SO_4)(OH)_4
+7MI0038 : Realgar AsS
+7MI0039 : Albite (Feldspar) (K,Na)AlSi_3O_8
+7MI0040 : Almandine Garnet Fe_3Al_2(SiO_4)_3
+7MI0041 : Rhodonite (Mn,Ca)SiO_3
+7MI0042 : Quartz SiO_2
+7MI0043 : Diopside CaMg(SiO_3)_2
+7MI0044 : Illite/smectite (K,H3O)(Al,Mg,Fe)2(Si,Al)4 O10 [(OH)2,H2O]
+7MI0045 : Labradorite (Feldspar) (NaSi,CaAl)AlSi_2O_8
+7MI0046 : Topaz Al2SiO4(F,OH)2
+7MI0047 : Molybdenite MoS_2
+7MI0048 : Cookeite LiAl_4(Si_3Al)O_10(OH)_8
+7MI0049 : Quartz SiO2
+7MI0050 : Celestite SrSO_4
+7MI0051 : Dolomite CaMg(CO_3)_2
+7MI0052 : Anhydrite CaSO4
+7MI0053 : Calcite CaCO_3
+7MI0054 : Tourmaline (Elbaite) Na(Li,Al)3Al6(BO3)3Si6018(OH)4
+7MI0055 : Glauconite (K,Na)(Fe^3+,Al,Mg)_2(Si,Al)_4O_10(OH)_2
+7MI0056 : Pyrophyllite Al_2Si_4O_10(OH)_2
+7MI0057 : Fayalite Fe_2SiO_4
+7MI0058 : Barite, BaSO4
+7MI0059 : Nepheline (Na,K)AlSiO4
+7MI0060 : Leucite KAlSi2O6
+7MI0061 : Augite (Ca,Na)(Mg,Fe,Al,Ti)(Si,Al)2O6
+7MI0062 : Dolomite CaMg(CO_3)_2
+7MI0063 : Siderite Fe^2+CO_3
+7MI0064 : Trona Na_3(CO_3)(HCO_3).2H_2O
+7MI0065 : Topaz Al_2SiO_4(F,OH)_2
+7MI0066 : Cerussite PbCO_3
+7MI0067 : Rhodonite (Mn,Ca)SiO_3
+7MI0068 : Diopside CaMgSi2O6
+7MI0069 : Marcasite FeS_2
+7MI0070 : Hematite a-Fe2O3
+7MI0071 : Tschermigite (NH_4)Al(SO_4)_2.12H_2O
+7MI0072 : Olivine (Fo88) (Fe+2,Mg)2SiO4
+7MI0073 : Sodalite Na8Al6Si6O24Cl2
+7MI0074 : Gypsum CaSO4 * 2H2O
+7MI0075 : Sanidine (Feldspar) (K,Na)AlSi_3O_8
+7MI0076 : Kaolinite Al_2Si_2O_5(OH)_4
+7MI0077 : Anhydrite CaSO4
+7MI0078 : Anorthite (Feldspar) (NaSi,CaAl)AlSi_2O_8
+7MI0079 : Ferroaxinite Ca_2Fe^2+Al_2BSi_4O_15(OH)
+7MI0080 : Cordierite Mg_2Al_3(Si_5Al)O_18
+7MI0081 : Quartz SiO_2
+7MI0082 : Natrojarosite NaFe_3^3+(SO_4)_2(OH)_6
+7MI0083 : Galena PbS
+7MI0084 : Columbite Fe^2+Nb_2O_6
+7MI0085 : Andesine (Feldspar) (NaSi,CaAl)AlSi_2O_8
+7MI0086 : Realgar AsS
+7MI0087 : Diopside CaMgSi2O6
+7MI0088 : Tourmaline (Schorl) NaFe3+2Al6(BO3)3Si6O18(OH)4
+7MI0089 : Labradorite (Feldspar) (NaSi,CaAl)AlSi_2O_8
+7MI0090 : Titanite (Sphene) CaTiSiO_5
+7MI0091 : Olivine (Fo92) (Fe+2,Mg)2SiO4
+7MI0092 : Gypsum CaSO_4.2H_2O
+7MI0093 : Cummingtonite (Mg,Fe^2+)_7Si_8O_22(OH)_2
+7MI0094 : Phlogopite KMg3Si3Al010(F,OH)2
+7MI0095 : Diopside CaMg(SiO_3)_2
+7MI0096 : Fluorite CaF_2
+7MI0097 : Pyrrhotite Fe(1-x)S
+7MI0098 : Montmorillonite (Na,Ca)_0.33(Al,Mg)_2Si_4O_10(OH)_2.H_2O
+7MI0099 : Chalcopyrite CuFeS_2
+7MI0100 : Olivine (Fo41) (Fe+2,Mg)2SiO4
+7MI0101 : Corundum Al_2O_3
+7MI0102 : Hornblende Ca2(Fe+2,Mg)4Al(Si7Al)O22(OH,F)2
+7MI0103 : Sulphur S
+7MI0104 : Calcite CaCO_3
+7MI0105 : Epidote Ca_2(Al,Fe^3+)_3O.SiO_4.Si_2O_7.OH
+7MI0106 : Beryl Be_3Al_2Si_6O_18
+7MI0107 : Aphthitalite (K,Na)_3Na(SO_4)_2
+7MI0108 : Rutile TiO_2
+7MI0109 : Oligoclase (Feldspar) (NaSi,CaAl)AlSi_2O_8
+7MI0110 : Hydroxyapophyllite KCa_4Si_8O_20(OH,F).8H_2O
+7MI0111 : Wollastonite CaSiO_3
+7MI0112 : Muscovite KAl2(Si3Al)O10(OH,F)2
+7MI0113 : Arsenopyrite FeAsS
+7MI0114 : Fluorite CaF_2
+7MI0115 : Alunite (potassium alunite) KAl3(SO4)2(OH)6
+7MI0116 : Montmorillonite (Na,Ca)0.33(Al,Mg)2Si4O10(OH)2.nH2O
+7MI0117 : Quartz SiO_2
+7MI0118 : Vermiculite (Mg,Fe^2+,Al)_3(Al,Si)_4O_10(OH)_2.4H_2O
+7MI0119 : Sanidine (K,Na)Al3O8
+7MI0120 : Chrysotile Mg3Si2O5(OH)4
+7MI0121 : Magnesiochromite MgCr_2O_4
+7MI0122 : Cummingtonite (Mg,Fe^2+)_7Si_8O_22(OH)_2
+7MI0123 : Cookeite LiAl_4(Si_3Al)O_10(OH)_8
+7MI0124 : Lepidolite K(Li,Al)3(Si,Al)_4O_10(F,OH)_2
+7MI0125 : Microcline (Feldspar) (K,Na)AlSi_3O_8
+7MI0126 : Biotite K(Mg,Fe+2)3(Al,Fe+3)Si3O10(OH,F)2
+7MI0127 : Magnesiochromite MgCr_2O_4
+7MI0128 : Hematite alpha Fe_2O_3
+7MI0129 : Azurite Cu_3(CO_3)_2(OH)_2
+7MI0130 : Calcite CaCO_3
+7MI0131 : Anhydrite CaSO_4
+7MI0132 : Richterite Na2Ca(Mg,Fe+2)5Si8O22(OH)2
+7MI0133 : Saponite (Ca/2,Na)_0.33(Mg,Fe^2+)_3(Si,Al)_4O_10(OH)_2.4H_2O
+7MI0134 : Clinochlore (Chlorite) (Mg,Al)_6(Si,Al)_4O_10(OH)_8
+7MI0135 : Augite (Ca,Na)(Mg,Fe,Al,Ti)(Si,Al)2O6
+7MI0136 : Kernite Na_2B_4O_6(OH)_2.3H_2O
+7MI0137 : Hornblende Ca2(Fe+2,Mg)4Al(Si7Al)O22(OH,F)2
+7MI0138 : Halite NaCl
+7MI0139 : Anatase TiO_2
+7MI0140 : Labradorite (Feldspar) (NaSi,CaAl)AlSi_2O_8
+7MI0141 : Hornblende Ca2(Fe+2,Mg)4Al(Si7Al)O22(OH,F)2
+7MI0142 : Montebrasite LiAlPO_4(OH)
+7MI0143 : Stilbite NaCa_2Al_5Si_3O_36.14H_2O
+7MI0144 : Cryolite Na_3AlF_6
+7MI0145 : Fluorite CaF_2
+7MI0146 : Labradorite (Na,Ca)Al(Al,Si)Si2O8
+7MI0147 : Cryolite Na_3AlF_6
+7MI0148 : Buddingtonite (Feldspar) (NH_4)AlSi_3O_8.0.5H_2O
+7MI0149 : Chalcopyrite CuFeS_2
+7MI0150 : Wollastonite CaSiO_3
+7MI0151 : Chalcocite Cu_2S
+7MI0152 : Natrojarosite NaFe_3^3+(SO_4)_2(OH)_6
+7MI0153 : Epidote Ca_2(Al,Fe^3+)_3O.SiO_4.Si_2O_7.OH
+7MI0154 : Carnallite KMgCl3 * 6H2O
+7MI0155 : Glauberite Na_2Ca(SO_4)_2
+7MI0156 : Sulphur S
+7MI0157 : Olivine (Fo51) (Fe+2,Mg)2SiO4
+7MI0158 : Zircon ZrSiO_4
+7MI0159 : Anhydrite CaSO_4
+7MI0160 : Orthoclase (Feldspar) (K,Na)AlSi_3O_8
+7MI0161 : Aragonite CaCO3
+7MI0162 : Dolomite CaMg(CO_3)_2
+7MI0163 : Dolomite CaMg(CO3)2
+7MI0164 : Sulphur S
+7MI0165 : Hemimorphite Zn_4Si_2O_7(OH)_2.H_2O
+7MI0166 : Hemimorphite Zn_4Si_2O_7(OH)_2.H_2O
+7MI0167 : Hematite alpha Fe_2O_3
+7MI0168 : Malachite Cu_2(CO_3)(OH)_2
+7MI0169 : Cordierite Mg_2Al_3(Si_5Al)O_18
+7MI0170 : Serpentine (Mg,Fe^2+,Ni)Si_2O_5(OH)_4
+7MI0171 : Bloedite Na2Mg(So4)2 * 3H2O
+7MI0172 : Sillimanite Al_2SiO_5
+7MI0173 : Magnetite Fe+2Fe2+3O4
+7MI0174 : Hematite alpha Fe_2O_3
+7MI0175 : Albite (Feldspar) (K,Na)AlSi_3O_8
+7MI0176 : Vesuvianite Ca_10(Mg,Fe^2+)_2Al_4(Si_2O_7)_2(SiO_4)_5(OH,F)_4
+7MI0177 : Apatite Ca_5(PO_4)_3F
+7MI0178 : Gypsum CaSO_4.2H_2O
+7MI0179 : Chalcopyrite CuFeS_2
+7MI0180 : Scheelite CaWO_4
+7MI0181 : Stibnite Sb_2S_3
+7MI0182 : Chalcocite Cu_2S
+7MI0183 : Muscovite KAl_2(Si_3Al)O_10(OH,F)_2
+7MI0184 : Grossular Garnet Ca_3Al_2(SiO_4)_3
+7MI0185 : Grossular Garnet Ca_3Al_2(SiO_4)_3
+7MI0186 : Johannsenite Ca(Mn,Fe^2+)(SiO_3)_2
+7MI0187 : Quartz SiO_2
+7MI0188 : Pyrrhotite Fe_1-xS
+7MI0189 : Talc Mg_3Si_4O_10(OH)_2
+7MI0190 : Rutile TiO_2
+7MI0191 : Aphthitalite (K,Na)_3Na(SO_4)_2
+7MI0192 : Glauberite Na_2Ca(SO_4)_2
+7MI0193 : Borax Na_2B_4O_5(OH)_4.8H_2O
+7MI0194 : Chlorite
+7MI0195 : Tincalconite Na_2B_4O_5(OH)_4.3H_2O
+7MI0196 : Trona Na_3(CO_3)(HCO_3).2H_2O
+7MI0197 : Chlorite
+7MI0198 : Lepidolite K(Li,Al)3(Si,Al)_4O_10(F,OH)_2
+7MI0199 : Enstatite Mg2Si2O6
+7MI0200 : Topaz Al2SiO4(F,OH)2
+7MI0201 : Cookeite LiAl_4(Si_3Al)O_10(OH)_8
+7MI0202 : Columbite Fe^2+Nb_2O_6
+7MI0203 : Dickite Al_2Si_2O_5(OH)_4
+7MI0204 : Columbite Fe^2+Nb_2O_6
+7MI0205 : Beryl Be3Al2Si6O18
+7MI0206 : Ulexite NaCaB_5O_6(OH)_6.5H_2O
+7MI0207 : Calcite CaCO_3
+7MI0208 : Amblygonite (Li,Na)Al(PO_4)(F,OH)
+7MI0209 : Andesine (Feldspar) (NaSi,CaAl)AlSi_2O_8
+7MI0210 : Dolomite CaMg(CO_3)_2
+7MI0211 : Colemanite Ca_2B_6O_11.5H_2O
+7MI0212 : Sulphur S
+7MI0213 : Antlerite Cu_3(SO_4)(OH)_4
+7MI0214 : Rhodochrosite MnCO_3
+7MI0215 : Beryl Be_3Al_2Si_6O_18
+7MI0216 : Vermiculite (Mg,Fe^2+,Al)_3(Al,Si)_4O_10(OH)_2.4H_2O
+7MI0217 : Pyrolusite MnO_2
+7MI0218 : Quartz SiO_2
+7MI0219 : Bustamite (Mn,Ca)3Si3O9
+7MI0220 : Ferroaxinite Ca_2Fe^2+Al_2BSi_4O_15(OH)
+7MI0221 : Sphalerite (Zn,Fe)S
+7MI0222 : Johannsenite Ca(Mn,Fe^2+)(SiO_3)_2
+7MI0223 : Realgar AsS
+7MI0224 : Olivine (Fo92) (Fe+2,Mg)2SiO4
+7MI0225 : Tremolite Ca2(Mg, Fe+2)5Si8O22(OH)2
+7MI0226 : Chlorite
+7MI0227 : Epidote Ca_2(Al,Fe^3+)_3O.SiO_4.Si_2O_7.OH
+7MI0228 : Alunite KAl_3(SO_4)_2(OH)_6
+7MI0229 : Illite (K,H3O)(Al,Mg,Fe)2(Si,Al)4O10[(OH)2,H2O]
+7MI0230 : Calcite CaCO_3
+7MI0231 : Apatite Ca_5(PO_4)_3F
+7MI0232 : Gypsum (selenite) CaSO4.2H2O
+7MI0233 : Corrensite (Mg,Fe)_9(Si,Al)_8O_20(OH)_10._xH_2O
+7MI0234 : Spodumene LiAlS_2O_6
+7MI0235 : Glauconite (K,Na)(Fe^3+,Al,Mg)_2(Si,Al)_4O_10(OH)_2
+7MI0236 : Celestite SrSO_4
+7MI0237 : Prehnite Ca2Al2Si3O10(OH)2
+7MI0238 : Alunite (ammonioalunite) NH4Al3(SO4)2(OH)6
+7MI0239 : Vesuvianite Ca10Mg2Al4(SiO4)5(Si2O7)2(OH)4
+7MI0240 : Magnesiochromite MgCr_2O_4
+7MI0241 : Nepheline (Na,K)AlSiO_4
+7MI0242 : Realgar AsS
+7MI0243 : Titanite (Sphene) CaTiSiO_5
+7MI0244 : Pyrophyllite Al_2Si_4O_10(OH)_2
+7MI0245 : Tschermigite (NH_4)Al(SO_4)_2.12H_2O
+7MI0246 : Molybdenite MoS_2
+7MI0247 : Scorodite Fe^3+AsO_4.2H_2O
+7MI0248 : AtacamiteCu_2Cl(OH)_3
+7MI0249 : Bornite Cu_5FeS_4
+7MI0250 : Olivine (Fo92) (Fe+2,Mg)2SiO4
+7MI0251 : Howlite Ca_2B_5SiO_9(OH)_5
+7MI0252 : Calcite CaCO_3
+7MI0253 : Beryl Be3Al2Si6O18
+7MI0254 : Stilbite NaCa_2Al_5Si_3O_36.14H_2O
+7MI0255 : Prehnite Ca_2Al_2Si_3O_10(OH)_2
+7MI0256 : Anorthite (Feldspar) (NaSi,CaAl)AlSi_2O_8
+7MI0257 : Corundum Al_2O_3
+7MI0258 : Scheelite CaWO_4
+7MI0259 : Titanite (Sphene) CaTiSiO_5
+7MI0260 : Diopside CaMg(SiO_3)_2
+7MI0261 : Cerussite PbCO_3
+7MI0262 : Pyrope Mg3Al2(SiO4)3
+7MI0263 : Andalusite Al2SiO5
+7MI0264 : Jarosite KFe_3^3+(SO_4)_2(OH)_6
+7MI0265 : Magnetite Fe+2Fe2+3O4
+7MI0266 : Graphite C
+7MI0267 : Labradorite (Feldspar) (NaSi,CaAl)AlSi_2O_8
+7MI0268 : Orthoclase (Feldspar) (K,Na)AlSi_3O_8
+7MI0269 : Molybdenite MoS_2
+7MI0270 : Tschermigite (NH_4)Al(SO_4)_2.12H_2O
+7MI0271 : Pyrolusite MnO_2
+7MI0272 : Sodalite Na_8Al_6Si_6O_24Cl_2
+7MI0273 : Quartz SiO_2
+7MI0274 : Almandine Garnet Fe_3Al_2(SiO_4)_3
+7MI0275 : Rhodonite (Mn,Ca)SiO_3
+7MI0276 : Glauconite (K,Na)(Fe^3+,Al,Mg)_2(Si,Al)_4O_10(OH)_2
+7MI0277 : Acmite NaFe+3Si2O6
+7MI0278 : Gahnite ZnAl_2O_4
+7MI0279 : Kaolinite Al2Si2O5(OH)4
+7MI0280 : Cryolite Na_3AlF_6
+7MI0281 : Lepidolite K(Li,Al)3(Si,Al)_4O_10(F,OH)_2
+7MI0282 : Pyrite FeS_2
+7MI0283 : Pectolite NaCa2Si308(OH)
+7MI0284 : Enstatite Mg_2(SiO_3)_2
+7MI0285 : Apatite Ca_5(PO_4)_3F
+7MI0286 : Tremolite Ca_2(Mg,Fe^2+)_5Si_8O_22(OH)_2
+7MI0287 : Natrojarosite NaFe_3^3+(SO_4)_2(OH)_6
+7MI0288 : Prehnite Ca_2Al_2Si_3O_10(OH)_2
+7MI0289 : Actinolite Ca_2(Mg,Fe^2+)_5Si_8O_22(OH)_2
+7MI0290 : Realgar AsS
+7MI0291 : Datolite CaBSiO4(OH)
+7MI0292 : Dolomite CaMg(CO_3)_2
+7MI0293 : Magnetite Fe+2Fe2+3O4
+7MI0294 : Pyrope Mg3Al2(SiO4)3
+7MI0295 : Vermiculite (Mg,Fe^2+,Al)_3(Al,Si)_4O_10(OH)_2.4H_2O
+7MI0296 : Quartz SiO_2
+7MI0297 : Quartz SiO_2
+7MI0298 : Albite (Feldspar) (K,Na)AlSi_3O_8
+7MI0299 : Molybdenite MoS_2
+7MI0300 : Olivine (Fo92) (Fe+2,Mg)2SiO4
+7MI0301 : Acmite NaFe+3Si2O6
+7MI0302 : Chlorite
+7MI0303 : Malachite Cu_2(CO_3)(OH)_2
+7MI0304 : Labradorite (Feldspar) (NaSi,CaAl)AlSi_2O_8
+7MI0305 : Cordierite Mg_2Al_3(Si_5Al)O_18
+7MI0306 : Sillimanite Al_2SiO_5
+7MI0307 : Cordierite Mg_2Al_3(Si_5Al)O_18
+7MI0308 : Antlerite Cu_3(SO_4)(OH)_4
+7MI0309 : Pectolite NaCa2Si308(OH)
+7MI0310 : Anglesite PbSO_4
+7MI0311 : Chalcopyrite CuFeS_2
+7MI0312 : Oligoclase (Feldspar) (NaSi,CaAl)AlSi_2O_8
+7MI0313 : Enstatite Mg_2(SiO_3)_2
+7MI0314 : Nontronite Na_0.33Fe_2^3+(Si,Al)_4O_10(OH)_2.H_2O
+7MI0315 : Chabazite CaAl2Si4O12.6H2O
+7MI0316 : Bytownite (Feldspar) (NaSi,CaAl)AlSi_2O_8
+7MI0317 : Stilbite NaCa_2Al_5Si_3O_36.14H_2O
+7MI0318 : Grossular Garnet Ca_3Al_2(SiO_4)_3
+7MI0319 : Enstatite Mg_2(SiO_3)_2
+7MI0320 : Quartz SiO_2
+7MI0321 : Grossular Garnet Ca_3Al_2(SiO_4)_3
+7MI0322 : Johannsenite Ca(Mn,Fe^2+)(SiO_3)_2
+7MI0323 : Biotite K(Mg,Fe^2+)_3(Al,Fe^3+)Si_3O_10(OH,F)_2
+7MI0324 : Glauberite Na_2Ca(SO_4)_2
+7MI0325 : Tremolite Ca2(Mg, Fe+2)5Si8O22(OH)2
+7MI0326 : Calcite CaCO_3
+7MI0327 : Nontronite Na_0.33Fe_2^3+(Si,Al)_4O_10(OH)_2.H_2O
+7MI0328 : Anthophyllite (Mg,Fe^2+)_7Si_8O_22(OH)_2
+7MI0329 : Quartz SiO_2
+7MI0330 : Anhydrite CaSO_4
+7MI0331 : Scheelite CaWO_4
+7MI0332 : Epidote Ca_2(Al,Fe^3+)_3O.SiO_4.Si_2O_7.OH
+7MI0333 : Hematite a-Fe2O3
+7MI0334 : Witherite BaCO_3
+7MI0335 : Molybdenite MoS_2
+7MI0336 : Columbite Fe^2+Nb_2O_6
+7MI0337 : Hydroxyapophyllite KCa_4Si_8O_20(OH,F).8H_2O
+7MI0338 : Chlorite
+7MI0339 : Hemimorphite Zn_4Si_2O_7(OH)_2.H_2O
+7MI0340 : Richterite Na2Ca(Mg,Fe+2)5Si8O22(OH)2
+7MI0341 : Mordenite (Ca,Na2,K2)Al2Si10O24.7H2O
+7MI0342 : Serpentine (Mg,Fe^2+,Ni)Si_2O_5(OH)_4
+7MI0343 : Richterite Na2Ca(Mg,Fe+2)5Si8O22(OH)2
+7MI0344 : Quartz SiO2
+7MI0345 : Grossular Garnet Ca_3Al_2(SiO_4)_3
+7MI0346 : Vermiculite (Mg,Fe^2+,Al)_3(Al,Si)_4O_10(OH)_2.4H_2O
+7MI0347 : Montmorillonite (Na,Ca)0.33(Al,Mg)2Si4O10(OH)2.nH2O
+7MI0348 : Spodumene LiAlS_2O_6
+7MI0349 : Azurite Cu_3(CO_3)_2(OH)_2
+7MI0350 : Clinochlore (Chlorite) (Mg,Al)_6(Si,Al)_4O_10(OH)_8
+7MI0351 : Calcite CaCO_3
+7MI0352 : Cookeite LiAl_4(Si_3Al)O_10(OH)_8
+7MI0353 : Cummingtonite (Mg,Fe^2+)_7Si_8O_22(OH)_2
+7MI0354 : Quartz SiO_2
+7MI0355 : Dolomite CaMg(CO_3)_2
+7MI0356 : Graphite C
+7MI0357 : Nepheline (Na,K)AlSiO4
+7MI0358 : Sepiolite Mg_4Si_6O_15(OH)_2.6H_2O
+7MI0359 : Andradite Ca3Fe2+3 (SiO4)3
+7MI0360 : Natrolite Na_2Al_2Si_3O_10.2H_2O
+7MI0361 : Grossular Ca3Al2(Si04)3
+7MI0362 : Trona Na_3(CO_3)(HCO_3).2H_2O
+7MI0363 : Tremolite Ca_2(Mg,Fe^2+)_5Si_8O_22(OH)_2
+7MI0364 : Azurite Cu_3(CO_3)_2(OH)_2
+7MI0365 : Labradorite (Feldspar) (NaSi,CaAl)AlSi_2O_8
+7MI0366 : Magnetite Fe^2+Fe_2^3+O_4
+7MI0367 : Rhodonite (Mn,Ca)SiO_3
+7MI0368 : Gypsum CaSO_4.2H_2O
+7MI0369 : Monticellite CaMgSiO4
+7MI0370 : Datolite CaBSiO4(OH)
+7MI0371 : Mimetite Pb_5(AsO_4)_3Cl
+7MI0372 : Rhodonite (Mn+2,Fe+2,Mg,Ca)SiO3
+7MI0373 : Corundum Al_2O_3
+7MI0374 : Erionite (K2,Ca,Na2)2Al4Si14O36.15H2O
+7MI0375 : Diopside CaMg(SiO_3)_2
+7MI0376 : Cordierite Mg2Al4Si5O18
+7MI0377 : Montmorillonite (Na,Ca)_0.33(Al,Mg)_2Si_4O_10(OH)_2.H_2O
+7MI0378 : Calcite CaCO3
+7MI0379 : Calcite CaCO_3
+7MI0380 : Glauberite Na_2Ca(SO_4)_2
+7MI0381 : Clinochlore (Chlorite) (Mg,Al)_6(Si,Al)_4O_10(OH)_8
+7MI0382 : Aphthitalite (K,Na)_3Na(SO_4)_2
+7MI0383 : Ilmenite Fe+2TiO3
+7MI0384 : Cassiterite SnO_2
+7MI0385 : Beryl Be_3Al_2Si_6O_18
+7MI0386 : Tremolite Ca2(Mg, Fe+2)5Si8O22(OH)2
+7MI0387 : Magnesite MgCO_3
+7MI0388 : Amblygonite (Li,Na)Al(PO_4)(F,OH)
+7MI0389 : Zincite (Zn,Mn)O
+7MI0390 : Calcite CaCO3
+7MI0391 : Hydroxyapophyllite KCa_4Si_8O_20(OH,F).8H_2O
+7MI0392 : Wollastonite CaSiO_3
+7MI0393 : Kyanite Al2SiO5
+7MI0394 : Apatite Ca_5(PO_4)_3F
+7MI0395 : Trona Na_3(CO_3)(HCO_3).2H_2O
+7MI0396 : Plumbojarosite PbFe_3^3+(SO_4)_4(OH)_12
+7MI0397 : Actinolite Ca_2(Mg,Fe^2+)_5Si_8O_22(OH)_2
+7MI0398 : Buddingtonite (Feldspar) (NH_4)AlSi_3O_8.0.5H_2O
+7MI0399 : Tremolite Ca_2(Mg,Fe^2+)_5Si_8O_22(OH)_2
+7MI0400 : Barite, BaSO4
+7MI0401 : Nontronite Na_0.33Fe_2^3+(Si,Al)_4O_10(OH)_2.H_2O
+7MI0402 : Brucite Mg(OH)_2
+7MI0403 : Alunite (sodium alunite) NaAl3(SO4)2(OH)6
+7MI0404 : Cordierite Mg2Al4Si5O18
+7MI0405 : Phlogopite KMg3Si3Al010(F,OH)2
+7MI0406 : Kaolinite Al2Si2O5(OH)4
+7MI0407 : Biotite K(Mg,Fe^2+)_3(Al,Fe^3+)Si_3O_10(OH,F)_2
+7MI0408 : Calcite CaCO_3
+7MI0409 : Riebeckite Na_2(Fe^2+,Mg)_3,Fe_2^3+Si_8O_22(OH)_2
+7MI0410 : Triphylite Li(Mn,Fe)PO_4
+7MI0411 : Strontianite SrCO_3
+7MI0412 : Mimetite Pb_5(AsO_4)_3Cl
+7MI0413 : Anhydrite CaSO_4
+7MI0414 : Celestite SrSO_4
+7MI0415 : Illite/smectite (K,H3O)(Al,Mg,Fe)2(Si,Al)4 O10 [(OH)2,H2O]
+7MI0416 : Andalusite Al2SiO5
+7MI0417 : Hedenbergite CaFe+2Si2O6
+7MI0418 : Quartz SiO_2
+7MI0419 : Topaz Al_2SiO_4(F,OH)_2
+7MI0420 : Andesine (Feldspar) (NaSi,CaAl)AlSi_2O_8
+7MI0421 : Glaucophane Na_2(Mg,Fe^2+)_3Al_2Si_8O_22(OH)_2
+7MI0422 : Olivine (Fo92) (Fe+2,Mg)2SiO4
+7MI0423 : Quartz SiO_2
+7MI0424 : Sodalite Na8Al6Si6O24Cl2
+7MI0425 : Calcite CaCO_3
+7MI0426 : Bornite Cu_5FeS_4
+7MI0427 : Nontronite Na_0.33Fe_2^3+(Si,Al)_4O_10(OH)_2.H_2O
+7MI0428 : Topaz Al2SiO4(F,OH)2
+7MI0429 : Scheelite CaWO_4
+7MI0430 : Chlorite
+7MI0431 : Smithsonite PbCO_3
+7MI0432 : Azurite Cu_3(CO_3)_2(OH)_2
+7MI0433 : Magnesite MgCO_3
+7MI0434 : Hypersthene (Mg,Fe^2+)_2Si_2O_6
+7MI0435 : Analcime NaAlSi2O6.H2O
+7MI0436 : Sodalite Na_8Al_6Si_6O_24Cl_2
+7MI0437 : Siderite Fe^2+CO_3
+7MI0438 : Topaz Al_2SiO_4(F,OH)_2
+7MI0439 : Sepiolite Mg_4Si_6O_15(OH)_2.6H_2O
+7MI0440 : Hemimorphite Zn4Si2O7(OH)2.H2O
+7MI0441 : Dolomite CaMg(CO3)2
+7MI0442 : Alunite KAl_3(SO_4)_2(OH)_6
+7MI0443 : Marcasite FeS_2
+7MI0444 : Rhodonite (Mn,Ca)SiO_3
+7MI0445 : Clinozoisite Ca_2Al_3(SiO_4)_3(OH)
+7MI0446 : Chlorite
+7MI0447 : Celestite SrSO_4
+7MI0448 : Albite NaAlSi3O8
+7MI0449 : Calcite CaCO_3
+7MI0450 : Malachite Cu_2(CO_3)(OH)_2
+7MI0451 : AtacamiteCu_2Cl(OH)_3
+7MI0452 : Vermiculite (Mg,Fe^2+,Al)_3(Al,Si)_4O_10(OH)_2.4H_2O
+7MI0453 : Clinozoisite Ca2Al3(SiO4)3(OH)
+7MI0454 : Sanidine (K,Na)Al3O8
+7MI0455 : Rutile TiO2
+7MI0456 : Oligoclase (Feldspar) (NaSi,CaAl)AlSi_2O_8
+7MI0457 : Cordierite Mg_2Al_3(Si_5Al)O_18
+7MI0458 : Muscovite KAl2(Si3Al)O10(OH,F)2
+7MI0459 : Anthophyllite (Mg,Fe^2+)_7Si_8O_22(OH)_2
+7MI0460 : Fluorite CaF2
+7MI0461 : Clinochlore (Mg,Fe+2)5Al(Si3Al)O10(OH)8
+7MI0462 : Microcline KAlSi3O8
+7MI0463 : Spessartine Mn3Al2 (SiO4)3
+7MI0464 : Pyrophyllite Al2Si4010(OH)2
+7MI0465 : Sphalerite (Zn,Fe)S
+7MI0466 : Albite (Feldspar) (K,Na)AlSi_3O_8
+7MI0467 : Rutile TiO2
+7MI0468 : Nepheline (Na,K)AlSiO_4
+7MI0469 : Dickite Al_2Si_2O_5(OH)_4
+7MI0470 : Orthoclase KAlSi3O8
+7MI0471 : Almandine Fe3+2Al2(SiO4)3
+7MI0472 : Montebrasite LiAlPO_4(OH)
+7MI0473 : Anorthite (Feldspar) (NaSi,CaAl)AlSi_2O_8
+7MI0474 : Siderite Fe^2+CO_3
+7MI0475 : Aphthitalite (K,Na)_3Na(SO_4)_2
+7MI0476 : Epidote Ca_2(Al,Fe^3+)_3O.SiO_4.Si_2O_7.OH
+7MI0477 : Rutile TiO_2
+7MI0478 : Chlorite
+7MI0479 : Epidote Ca_2(Al,Fe^3+)_3O.SiO_4.Si_2O_7.OH
+7MI0480 : Nepheline (Na,K)AlSiO4
+7MI0481 : Anorthite CaAl2Si2O8
+7MI0482 : Talc Mg_3Si_4O_10(OH)_2
+7MI0483 : Saponite (Ca/2,Na)0.33(Mg,Fe+2)3(Si,Al)4O10(OH)2.H2O
+7MI0484 : Fluorite CaF_2
+7MI0485 : Monticellite CaMgSiO4
+7MI0486 : Galena PbS
+7MI0487 : Anatase TiO_2
+7MI0488 : Biotite K(Mg,Fe^2+)_3(Al,Fe^3+)Si_3O_10(OH,F)_2
+7MI0489 : Triphylite Li(Mn,Fe)PO_4
+7MI0490 : Labradorite (Na,Ca)Al(Al,Si)Si2O8
+7MI0491 : Glauberite Na_2Ca(SO_4)_2
+7MI0492 : Saponite (Ca/2,Na)_0.33(Mg,Fe^2+)_3(Si,Al)_4O_10(OH)_2.4H_2O
+7MI0493 : Epidote Ca2(Al,Fe+3)3(SiO4)3(OH)
+7MI0494 : Spodumene LiAlSi2O6
+7MI0495 : Quartz SiO2
+7MI0496 : Cookeite LiAl_4(Si_3Al)O_10(OH)_8
+7MI0497 : Calcite CaCO_3
+7MI0498 : Gypsum (alabaster) CaSO4.2H20
+7MI0499 : Cryolite Na_3AlF_6
+7MI0500 : Corrensite (Mg,Fe)_9(Si,Al)_8O_20(OH)_10._xH_2O
+7MI0501 : Chrysotile Mg3Si2O5(OH)4
+7MI0502 : Stilbite NaCa_2Al_5Si_3O_36.14H_2O
+7MI0503 : Hematite alpha Fe_2O_3
+7MI0504 : Dolomite CaMg(CO_3)_2
+7MI0505 : Andradite Ca3Fe2+3 (SiO4)3
+7MI0506 : Montmorillonite (Na,Ca)0.33(Al,Mg)2Si4O10(OH)2.nH2O
+7MI0507 : Microcline (Feldspar) (K,Na)AlSi_3O_8
+7MI0508 : Magnesiochromite MgCr_2O_4
+7MI0509 : Cerussite PbCO_3
+7MI0510 : Barite BaSO_4
+7MI0511 : Cassiterite SnO_2
+7MI0512 : Biotite K(Mg,Fe+2)3(Al,Fe+3)Si3O10(OH,F)2
+7MI0513 : Actinolite Ca_2(Mg,Fe^2+)_5Si_8O_22(OH)_2
+7MI0514 : Fayalite Fe_2SiO_4
+7MI0515 : Dolomite CaMg(CO_3)_2
+7MI0516 : Fluorite CaF_2
+7MI0517 : Corrensite (Mg,Fe)_9(Si,Al)_8O_20(OH)_10._xH_2O
+7MI0518 : Triphylite Li(Mn,Fe)PO_4
+7MI0519 : Gahnite ZnAl_2O_4
+7MI0520 : Pyrolusite MnO_2
+7MI0521 : Bytownite (Feldspar) (NaSi,CaAl)AlSi_2O_8
+7MI0522 : Fluorite CaF_2
+7MI0523 : Anthophyllite (Mg,Fe^2+)_7Si_8O_22(OH)_2
+7MI0524 : Talc Mg3Si4O10(OH)2
+7MI0525 : Halite NaCl
+7MI0526 : Heulandite (Na,Ca)2-3Al3(Al,Si)2Si13O36.12H2O
+7MI0527 : Natrojarosite NaFe_3^3+(SO_4)_2(OH)_6
+7MI0528 : Barite BaSO_4
+7MI0529 : Magnesiochromite MgCr_2O_4
+7MI0530 : Quartz SiO_2
+7MI0531 : Graphite C
+7MI0532 : Vesuvianite Ca_10(Mg,Fe^2+)_2Al_4(Si_2O_7)_2(SiO_4)_5(OH,F)_4
+7MI0533 : Hematite alpha Fe_2O_3
+7MI0534 : Muscovite KAl_2(Si_3Al)O_10(OH,F)_2
+7MI0535 : Grossular Garnet Ca_3Al_2(SiO_4)_3
+7MI0536 : Strontianite SrCO_3
+7MI0537 : Mordenite (Ca,Na2,K2)Al2Si10O24.7H2O
+7MI0538 : Marcasite FeS_2
+7MI0539 : Hexahydrite MgSO46H2O
+7MI0540 : Talc Mg_3Si_4O_10(OH)_2
+7MI0541 : Rutile TiO_2
+7MI0542 : Zircon ZrSiO_4
+7MI0543 : Pyrite FeS2
+7MI0544 : Quartz SiO_2
+7MI0545 : Spodumene LiAlS_2O_6
+7MI0546 : Brucite Mg(OH)_2
+7MI0547 : Rutile TiO_2
+7MI0548 : Magnesite MgCO_3
+7MI0549 : Borax Na_2B_4O_5(OH)_4.8H_2O
+7MI0550 : Augite (Ca,Na)(Mg,Fe,Al,Ti)(Si,Al)_2O_6
+7MI0551 : Fluorite CaF_2
+7MI0552 : Tincalconite Na_2B_4O_5(OH)_4.3H_2O
+7MI0553 : Lepidolite K(Li,Al)3(Si,Al)_4O_10(F,OH)_2
+7MI0554 : Grossular Ca3Al2(Si04)3
+7MI0555 : Quartz SiO_2
+7MI0556 : Epidote Ca_2(Al,Fe^3+)_3O.SiO_4.Si_2O_7.OH
+7MI0557 : Olivine (Fo11) (Fe+2,Mg)2SiO4
+7MI0558 : Cassiterite SnO_2
+7MI0559 : Andesine (Feldspar) (NaSi,CaAl)AlSi_2O_8
+7MI0560 : Magnesite MgCO_3
+7MI0561 : Natrolite Na_2Al_2Si_3O_10.2H_2O
+7MI0562 : Sanidine (K,Na)Al3O8
+7MI0563 : Tourmaline Na(Mg_3,Fe_3^2+)Al_6(BO_3)_3Si_6O_18(OH)_4
+7MI0564 : Beryl Be_3Al_2Si_6O_18
+7MI0565 : Anglesite PbSO_4
+7MI0566 : Spessartine Mn3Al2 (SiO4)3
+7MI0567 : Chalcopyrite CuFeS_2
+7MI0568 : Sepiolite Mg4Si6O15(OH)2.6H2)
+7MI0569 : Vermiculite (Mg,Fe^2+,Al)_3(Al,Si)_4O_10(OH)_2.4H_2O
+7MI0570 : Stibnite Sb_2S_3
+7MI0571 : Beryl Be_3Al_2Si_6O_18
+7MI0572 : Vermiculite (Mg,Fe^2+,Al)_3(Al,Si)_4O_10(OH)_2.4H_2O
+7MI0573 : Magnetite Fe^2+Fe_2^3+O_4
+7MI0574 : Oligoclase (Feldspar) (NaSi,CaAl)AlSi_2O_8
+7MI0575 : Fluorite CaF_2
+7MI0576 : Goethite a-Fe+3O(OH)
+7MI0577 : Plumbojarosite PbFe_3^3+(SO_4)_4(OH)_12
+7MI0578 : Smithsonite PbCO_3
+7MI0579 : Sphalerite (Zn,Fe)S
+7MI0580 : Pyrolusite MnO_2
+7MI0581 : Realgar AsS
+7MI0582 : Chlorite
+7MI0583 : Lepidolite K(Li,Al)3(Si,Al)_4O_10(F,OH)_2
+7MI0584 : Cookeite LiAl_4(Si_3Al)O_10(OH)_8
+7MI0585 : Columbite Fe^2+Nb_2O_6
+7MI0586 : Ulexite NaCaB_5O_6(OH)_6.5H_2O
+7MI0587 : Sphalerite (Zn,Fe)S
+7MI0588 : Andesine (Feldspar) (NaSi,CaAl)AlSi_2O_8
+7MI0589 : Johannsenite Ca(Mn,Fe^2+)(SiO_3)_2
+7MI0590 : Strontianite SrCO_3
+7MI0591 : Colemanite Ca_2B_6O_11.5H_2O
+7MI0592 : Cerussite, PbCO3
+7MI0593 : Sepiolite Mg_4Si_6O_15(OH)_2.6H_2O
+7MI0594 : Chalcocite Cu_2S
+7MI0595 : AtacamiteCu_2Cl(OH)_3
+7MI0596 : Sphalerite (Zn,Fe)S
+7MI0597 : Anhydrite CaSO_4
+7MI0598 : Diopside CaMgSi2O6
+7MI0599 : Sphalerite (Zn,Fe)S
+7MI0600 : Sanidine (Feldspar) (K,Na)AlSi_3O_8
+7MI0601 : Titanite (Sphene) CaTiSiO_5
+7MI0602 : Sodalite Na_8Al_6Si_6O_24Cl_2
+7MI0603 : Smectite Na0.33Fe2+3(Si,Al)4 O10.3H2O
+7MI0604 : Chlorite (Mg,Al)_6(Si,Al)_4O_10(OH)_8
+7MI0605 : Molybdenite MoS_2
+7MI0606 : Olivine (Fo88) (Fe+2,Mg)2SiO4
+7MI0607 : Amblygonite (Li,Na)Al(PO_4)(F,OH)
+7MI0608 : Staurolite (Fe+2,Mg,Zn)2Al9(Si,Al)4O22(OH)2
+7MI0609 : Lepidolite K(Li,Al)3(Si,Al)_4O_10(F,OH)_2
+7MI0610 : Clinochlore (Chlorite) (Mg,Al)_6(Si,Al)_4O_10(OH)_8
+7MI0611 : Alunite KAl_3(SO_4)_2(OH)_6
+7MI0612 : Hematite a-Fe2O3
+7MI0613 : Bornite Cu_5FeS_4
+7MI0614 : Smithsonite PbCO_3
+7MI0615 : Calcite CaCO_3
+7MI0616 : Vermiculite (Mg,Fe^2+,Al)_3(Al,Si)_4O_10(OH)_2.4H_2O
+7MI0617 : Jarosite KFe_3^3+(SO_4)_2(OH)_6
+7MI0618 : Vesuvianite Ca10Mg2Al4(SiO4)5(Si2O7)2(OH)4
+7MI0619 : Celestite SrSO_4
+7MI0620 : Rutile TiO_2
+7MI0621 : Siderite Fe^2+CO_3
+7MI0622 : Pyrite FeS_2
+7MI0623 : Topaz Al_2SiO_4(F,OH)_2
+7MI0624 : Quartz SiO_2
+7MI0625 : Glaucophane Na_2(Mg,Fe^2+)_3Al_2Si_8O_22(OH)_2
+7MI0626 : Orthoclase (Feldspar) (K,Na)AlSi_3O_8
+7MI0627 : Magnetite Fe^2+Fe_2^3+O_4
+7MI0628 : Alunite KAl_3(SO_4)_2(OH)_6
+7MI0629 : Topaz Al2SiO4(F,OH)2
+7MI0630 : Fluorite CaF2
+7MI0631 : Glauconite (K,Na)(Fe^3+,Al,Mg)_2(Si,Al)_4O_10(OH)_2
+7MI0632 : Anglesite PbSO_4
+7MI0633 : Sodalite Na_8Al_6Si_6O_24Cl_2
+7MI0634 : Bornite Cu_5FeS_4
+7MI0635 : Arsenopyrite FeAsS
+7MI0636 : Heulandite (Na,Ca)2-3Al3(Al,Si)2Si13O36.12H2O
+7MI0637 : Cristobalite SiO_2
+7MI0638 : Biotite K(Mg,Fe^2+)_3(Al,Fe^3+)Si_3O_10(OH,F)_2
+7MI0639 : Diopside CaMg(SiO_3)_2
+7MI0640 : Cerussite PbCO_3
+7MI0641 : Thenardite Na2SO4
+7MI0642 : Mordenite (Ca,Na2,K2)Al2Si10O24.7H2O
+7MI0643 : Biotite K(Mg,Fe^2+)_3(Al,Fe^3+)Si_3O_10(OH,F)_2
+7MI0644 : Actinolite Ca_2(Mg,Fe^2+)_5Si_8O_22(OH)_2
+7MI0645 : Beryl Be3Al2Si6O18
+7MI0646 : Brucite Mg(OH)_2
+7MI0647 : Celestite SrSO_4
+7MI0648 : Nontronite Na_0.33Fe_2^3+(Si,Al)_4O_10(OH)_2.H_2O
+7MI0649 : Goethite a-Fe+3O(OH)
+7MI0650 : Arsenopyrite FeAsS
+7MI0651 : Quartz SiO_2
+7MI0652 : Olivine (Fo88) (Fe+2,Mg)2SiO4
+7MI0653 : Montebrasite LiAlPO_4(OH)
+7MI0654 : Ilmenite Fe+2TiO3
+7MI0655 : Almandine Garnet Fe_3Al_2(SiO_4)_3
+7MI0656 : Sphalerite (Zn,Fe)S
+7MI0657 : Muscovite KAl2(Si3Al)O10(OH,F)2
+7MI0658 : Columbite Fe^2+Nb_2O_6
+7MI0659 : Amblygonite (Li,Na)Al(PO_4)(F,OH)
+7MI0660 : Riebeckite Na_2(Fe^2+,Mg)_3,Fe_2^3+Si_8O_22(OH)_2
+7MI0661 : Bornite Cu_5FeS_4
+7MI0662 : Gypsum (selenite) CaSO4.2H2O
+7MI0663 : Chlorite
+7MI0664 : Beryl Be_3Al_2Si_6O_18
+7MI0665 : Bornite Cu_5FeS_4
+7MI0666 : Zircon ZrSiO_4
+7MI0667 : Quartz SiO_2
+7MI0668 : Spodumene LiAlS_2O_6
+7MI0669 : Palygorskite (Mg,Al)_2Si_4O_10(OH).4H_2O
+7MI0670 : Marcasite FeS_2
+7MI0671 : Buddingtonite (Feldspar) (NH_4)AlSi_3O_8.0.5H_2O
+7MI0672 : Vermiculite (Mg,Fe^2+,Al)_3(Al,Si)_4O_10(OH)_2.4H_2O
+7MI0673 : Prehnite Ca_2Al_2Si_3O_10(OH)_2
+7MI0674 : Prehnite Ca_2Al_2Si_3O_10(OH)_2
+7MI0675 : Tourmaline Na(Mg_3,Fe_3^2+)Al_6(BO_3)_3Si_6O_18(OH)_4
+7MI0676 : Natrolite Na_2Al_2Si_3O_10.2H_2O
+7MI0677 : Scheelite CaWO_4
+7MI0678 : Muscovite KAl_2(Si_3Al)O_10(OH,F)_2
+7MI0679 : Andesine (Feldspar) (NaSi,CaAl)AlSi_2O_8
+7MI0680 : Lepidolite K(Li,Al)3(Si,Al)_4O_10(F,OH)_2
+7MI0681 : Montebrasite LiAlPO_4(OH)
+7MI0682 : Quartz SiO_2
+7MI0683 : Microcline KAlSi3O8
+7MI0684 : Forsterite Mg_2SiO_4
+7MI0685 : Enstatite Mg_2(SiO_3)_2
+7MI0686 : Fluorite CaF2
+7MI0687 : Bytownite (Feldspar) (NaSi,CaAl)AlSi_2O_8
+7MI0688 : Corrensite (Mg,Fe)_9(Si,Al)_8O_20(OH)_10._xH_2O
+7MI0689 : Clinoptilolite (Na,K,Ca)2-3Al3(Al,Si)2Si13O36.12H2O
+7MI0690 : Dolomite CaMg(CO_3)_2
+7MI0691 : Dolomite CaMg(CO3)2
+7MI0692 : Albite (Feldspar) (K,Na)AlSi_3O_8
+7MI0693 : Hydroxyapophyllite KCa_4Si_8O_20(OH,F).8H_2O
+7MI0694 : Magnesite MgCO_3
+7MI0695 : Serpentine (Mg,Fe^2+,Ni)Si_2O_5(OH)_4
+7MI0696 : Enstatite Mg_2(SiO_3)_2
+7MI0697 : Lepidolite K(Li,Al)3(Si,Al)_4O_10(F,OH)_2
+7MI0698 : Hemimorphite Zn4Si2O7(OH)2.H2O
+7MI0699 : Gahnite ZnAl_2O_4
+7MI0700 : Anthophyllite (Mg,Fe^2+)_7Si_8O_22(OH)_2
+7MI0701 : Olivine (Fo92) (Fe+2,Mg)2SiO4
+7MI0702 : Strontianite SrCO_3
+7MI0703 : Anthophyllite (Mg,Fe^2+)_7Si_8O_22(OH)_2
+7MI0704 : Scheelite CaWO_4
+7MI0705 : Glaucophane Na_2(Mg,Fe^2+)_3Al_2Si_8O_22(OH)_2
+7MI0706 : Vesuvianite Ca_10(Mg,Fe^2+)_2Al_4(Si_2O_7)_2(SiO_4)_5(OH,F)_4
+7MI0707 : Bornite Cu_5FeS_4
+7MI0708 : Quartz SiO_2
+7MI0709 : Erionite (K2,Ca,Na2)2Al4Si14O36.15H2O
+7MI0710 : Aphthitalite (K,Na)_3Na(SO_4)_2
+7MI0711 : Olivine (Fo41) (Fe+2,Mg)2SiO4
+7MI0712 : Vermiculite (Mg,Fe^2+,Al)_3(Al,Si)_4O_10(OH)_2.4H_2O
+7MI0713 : Clinozoisite Ca2Al3(SiO4)3(OH)
+7MI0714 : Tourmaline (Elbaite) Na(Li,Al)3Al6(BO3)3Si6018(OH)4
+7MI0715 : Barite BaSO_4
+7MI0716 : Stilbite NaCa_2Al_5Si_3O_36.14H_2O
+7MI0717 : Graphite C
+7MI0718 : Clinochlore (Fe+2,Mg)5Al(Si3Al)O10(OH)8
+7MI0719 : Rutile TiO2
+7MI0720 : Hornblende Ca2(Fe2+,Mg)4Al(Si7,Al)O22(OH,F)2
+7MI0721 : Sepiolite Mg_4Si_6O_15(OH)_2.6H_2O
+7MI0722 : Topaz Al2SiO4(F,OH)2
+7MI0723 : Riebeckite Na_2(Fe^2+,Mg)_3,Fe_2^3+Si_8O_22(OH)_2
+7MI0724 : Amblygonite (Li,Na)Al(PO_4)(F,OH)
+7MI0725 : Natrolite Na_2Al_2Si_3O_10.2H_2O
+7MI0726 : Labradorite (Feldspar) (NaSi,CaAl)AlSi_2O_8
+7MI0727 : Alunite (potassium alunite) KAl3(SO4)2(OH)6
+7MI0728 : Albite NaAlSi3O8
+7MI0729 : Montmorillonite (Na,Ca)0.33(Al,Mg)2Si4O10(OH)2.nH2O
+7MI0730 : Quartz SiO_2
+7MI0731 : Spodumene LiAlS_2O_6
+7MI0732 : Anglesite PbSO_4
+7MI0733 : Triphylite Li(Mn,Fe)PO_4
+7MI0734 : Actinolite Ca_2(Mg,Fe^2+)_5Si_8O_22(OH)_2
+7MI0735 : Oligoclase (Feldspar) (NaSi,CaAl)AlSi_2O_8
+7MI0736 : Vermiculite (Mg,Fe+2,Al)3(Al,Si)4O10(OH)2.4H2O
+7MI0737 : Fayalite Fe_2SiO_4
+7MI0738 : Clinochlore (Chlorite) (Mg,Al)_6(Si,Al)_4O_10(OH)_8
+7MI0739 : Scheelite CaWO_4
+7MI0740 : Corrensite (Mg,Fe)_9(Si,Al)_8O_20(OH)_10._xH_2O
+7MI0741 : Cerussite PbCO_3
+7MI0742 : Illite (K,H3O)(Al,Mg,Fe)2(Si,Al)4O10[(OH)2,H2O]
+7MI0743 : Hornblende Ca2(Fe2+,Mg)4Al(Si7,Al)O22(OH,F)2
+7MI0744 : Epidote Ca_2(Al,Fe^3+)_3O.SiO_4.Si_2O_7.OH
+7MI0745 : Natrojarosite NaFe_3^3+(SO_4)_2(OH)_6
+7MI0746 : Witherite BaCO_3
+7MI0747 : Epidote Ca_2(Al,Fe^3+)_3O.SiO_4.Si_2O_7.OH
+7MI0748 : Glauberite Na_2Ca(SO_4)_2
+7MI0749 : Spodumene LiAlS_2O_6
+7MI0750 : Corrensite (Mg,Fe)_9(Si,Al)_8O_20(OH)_10._xH_2O
+7MI0751 : Beryl Be_3Al_2Si_6O_18
+7MI0752 : Labradorite (Feldspar) (NaSi,CaAl)AlSi_2O_8
+7MI0753 : Biotite K(Mg,Fe^2+)_3(Al,Fe^3+)Si_3O_10(OH,F)_2
+7MI0754 : Magnesite MgCO_3
+7MI0755 : Amblygonite (Li,Na)Al(PO_4)(F,OH)
+7MI0756 : Siderite Fe^2+CO_3
+7MI0757 : Talc Mg_3Si_4O_10(OH)_2
+7MI0758 : Microcline (Feldspar) (K,Na)AlSi_3O_8
+7MI0759 : Apatite Ca_5(PO_4)_3F
+7MI0760 : Trona Na_3(CO_3)(HCO_3).2H_2O
+7MI0761 : Saponite (Ca/2,Na)_0.33(Mg,Fe^2+)_3(Si,Al)_4O_10(OH)_2.4H_2O
+7MI0762 : Halite NaCl
+7MI0763 : Nepheline (Na,K)AlSiO_4
+7MI0764 : Glaucophane Na_2(Mg,Fe^2+)_3Al_2Si_8O_22(OH)_2
+7MI0765 : Riebeckite Na_2(Fe^2+,Mg)_3,Fe_2^3+Si_8O_22(OH)_2
+7MI0766 : Rhodochrosite MnCO_3
+7MI0767 : Atacamite Cu_2Cl(OH)_3
+7MI0768 : Mimetite Pb_5(AsO_4)_3Cl
+7MI0769 : Kaolinite Al_2Si_2O_5(OH)_4
+7MI0770 : Clinochlore (Fe+2,Mg)5Al(Si3Al)O10(OH)8
+7MI0771 : Olivine (Fo51) (Fe+2,Mg)2SiO4
+7MI0772 : Calcite CaCO_3
+7MI0773 : Nontronite Na_0.33Fe_2^3+(Si,Al)_4O_10(OH)_2.H_2O
+7MI0774 : Cummingtonite (Mg,Fe^2+)_7Si_8O_22(OH)_2
+7MI0775 : Quartz SiO_2
+7MI0776 : Prehnite Ca2Al2Si3O10(OH)2
+7MI0777 : Gibbsite Al(OH)_3
+7MI0778 : Sulphur S
+7MI0779 : Natrolite Na_2Al_2Si_3O_10.2H_2O
+7MI0780 : Tremolite Ca2(Mg, Fe+2)5Si8O22(OH)2
+7MI0781 : Epidote Ca_2(Al,Fe^3+)_3O.SiO_4.Si_2O_7.OH
+7MI0782 : Pyrophyllite Al2Si4010(OH)2
+7MI0783 : Illite (K,H_3O)(Al,Mg,Fe)_2(Si,Al)_4O_10((OH)_2,H_2O)
+7MI0784 : Analcime NaAlSi_2O_6.H_2O
+7MI0785 : Acmite NaFe+3 Si2O6
+7MI0786 : Smithsonite PbCO_3
+7MI0787 : Olivine (Fo92) (Fe+2,Mg)2SiO4
+7MI0788 : Tremolite Ca_2(Mg,Fe^2+)_5Si_8O_22(OH)_2
+7MI0789 : Gypsum CaSO_4.2H_2O
+7MI0790 : Chlorite
+7MI0791 : Pyrrhotite Fe(1-x)S
+7MI0792 : Labradorite (Feldspar) (NaSi,CaAl)AlSi_2O_8
+7MI0793 : Sanidine (K,Na)Al3O8
+7MI0794 : Johannsenite Ca(Mn,Fe^2+)(SiO_3)_2
+7MI0795 : Heulandite (Na,Ca)2-3Al3(Al,Si)2Si13O36.12H2O
+7MI0796 : Antlerite Cu_3(SO_4)(OH)_4
+7MI0797 : Barite BaSO_4
+7MI0798 : Rhodonite (Mn+2,Fe+2,Mg,Ca)SiO3
+7MI0799 : Chlorite
+7MI0800 : Almandine Fe3+2Al2(SiO4)3
+7MI0801 : Rhodochrosite MnCO_3
+7MI0802 : Dolomite CaMg(CO_3)_2
+7MI0803 : Montebrasite LiAlPO_4(OH)
+7MI0804 : Malachite Cu_2(CO_3)(OH)_2
+7MI0805 : Clinochlore (Chlorite) (Mg,Al)_6(Si,Al)_4O_10(OH)_8
+7MI0806 : Rhodonite (Mn,Ca)SiO_3
+7MI0807 : Johannsenite Ca(Mn,Fe^2+)(SiO_3)_2
+7MI0808 : Datolite CaBSiO4(OH)
+7MI0809 : Cordierite Mg_2Al_3(Si_5Al)O_18
+7MI0810 : Diopside CaMg(SiO_3)_2
+7MI0811 : Magnetite Fe^2+Fe_2^3+O_4
+7MI0812 : Chlorite
+7MI0813 : Tourmaline Na(Mg_3,Fe_3^2+)Al_6(BO_3)_3Si_6O_18(OH)_4
+7MI0814 : Clinozoisite Ca2Al3(SiO4)3(OH)
+7MI0815 : Scorodite Fe^3+AsO_4.2H_2O
+7MI0816 : Siderite Fe^2+CO_3
+7MI0817 : Labradorite (Feldspar) (NaSi,CaAl)AlSi_2O_8
+7MI0818 : Wollastonite CaSiO_3
+7MI0819 : Prehnite Ca2Al2Si3O10(OH)2
+7MI0820 : Calcite CaCO_3
+7MI0821 : Cassiterite SnO_2
+7MI0822 : Microcline (Feldspar) (K,Na)AlSi_3O_8
+7MI0823 : Anglesite PbSO_4
+7MI0824 : Serpentine (Mg,Fe^2+,Ni)Si_2O_5(OH)_4
+7MI0825 : Sepiolite Mg_4Si_6O_15(OH)_2.6H_2O
+7MI0826 : Molybdenite MoS_2
+7MI0827 : Sodalite Na_8Al_6Si_6O_24Cl_2
+7MI0828 : Glauconite (K,Na)(Fe^3+,Al,Mg)_2(Si,Al)_4O_10(OH)_2
+7MI0829 : Cordierite Mg_2Al_3(Si_5Al)O_18
+7MI0830 : Scheelite CaWO_4
+7MI0831 : Malachite Cu_2(CO_3)(OH)_2
+7MI0832 : Labradorite (Feldspar) (NaSi,CaAl)AlSi_2O_8
+7MI0833 : Smithsonite PbCO_3
+7MI0834 : Quartz SiO2
+7MI0835 : Chromite Fe+2Cr2O4
+7MI0836 : Amblygonite (Li,Na)Al(PO_4)(F,OH)
+7MI0837 : Galena PbS
+7MI0838 : Ferroaxinite Ca_2Fe^2+Al_2BSi_4O_15(OH)
+7MI0839 : Quartz SiO_2
+7MI0840 : Anorthite (Feldspar) (NaSi,CaAl)AlSi_2O_8
+7MI0841 : Brucite Mg(OH)_2
+7MI0842 : Quartz SiO_2
+7MI0843 : Grossular Garnet Ca_3Al_2(SiO_4)_3
+7MI0844 : Stilbite NaCa_2Al_5Si_3O_36.14H_2O
+7MI0845 : Vesuvianite Ca_10(Mg,Fe^2+)_2Al_4(Si_2O_7)_2(SiO_4)_5(OH,F)_4
+7MI0846 : Prehnite Ca_2Al_2Si_3O_10(OH)_2
+7MI0847 : Biotite K(Mg,Fe^2+)_3(Al,Fe^3+)Si_3O_10(OH,F)_2
+7MI0848 : Epidote Ca_2(Al,Fe^3+)_3O.SiO_4.Si_2O_7.OH
+7MI0849 : Kaolinite Al2Si2O5(OH)4
+7MI0850 : Muscovite KAl_2(Si_3Al)O_10(OH,F)_2
+7MI0851 : Tremolite Ca2(Mg, Fe+2)5Si8O22(OH)2
+7MI0852 : Prehnite Ca_2Al_2Si_3O_10(OH)_2
+7MI0853 : Strontianite SrCO_3
+7MI0854 : Columbite Fe^2+Nb_2O_6
+7MI0855 : Glauconite (K,Na)(Fe^3+,Al,Mg)_2(Si,Al)_4O_10(OH)_2
+7MI0856 : Hemimorphite Zn_4Si_2O_7(OH)_2.H_2O
+7MI0857 : Dickite Al_2Si_2O_5(OH)_4
+7MI0858 : Kaolinite Al_2Si_2O_5(OH)_4
+7MI0859 : Pectolite NaCa2Si308(OH)
+7MI0860 : Calcite CaCO3
+7MI0861 : Tourmaline Na(Mg_3,Fe_3^2+)Al_6(BO_3)_3Si_6O_18(OH)_4
+7MI0862 : Celestite SrSO_4
+7MI0863 : Vermiculite (Mg,Fe^2+,Al)_3(Al,Si)_4O_10(OH)_2.4H_2O
+7MI0864 : Quartz SiO_2
+7MI0865 : Antlerite Cu_3(SO_4)(OH)_4
+7MI0866 : Titanite (Sphene) CaTiSiO_5
+7MI0867 : Scheelite CaWO_4
+7MI0868 : Wollastonite CaSiO_3
+7MI0869 : Eugsterite Na4Ca(SO4)3 * 2H2O
+7MI0870 : Rhodochrosite MnCO_3
+7MI0871 : Quartz SiO_2
+7MI0872 : Olivine (Fo92) (Fe+2,Mg)2SiO4
+7MI0873 : Tremolite Ca2(Mg, Fe+2)5Si8O22(OH)2
+7MI0874 : Hemimorphite Zn_4Si_2O_7(OH)_2.H_2O
+7MI0875 : Alunite KAl_3(SO_4)_2(OH)_6
+7MI0876 : Chlorite
+7MI0877 : Lepidolite K(Li,Al)3(Si,Al)_4O_10(F,OH)_2
+7MI0878 : Topaz Al2SiO4(F,OH)2
+7MI0879 : Acmite NaFe+3Si2O6
+7MI0880 : Albite (Feldspar) (K,Na)AlSi_3O_8
+7MI0881 : Nontronite Na_0.33Fe_2^3+(Si,Al)_4O_10(OH)_2.H_2O
+7MI0882 : Diopside CaMg(SiO_3)_2
+7MI0883 : Almandine Garnet Fe_3Al_2(SiO_4)_3
+7MI0884 : Molybdenite MoS_2
+7MI0885 : Hydroxyapophyllite KCa_4Si_8O_20(OH,F).8H_2O
+7MI0886 : Nontronite Na0.33Fe2+3(Si,Al)4O10.3H2O
+7MI0887 : Beryl Be3Al2Si6O18
+7MI0888 : Enstatite Mg_2(SiO_3)_2
+7MI0889 : Borax Na_2B_4O_5(OH)_4.8H_2O
+7MI0890 : Muscovite KAl_2(Si_3Al)O_10(OH,F)_2
+7MI0891 : Chalcocite Cu_2S
+7MI0892 : Graphite C
+7MI0893 : Amblygonite (Li,Na)Al(PO_4)(F,OH)
+7MI0894 : Gahnite ZnAl_2O_4
+7MI0895 : Nontronite Na_0.33Fe_2^3+(Si,Al)_4O_10(OH)_2.H_2O
+7MI0896 : Orthoclase (Feldspar) (K,Na)AlSi_3O_8
+7MI0897 : Almandine Garnet Fe_3Al_2(SiO_4)_3
+7MI0898 : Dolomite CaMg(CO3)2
+7MI0899 : Riebeckite Na2(Fe+2,Mg)3Fe2+3Si8O22(OH)2
+7MI0900 : Talc Mg3Si4O10(OH)2
+7MI0901 : Glaucophane Na_2(Mg,Fe^2+)_3Al_2Si_8O_22(OH)_2
+7MI0902 : Hydroxyapophyllite KCa_4Si_8O_20(OH,F).8H_2O
+7MI0903 : Jarosite KFe_3^3+(SO_4)_2(OH)_6
+7MI0904 : Chalcocite Cu_2S
+7MI0905 : Atacamite Cu_2Cl(OH)_3
+7MI0906 : Montebrasite LiAlPO_4(OH)
+7MI0907 : Cummingtonite (Mg,Fe^2+)_7Si_8O_22(OH)_2
+7MI0908 : Gypsum (alabaster) CaSO4.2H20
+7MI0909 : Sphalerite (Zn,Fe)S
+7MI0910 : Alunite (potassium alunite) KAl3(SO4)2(OH)6
+7MI0911 : Pyrolusite MnO_2
+7MI0912 : Sanidine (K,Na)Al3O8
+7MI0913 : Natrolite Na2Al2Si3O10.2H2O
+7MI0914 : Hedenbergite CaFe+2Si2O6
+7MI0915 : Brucite Mg(OH)_2
+7MI0916 : Pyrite FeS_2
+7MI0917 : Cerussite PbCO_3
+7MI0918 : Plumbojarosite PbFe_3^3+(SO_4)_4(OH)_12
+7MI0919 : Rhodochrosite MnCO_3
+7MI0920 : Dolomite CaMg(CO_3)_2
+7MI0921 : Sulphur S
+7MI0922 : Labradorite (Feldspar) (NaSi,CaAl)AlSi_2O_8
+7MI0923 : Lepidolite K(Li,Al)3(Si,Al)_4O_10(F,OH)_2
+7MI0924 : Cerussite, PbCO3
+7MI0925 : Olivine (Fo92) (Fe+2,Mg)2SiO4
+7MI0926 : Oligoclase (Feldspar) (NaSi,CaAl)AlSi_2O_8
+7MI0927 : Spodumene LiAlS_2O_6
+7MI0928 : Triphylite Li(Mn,Fe)PO_4
+7MI0929 : Andradite Ca3Fe2+3 (SiO4)3
+7MI0930 : Beryl Be3Al2Si6O18
+7MI0931 : Jadeite Na(Al,Fe+3)Si2O6
+7MI0932 : Kernite Na_2B_4O_6(OH)_2.3H_2O
+7MI0933 : Palygorskite (Mg,Al)_2Si_4O_10(OH).4H_2O
+7MI0934 : Pyrolusite MnO_2
+7MI0935 : Corrensite (Mg,Fe)_9(Si,Al)_8O_20(OH)_10._xH_2O
+7MI0936 : Magnetite Fe^2+Fe_2^3+O_4
+7MI0937 : Sepiolite Mg_4Si_6O_15(OH)_2.6H_2O
+7MI0938 : Magnetite Fe^2+Fe_2^3+O_4
+7MI0939 : Clinochlore (Chlorite) (Mg,Al)_6(Si,Al)_4O_10(OH)_8
+7MI0940 : Celestite SrSO_4
+7MI0941 : Riebeckite Na_2(Fe^2+,Mg)_3,Fe_2^3+Si_8O_22(OH)_2
+7MI0942 : Hedenbergite CaFe+2Si2O6
+7MI0943 : Epidote Ca_2(Al,Fe^3+)_3O.SiO_4.Si_2O_7.OH
+7MI0944 : Antigorite (Mg, Fe+2)3 Si2O5(OH)4
+7MI0945 : Atacamite Cu_2Cl(OH)_3
+7MI0946 : Chabazite CaAl_2Si_4O_12.6H_2O
+7MI0947 : Enstatite Mg_2(SiO_3)_2
+7MI0948 : Vermiculite (Mg,Fe^2+,Al)_3(Al,Si)_4O_10(OH)_2.4H_2O
+7MI0949 : Bornite Cu_5FeS_4
+7MI0950 : Monticellite CaMgSiO4
+7MI0951 : Johannsenite Ca(Mn,Fe^2+)(SiO_3)_2
+7MI0952 : Epidote Ca2(Al,Fe+3)3(SiO4)3(OH)
+7MI0953 : Mirabilite Na2SO410H2O
+7MI0954 : Tschermigite (NH_4)Al(SO_4)_2.12H_2O
+7MI0955 : Acmite NaFe+3 Si2O6
+7MI0956 : Rhodonite (Mn+2,Fe+2,Mg,Ca)SiO3
+7MI0957 : Chalcocite Cu_2S
+7MI0958 : Atacamite Cu_2Cl(OH)_3
+7MI0959 : Fluorite CaF_2
+7MI0960 : Magnesiochromite MgCr_2O_4
+7MI0961 : Cerussite PbCO_3
+7MI0962 : Montebrasite LiAlPO_4(OH)
+7MI0963 : Pyrophyllite Al_2Si_4O_10(OH)_2
+7MI0964 : Clinoptilolite (Na,K,Ca)2-3Al3(Al,Si)2Si13O36.12H2O
+7MI0965 : Lepidolite K(Li,Al)3(Si,Al)_4O_10(F,OH)_2
+7MI0966 : Barite BaSO_4
+7MI0967 : Epidote Ca_2(Al,Fe^3+)_3O.SiO_4.Si_2O_7.OH
+7MI0968 : Pyrope Mg3Al2(SiO4)3
+7MI0969 : Graphite C
+7MI0970 : Epidote Ca_2(Al,Fe^3+)_3O.SiO_4.Si_2O_7.OH
+7MI0971 : Hemimorphite Zn_4Si_2O_7(OH)_2.H_2O
+7MI0972 : Anhydrite CaSO_4
+7MI0973 : Muscovite KAl2(Si3Al)O10(OH,F)2
+7MI0974 : Prehnite Ca_2Al_2Si_3O_10(OH)_2
+7MI0975 : Talc Mg_3Si_4O_10(OH)_2
+7MI0976 : Chabazite CaAl_2Si_4O_12.6H_2O
+7MI0977 : Gahnite ZnAl_2O_4
+7MI0978 : Muscovite KAl_2(Si_3Al)O_10(OH,F)_2
+7MI0979 : Halite NaCl
+7MI0980 : Cryolite Na_3AlF_6
+7MI0981 : Hemimorphite Zn_4Si_2O_7(OH)_2.H_2O
+7MI0982 : Lizardite Mg3Si2O5(OH)4
+7MI0983 : Olivine (Fo18) (Fe+2,Mg)2SiO4
+7MI0984 : Graphite C
+7MI0985 : Tremolite Ca_2(Mg,Fe^2+)_5Si_8O_22(OH)_2
+7MI0986 : Zircon ZrSiO_4
+7MI0987 : Epidote Ca2(Al,Fe+3)3(SiO4)3(OH)
+7MI0988 : Cryolite Na_3AlF_6
+7MI0989 : Phlogopite KMg3Si3AlO10(F, OH)2
+7MI0990 : Fluorite CaF_2
+7MI0991 : Orthoclase (Feldspar) (K,Na)AlSi_3O_8
+7MI0992 : Galena PbS
+7MI0993 : Orthoclase (Feldspar) (K,Na)AlSi_3O_8
+7MI0994 : Halite NaCl
+7MI0995 : Olivine (Fo66) (Fe+2,Mg)2SiO4
+7MI0996 : Howlite Ca_2B_5SiO_9(OH)_5
+7MI0997 : Augite (Ca,Na)(Mg,Fe,Al,Ti)(Si,Al)2O6
+7MI0998 : Malachite Cu_2(CO_3)(OH)_2
+7MI0999 : Vesuvianite Ca10Mg2Al4(SiO4)5(Si2O7)2(OH)4
+7MI1000 : Hypersthene (Mg,Fe^2+)_2Si_2O_6
+7MI1001 : Cassiterite SnO_2
+7MI1002 : Sillimanite Al_2SiO_5
+7MI1003 : Labradorite (Feldspar) (NaSi,CaAl)AlSi_2O_8
+7MI1004 : Orthoclase KAlSi3O8
+7MI1005 : Grossular Garnet Ca_3Al_2(SiO_4)_3
+7MI1006 : Hornblende Ca2(Fe2+,Mg)4Al(Si7,Al)O22(OH,F)2
+7MI1007 : Cassiterite SnO_2
+7MI1008 : Quartz SiO_2
+7MI1009 : Hematite alpha Fe_2O_3
+7MI1010 : Apatite Ca_5(PO_4)_3F
+7MI1011 : Gypsum CaSO_4.2H_2O
+7MI1012 : Molybdenite MoS_2
+7MI1013 : Glauconite (K,Na)(Fe^3+,Al,Mg)_2(Si,Al)_4O_10(OH)_2
+7MI1014 : Galena PbS
+7MI1015 : Montmorillonite (Na,Ca)0.33(Al,Mg)2Si4O10(OH)2.nH2O
+7MI1016 : Arsenopyrite FeAsS
+7MI1017 : Chalcocite Cu_2S
+7MI1018 : Plumbojarosite PbFe_3^3+(SO_4)_4(OH)_12
+7MI1019 : Grossular Garnet Ca_3Al_2(SiO_4)_3
+7MI1020 : Stilbite NaCa_2Al_5Si_3O_36.14H_2O
+7MI1021 : Corrensite (Mg,Fe)_9(Si,Al)_8O_20(OH)_10._xH_2O
+7MI1022 : Biotite K(Mg,Fe+2)3(Al,Fe+3)Si3O10(OH,F)2
+7MI1023 : Magnesiochromite MgCr_2O_4
+7MI1024 : Zoisite (var. tanzanite) Ca2Al3(SiO4)3(OH)
+7MI1025 : Natrolite Na2Al2Si3O10.2H2O
+7MI1026 : Anorthite (Feldspar) (NaSi,CaAl)AlSi_2O_8
+7MI1027 : Rutile TiO_2
+7MI1028 : Stibnite Sb_2S_3
+7MI1029 : Clinochlore (Chlorite) (Mg,Al)_6(Si,Al)_4O_10(OH)_8
+7MI1030 : Corundum Al_2O_3
+7MI1031 : Rhodonite (Mn,Ca)SiO_3
+7MI1032 : Corundum Al_2O_3
+7MI1033 : Halite NaCl
+7MI1034 : Calcite CaCO_3
+7MI1035 : Tourmaline Na(Mg_3,Fe_3^2+)Al_6(BO_3)_3Si_6O_18(OH)_4
+7MI1036 : Andesine (Feldspar) (NaSi,CaAl)AlSi_2O_8
+7MI1037 : Graphite C
+7MI1038 : Hematite alpha Fe_2O_3
+7MI1039 : Trona Na_3(CO_3)(HCO_3).2H_2O
+7MI1040 : Hematite alpha Fe_2O_3
+7MI1041 : Gypsum CaSO_4.2H_2O
+7MI1042 : Olivine (Fo29) (Fe+2,Mg)2SiO4
+7MI1043 : Fluorite CaF_2
+7MI1044 : Galena PbS
+7MI1045 : Fluorite CaF_2
+7MI1046 : Triphylite Li(Mn,Fe)PO_4
+7MI1047 : Rhodonite (Mn,Ca)SiO_3
+7MI1048 : Anglesite PbSO_4
+7MI1049 : Olivine (Fo60) (Fe+2,Mg)2SiO4
+7MI1050 : Calcite CaCO_3
+7MI1051 : Aphthitalite (K,Na)_3Na(SO_4)_2
+7MI1052 : Quartz SiO_2
+7MI1053 : Gahnite ZnAl_2O_4
+7MI1054 : Illite (K,H_3O)(Al,Mg,Fe)_2(Si,Al)_4O_10((OH)_2,H_2O)
+7MI1055 : Colemanite Ca_2B_6O_11.5H_2O
+7MI1056 : Chlorite
+7MI1057 : Anorthite CaAl2Si2O8
+7MI1058 : Biotite K(Mg,Fe^2+)_3(Al,Fe^3+)Si_3O_10(OH,F)_2
+7MI1059 : Tremolite Ca_2(Mg,Fe^2+)_5Si_8O_22(OH)_2
+7MI1060 : Talc Mg_3Si_4O_10(OH)_2
+7MI1061 : Smithsonite PbCO_3
+7MI1062 : Rutile TiO_2
+7MI1063 : Montebrasite LiAlPO_4(OH)
+7MI1064 : Barite BaSO_4
+7MI1065 : Chlorite
+7MI1066 : Quartz SiO_2
+7MI1067 : Celestite SrSO_4
+7MI1068 : Graphite C
+7MI1069 : Leucite KAlSi2O6
+7MI1070 : Cummingtonite (Mg,Fe^2+)_7Si_8O_22(OH)_2
+7MI1071 : Fayalite Fe_2SiO_4
+7MI1072 : Enstatite Mg_2(SiO_3)_2
+7MI1073 : Rhodochrosite MnCO_3
+7MI1074 : Palygorskite (Mg,Al)_2Si_4O_10(OH).4H_2O
+7MI1075 : Jarosite KFe_3^3+(SO_4)_2(OH)_6
+7MI1076 : Galena PbS
+7MI1077 : Malachite Cu_2(CO_3)(OH)_2
+7MI1078 : Topaz Al_2SiO_4(F,OH)_2
+7MI1079 : Natrolite Na_2Al_2Si_3O_10.2H_2O
+7MI1080 : Magnesite MgCO_3
+7MI1081 : Phlogopite KMg3Si3AlO10(F, OH)2
+7MI1082 : Rhodochrosite MnCO_3
+7MI1083 : Cristobalite SiO_2
+7MI1084 : Augite (Ca,Na)(Mg,Fe,Al,Ti)(Si,Al)2O6
+7MI1085 : Chromite Fe+2Cr2O4
+7MI1086 : Plumbojarosite PbFe_3^3+(SO_4)_4(OH)_12
+7MI1087 : Triphylite Li(Mn,Fe)PO_4
+7MI1088 : Vermiculite (Mg,Fe^2+,Al)_3(Al,Si)_4O_10(OH)_2.4H_2O
+7MI1089 : Almandine Garnet Fe_3Al_2(SiO_4)_3
+7MI1090 : Lepidolite K(Li,Al)3(Si,Al)_4O_10(F,OH)_2
+7MI1091 : Topaz Al2SiO4(F,OH)2
+7MI1092 : Labradorite (Feldspar) (NaSi,CaAl)AlSi_2O_8
+7MI1093 : Ferroaxinite Ca_2Fe^2+Al_2BSi_4O_15(OH)
+7MI1094 : Labradorite (Feldspar) (NaSi,CaAl)AlSi_2O_8
+7MI1095 : Chlorite
+7MI1096 : Galena PbS
+7MI1097 : Riebeckite Na2(Fe+2,Mg)3Fe2+3Si8O22(OH)2
+7MI1098 : Jadeite Na(Al,Fe+3)Si2O6
+7MI1099 : Sepiolite Mg_4Si_6O_15(OH)_2.6H_2O
+7MI1100 : Biotite K(Mg,Fe+2)3(Al,Fe+3)Si3O10(OH,F)2
+7MI1101 : Ferroaxinite Ca_2Fe^2+Al_2BSi_4O_15(OH)
+7MI1102 : Azurite Cu_3(CO_3)_2(OH)_2
+7MI1103 : Microcline (Feldspar) (K,Na)AlSi_3O_8
+7MI1104 : Goethite a-Fe+3O(OH)
+7MI1105 : Forsterite Mg_2SiO_4
+7MI1106 : Realgar AsS
+7MI1107 : Riebeckite Na2(Fe+2,Mg)3Fe2+3Si8O22(OH)2
+7MI1108 : Gahnite ZnAl_2O_4
+7MI1109 : Barite BaSO_4
+7MI1110 : Jadeite Na(Al,Fe+3)Si2O6
+7MI1111 : Augite (Ca,Na)(Mg,Fe,Al,Ti)(Si,Al)2O6
+7MI1112 : Orthoclase (Feldspar) (K,Na)AlSi_3O_8
+7MI1113 : Hemimorphite Zn4Si2O7(OH)2.H2O
+7MI1114 : Wollastonite CaSiO_3
+7MI1115 : Sodalite Na_8Al_6Si_6O_24Cl_2
+7MI1116 : Nontronite Na_0.33Fe_2^3+(Si,Al)_4O_10(OH)_2.H_2O
+7MI1117 : Tremolite Ca_2(Mg,Fe^2+)_5Si_8O_22(OH)_2
+7MI1118 : Kyanite Al2SiO5
+7MI1119 : Chlorite (Mg,Al)_6(Si,Al)_4O_10(OH)_8
+7MI1120 : Quartz SiO2
+7MI1121 : Cummingtonite (Mg,Fe^2+)_7Si_8O_22(OH)_2
+7MI1122 : Tschermigite (NH_4)Al(SO_4)_2.12H_2O
+7MI1123 : Hydroxyapophyllite KCa_4Si_8O_20(OH,F).8H_2O
+7MI1124 : Witherite BaCO_3
+7MI1125 : Tourmaline (Schorl) NaFe3+2Al6(BO3)3Si6O18(OH)4
+7MI1126 : Natrojarosite NaFe_3^3+(SO_4)_2(OH)_6
+7MI1127 : Ferroaxinite Ca_2Fe^2+Al_2BSi_4O_15(OH)
+7MI1128 : Muscovite KAl_2(Si_3Al)O_10(OH,F)_2
+7MI1129 : Titanite (Sphene) CaTiSiO_5
+7MI1130 : Anorthite (Feldspar) (NaSi,CaAl)AlSi_2O_8
+7MI1131 : Wollastonite CaSiO_3
+7MI1132 : Muscovite KAl_2(Si_3Al)O_10(OH,F)_2
+7MI1133 : Quartz SiO_2
+7MI1134 : Chalcopyrite CuFeS_2
+7MI1135 : Magnetite Fe^2+Fe_2^3+O_4
+7MI1136 : Alunite KAl_3(SO_4)_2(OH)_6
+7MI1137 : Diopside CaMgSi2O6
+7MI1138 : Quartz SiO_2
+7MI1139 : Tourmaline (Elbaite) Na(Li,Al)3Al6(BO3)3Si6018(OH)4
+7MI1140 : Nontronite Na_0.33Fe_2^3+(Si,Al)_4O_10(OH)_2.H_2O
+7MI1141 : Almandine Garnet Fe_3Al_2(SiO_4)_3
+7MI1142 : Almandine Garnet Fe_3Al_2(SiO_4)_3
+7MI1143 : Albite (Feldspar) (K,Na)AlSi_3O_8
+7MI1144 : Diopside CaMg(SiO_3)_2
+7MI1145 : Rhodonite (Mn,Ca)SiO_3
+7MI1146 : Kaolinite Al_2Si_2O_5(OH)_4
+7MI1147 : Antigorite (Mg, Fe+2)3 Si2O5(OH)4
+7MI1148 : Chalcocite Cu_2S
+7MI1149 : Realgar AsS
+7MI1150 : Albite (Feldspar) (K,Na)AlSi_3O_8
+7MI1151 : Hydroxyapophyllite KCa_4Si_8O_20(OH,F).8H_2O
+7MI1152 : Riebeckite Na_2(Fe^2+,Mg)_3,Fe_2^3+Si_8O_22(OH)_2
+7MI1153 : Smectite Na0.33Fe2+3(Si,Al)4 O10.3H2O
+7MI1154 : Gypsum CaSO_4.2H_2O
+7MI1155 : Epsomite MgSO47H2O
+7MI1156 : Lepidolite K(Li,Al)3(Si,Al)_4O_10(F,OH)_2
+7MI1157 : Amblygonite (Li,Na)Al(PO_4)(F,OH)
+7MI1158 : Anhydrite CaSO_4
+7MI1159 : Quartz SiO_2
+7MI1160 : Johannsenite Ca(Mn,Fe^2+)(SiO_3)_2
+7MI1161 : Alunite (sodium alunite) NaAl3(SO4)2(OH)6
+7MI1162 : Fayalite Fe_2SiO_4
+7MI1163 : Plumbojarosite PbFe_3^3+(SO_4)_4(OH)_12
+7MI1164 : Actinolite Ca_2(Mg,Fe^2+)_5Si_8O_22(OH)_2
+7MI1165 : Triphylite Li(Mn,Fe)PO_4
+7MI1166 : Fayalite Fe_2SiO_4
+7MI1167 : Oligoclase (Feldspar) (NaSi,CaAl)AlSi_2O_8
+7MI1168 : Vermiculite (Mg,Fe^2+,Al)_3(Al,Si)_4O_10(OH)_2.4H_2O
+7MI1169 : Sulphur S
+7MI1170 : Zircon ZrSiO_4
+7MI1171 : Scorodite Fe^3+AsO_4.2H_2O
+7MI1172 : Olivine (Fo18) (Fe+2,Mg)2SiO4
+7MI1173 : Montmorillonite (Na,Ca)_0.33(Al,Mg)_2Si_4O_10(OH)_2.H_2O
+7MI1174 : Halite NaCl
+7MI1175 : Periclase MgO
+7MI1176 : Epidote Ca_2(Al,Fe^3+)_3O.SiO_4.Si_2O_7.OH
+7MI1177 : Labradorite (Feldspar) (NaSi,CaAl)AlSi_2O_8
+7MI1178 : Antlerite Cu_3(SO_4)(OH)_4
+7MI1179 : Olivine (Fo66) (Fe+2,Mg)2SiO4
+7MI1180 : Tourmaline (Schorl) NaFe3+2Al6(BO3)3Si6O18(OH)4
+7MI1181 : Vermiculite (Mg,Fe^2+,Al)_3(Al,Si)_4O_10(OH)_2.4H_2O
+7MI1182 : Sodalite Na8Al6Si6O24Cl2
+7MI1183 : Atacamite Cu_2Cl(OH)_3
+7MI1184 : Glaucophane Na_2(Mg,Fe^2+)_3Al_2Si_8O_22(OH)_2
+7MI1185 : Cookeite LiAl_4(Si_3Al)O_10(OH)_8
+7MI1186 : Sodalite Na_8Al_6Si_6O_24Cl_2
+7MI1187 : Lepidolite K(Li,Al)3(Si,Al)_4O_10(F,OH)_2
+7MI1188 : Dolomite CaMg(CO_3)_2
+7MI1189 : Dolomite CaMg(CO3)2
+7MI1190 : Montebrasite LiAlPO_4(OH)
+7MI1191 : Malachite Cu_2(CO_3)(OH)_2
+7MI1192 : Calcite CaCO_3
+7MI1193 : Anorthite (Feldspar) (NaSi,CaAl)AlSi_2O_8
+7MI1194 : Cordierite Mg_2Al_3(Si_5Al)O_18
+7MI1195 : Lepidolite K(Li,Al)3(Si,Al)_4O_10(F,OH)_2
+7MI1196 : Vermiculite (Mg,Fe^2+,Al)_3(Al,Si)_4O_10(OH)_2.4H_2O
+7MI1197 : Glauberite Na_2Ca(SO_4)_2
+7MI1198 : Tourmaline Na(Mg_3,Fe_3^2+)Al_6(BO_3)_3Si_6O_18(OH)_4
+7MI1199 : Antlerite Cu_3(SO_4)(OH)_4
+7MI1200 : Arsenopyrite FeAsS
+7MI1201 : Gypsum CaSO_4.2H_2O
+7MI1202 : Labradorite (Feldspar) (NaSi,CaAl)AlSi_2O_8
+7MI1203 : Apatite Ca_5(PO_4)_3F
+7MI1204 : Fayalite Fe_2SiO_4
+7MI1205 : Barite, BaSO4
+7MI1206 : Sanidine (K,Na)Al3O8
+7MI1207 : Bornite Cu_5FeS_4
+7MI1208 : Zircon ZrSiO_4
+7MI1209 : Clinochlore (Mg,Fe+2)5Al(Si3Al)O10(OH)8
+7MI1210 : Quartz SiO_2
+7MI1211 : Illite (K,H_3O)(Al,Mg,Fe)_2(Si,Al)_4O_10((OH)_2,H_2O)
+7MI1212 : Beryl Be_3Al_2Si_6O_18
+7MI1213 : Zircon ZrSiO_4
+7MI1214 : Gibbsite Al(OH)_3
+7MI1215 : Marcasite FeS_2
+7MI1216 : Aphthitalite (K,Na)_3Na(SO_4)_2
+7MI1217 : Chlorite
+7MI1218 : Hydroxyapophyllite KCa_4Si_8O_20(OH,F).8H_2O
+7MI1219 : Pyrrhotite, Fe(1-x)S
+7MI1220 : Hornblende Ca2(Fe+2,Mg)4Al(Si7Al)O22(OH,F)2
+7MI1221 : Topaz Al2SiO4(F,OH)2
+7MI1222 : Natrolite Na_2Al_2Si_3O_10.2H_2O
+7MI1223 : Tourmaline Na(Mg_3,Fe_3^2+)Al_6(BO_3)_3Si_6O_18(OH)_4
+7MI1224 : Hornblende Ca2(Fe+2,Mg)4Al(Si7Al)O22(OH,F)2
+7MI1225 : Quartz SiO_2
+7MI1226 : Diopside CaMg(SiO_3)_2
+7MI1227 : Pyrophyllite Al_2Si_4O_10(OH)_2
+7MI1228 : Analcime NaAlSi2O6.H2O
+7MI1229 : Orthoclase (Feldspar) (K,Na)AlSi_3O_8
+7MI1230 : Olivine (Fo29) (Fe+2,Mg)2SiO4
+7MI1231 : Actinolite Ca_2(Mg,Fe^2+)_5Si_8O_22(OH)_2
+7MI1232 : Kaolinite Al_2Si_2O_5(OH)_4
+7MI1233 : Witherite BaCO_3
+7MI1234 : Olivine (Fo60) (Fe+2,Mg)2SiO4
+7MI1235 : Hornblende Ca2(Fe+2,Mg)4Al(Si7Al)O22(OH,F)2
+7MI1236 : Clinoptilolite (Na,K,Ca)2-3Al3(Al,Si)2Si13O36.12H2O
+7MI1237 : Vesuvianite Ca_10(Mg,Fe^2+)_2Al_4(Si_2O_7)_2(SiO_4)_5(OH,F)_4
+7MI1238 : Strontianite SrCO_3
+7MI1239 : Prehnite Ca_2Al_2Si_3O_10(OH)_2
+7MI1240 : Vesuvianite Ca_10(Mg,Fe^2+)_2Al_4(Si_2O_7)_2(SiO_4)_5(OH,F)_4
+7MI1241 : Chabazite CaAl2Si4O12.6H2O
+7MI1242 : Anthophyllite (Mg,Fe^2+)_7Si_8O_22(OH)_2
+7MI1243 : Marcasite FeS_2
+7MI1244 : Quartz SiO_2
+7MI1245 : Biotite K(Mg,Fe^2+)_3(Al,Fe^3+)Si_3O_10(OH,F)_2
+7MI1246 : Calcite CaCO_3
+7MI1247 : Serpentine (Mg,Fe^2+,Ni)Si_2O_5(OH)_4
+7MI1248 : Pyrite FeS2
+7MI1249 : Sanidine (Feldspar) (K,Na)AlSi_3O_8
+7MI1250 : Serpentine (Mg,Fe^2+,Ni)Si_2O_5(OH)_4
+7MI1251 : Enstatite Mg2Si2O6
+7MI1252 : Montmorillonite (Na,Ca)_0.33(Al,Mg)_2Si_4O_10(OH)_2.H_2O
+7MI1253 : Chlorite
+7MI1254 : Andesine (Feldspar) (NaSi,CaAl)AlSi_2O_8
+7MI1255 : Topaz Al_2SiO_4(F,OH)_2
+7MI1256 : Lepidolite K(Li,Al)3(Si,Al)_4O_10(F,OH)_2
+7MI1257 : Natrolite Na_2Al_2Si_3O_10.2H_2O
+7MI1258 : Nontronite Na0.33Fe2+3(Si,Al)4O10.3H2O
+7MI1259 : Brucite Mg(OH)_2
+7MI1260 : Talc Mg_3Si_4O_10(OH)_2
+7MI1261 : Pyrite FeS_2
+7MI1262 : Chalcocite Cu_2S
+7MI1263 : Labradorite (Na,Ca)Al(Al,Si)Si2O8
+7MI1264 : Tincalconite Na_2B_4O_5(OH)_4.3H_2O
+7MI1265 : Tourmaline Na(Mg_3,Fe_3^2+)Al_6(BO_3)_3Si_6O_18(OH)_4
+7MI1266 : Zoisite (var. tanzanite) Ca2Al3(SiO4)3(OH)
+7MI1267 : Topaz Al2SiO4(F,OH)2
+7MI1268 : Quartz SiO_2
+7MI1269 : Vermiculite (Mg,Fe^2+,Al)_3(Al,Si)_4O_10(OH)_2.4H_2O
+7MI1270 : Goethite a-Fe+3O(OH)
+7MI1271 : Bustamite (Mn,Ca)3Si3O9
+7MI1272 : Nontronite Na_0.33Fe_2^3+(Si,Al)_4O_10(OH)_2.H_2O
+7MI1273 : Marcasite FeS_2
+7MI1274 : Jarosite KFe_3^3+(SO_4)_2(OH)_6
+7MI1275 : Quartz SiO_2
+7MI1276 : Columbite Fe^2+Nb_2O_6
+7MI1277 : Polyhalite K2Ca2Mg(SO4)4 * 2H2O
+7MI1278 : Arsenopyrite FeAsS
+7MI1279 : Chabazite CaAl2Si4O12.6H2O
+7MI1280 : Tschermigite (NH_4)Al(SO_4)_2.12H_2O
+7MI1281 : Enstatite Mg_2(SiO_3)_2
+7MI1282 : Quartz SiO_2
+7MI1283 : Nontronite Na_0.33Fe_2^3+(Si,Al)_4O_10(OH)_2.H_2O
+7MI1284 : Realgar AsS
+7MI1285 : Jarosite KFe_3^3+(SO_4)_2(OH)_6
+7MI1286 : Brucite Mg(OH)_2
+7MI1287 : Actinolite Ca_2(Mg,Fe^2+)_5Si_8O_22(OH)_2
+7MI1288 : Dolomite CaMg(CO_3)_2
+7MI1289 : Ferroaxinite Ca_2Fe^2+Al_2BSi_4O_15(OH)
+7MI1290 : Magnetite Fe^2+Fe_2^3+O_4
+7MI1291 : Plumbojarosite PbFe_3^3+(SO_4)_4(OH)_12
+7MI1292 : Glauconite (K,Na)(Fe^3+,Al,Mg)_2(Si,Al)_4O_10(OH)_2
+7MI1293 : Pyrite FeS_2
+7MI1294 : Pyrite FeS_2
+7MI1295 : Apatite Ca_5(PO_4)_3F
+7MI1296 : Diopside CaMgSi2O6
+7MI1297 : Anthophyllite (Mg,Fe^2+)_7Si_8O_22(OH)_2
+7MI1298 : Almandine Garnet Fe_3Al_2(SiO_4)_3
+7MI1299 : Glaucophane Na_2(Mg,Fe^2+)_3Al_2Si_8O_22(OH)_2
+7MI1300 : Serpentine (Mg,Fe^2+,Ni)Si_2O_5(OH)_4
+7MI1301 : Grossular Ca3Al2(Si04)3
+7MI1302 : Wollastonite CaSiO3
+7MI1303 : Oligoclase (Feldspar) (NaSi,CaAl)AlSi_2O_8
+7MI1304 : Anglesite PbSO_4
+7MI1305 : Kainite MgSO4 * KCL * 3H2O
+7MI1306 : Witherite BaCO_3
+7MI1307 : Kernite Na_2B_4O_6(OH)_2.3H_2O
+7MI1308 : Heulandite (Na,Ca)2-3Al3(Al,Si)2Si13O36.12H2O
+7MI1309 : Pyrophyllite Al_2Si_4O_10(OH)_2
+7MI1310 : Pyrolusite MnO_2
+7MI1311 : Corrensite (Mg,Fe)_9(Si,Al)_8O_20(OH)_10._xH_2O
+7MI1312 : Anthophyllite (Mg,Fe^2+)_7Si_8O_22(OH)_2
+7MI1313 : Pyrolusite MnO_2
+7MI1314 : Hypersthene (Mg,Fe+2)2Si2O6
+7MI1315 : Magnetite Fe^2+Fe_2^3+O_4
+7MI1316 : Clinochlore (Chlorite) (Mg,Al)_6(Si,Al)_4O_10(OH)_8
+7MI1317 : Fluorite CaF_2
+7MI1318 : Clinochlore (Fe+2,Mg)5Al(Si3Al)O10(OH)8
+7MI1319 : Pyrite FeS_2
+7MI1320 : Natrojarosite NaFe_3^3+(SO_4)_2(OH)_6
+7MI1321 : Brucite Mg(OH)_2
+7MI1322 : Azurite Cu_3(CO_3)_2(OH)_2
+7MI1323 : Spodumene LiAlS_2O_6
+7MI1324 : Glauconite (K,Na)(Fe^3+,Al,Mg)_2(Si,Al)_4O_10(OH)_2
+7MI1325 : Hematite alpha Fe_2O_3
+7MI1326 : Sphalerite (Zn,Fe)S
+7MI1327 : Montmorillonite (Na,Ca)_0.33(Al,Mg)_2Si_4O_10(OH)_2.H_2O
+7MI1328 : Columbite Fe^2+Nb_2O_6
+7MI1329 : Muscovite KAl2(Si3Al)O10(OH,F)2
+7MI1330 : Clinozoisite Ca_2Al_3(SiO_4)_3(OH)
+7MI1331 : Chlorite
+7MI1332 : Kyanite Al2SiO5
+7MI1333 : Alunite KAl_3(SO_4)_2(OH)_6
+7MI1334 : Antigorite (Mg, Fe+2)3 Si2O5(OH)4
+7MI1335 : Corundum Al_2O_3
+7MI1336 : Stilbite NaCa_2Al_5Si_3O_36.14H_2O
+7MI1337 : Sepiolite Mg_4Si_6O_15(OH)_2.6H_2O
+7MI1338 : Pyrophyllite Al2Si4010(OH)2
+7MI1339 : Johannsenite Ca(Mn,Fe^2+)(SiO_3)_2
+7MI1340 : Siderite Fe^2+CO_3
+7MI1341 : Gypsum (alabaster) CaSO4.2H20
+7MI1342 : Barite BaSO_4
+7MI1343 : Azurite Cu_3(CO_3)_2(OH)_2
+7MI1344 : Hypersthene (Mg,Fe+2)2Si2O6
+7MI1345 : Chlorite
+7MI1346 : Jarosite KFe_3^3+(SO_4)_2(OH)_6
+7MI1347 : Vermiculite (Mg,Fe+2,Al)3(Al,Si)4O10(OH)2.4H2O
+7MI1348 : Riebeckite Na_2(Fe^2+,Mg)_3,Fe_2^3+Si_8O_22(OH)_2
+7MI1349 : Microcline (Feldspar) (K,Na)AlSi_3O_8
+7MI1350 : Beryl Be3Al2Si6O18
+7MI1351 : Atacamite Cu_2Cl(OH)_3
+7MI1352 : Goethite a-Fe+3O(OH)
+7MI1353 : Tschermigite (NH_4)Al(SO_4)_2.12H_2O
+7MI1354 : Epidote Ca_2(Al,Fe^3+)_3O.SiO_4.Si_2O_7.OH
+7MI1355 : Pyrite FeS_2
+7MI1356 : Microcline (Feldspar) (K,Na)AlSi_3O_8
+7MI1357 : Microcline (Feldspar) (K,Na)AlSi_3O_8
+7MI1358 : Titanite (Sphene) CaTiSiO_5
+7MI1359 : Sulphur S
+7MI1360 : Pyrolusite MnO_2
+7MI1361 : Zircon ZrSiO_4
+7MI1362 : Cryolite Na_3AlF_6
+7MI1363 : Leucite KAlSi2O6
+7MI1364 : Arsenopyrite FeAsS
+7MI1365 : Sodalite Na_8Al_6Si_6O_24Cl_2
+7MI1366 : Sodalite Na_8Al_6Si_6O_24Cl_2
+7MI1367 : Halite NaCl
+7MI1368 : Hemimorphite Zn_4Si_2O_7(OH)_2.H_2O
+7MI1369 : Chlorite
+7MI1370 : Barite BaSO_4
+7MI1371 : Hematite alpha Fe_2O_3
+7MI1372 : Vesuvianite Ca_10(Mg,Fe^2+)_2Al_4(Si_2O_7)_2(SiO_4)_5(OH,F)_4
+7MI1373 : Vesuvianite Ca_10(Mg,Fe^2+)_2Al_4(Si_2O_7)_2(SiO_4)_5(OH,F)_4
+7MI1374 : Cryolite Na_3AlF_6
+7MI1375 : Kaolinite Al2Si2O5(OH)4
+7MI1376 : Fluorite CaF_2
+7MI1377 : Serpentine (Mg,Fe^2+,Ni)Si_2O_5(OH)_4
+7MI1378 : Muscovite KAl_2(Si_3Al)O_10(OH,F)_2
+7MI1379 : Gahnite ZnAl_2O_4
+7MI1380 : Gahnite ZnAl_2O_4
+7MI1381 : Staurolite (Fe+2,Mg,Zn)2Al9(Si,Al)4O22(OH)2
+7MI1382 : Hypersthene (Mg,Fe^2+)_2Si_2O_6
+7MI1383 : Galena PbS
+7MI1384 : Gypsum CaSO_4.2H_2O
+7MI1385 : Montmorillonite (Na,Ca)0.33(Al,Mg)2Si4O10(OH)2.nH2O
+7MI1386 : Arsenopyrite FeAsS
+7MI1387 : Quartz SiO_2
+7MI1388 : Hemimorphite Zn_4Si_2O_7(OH)_2.H_2O
+7MI1389 : Biotite K(Mg,Fe+2)3(Al,Fe+3)Si3O10(OH,F)2
+7MI1390 : Plumbojarosite PbFe_3^3+(SO_4)_4(OH)_12
+7MI1391 : Chlorite
+7MI1392 : Beryl Be_3Al_2Si_6O_18
+7MI1393 : Zircon ZrSiO_4
+7MI1394 : Quartz SiO_2
+7MI1395 : Gypsum (selenite) CaSO4.2H2O
+7MI1396 : Dolomite CaMg(CO_3)_2
+7MI1397 : Howlite Ca_2B_5SiO_9(OH)_5
+7MI1398 : Aphthitalite (K,Na)_3Na(SO_4)_2
+7MI1399 : Quartz SiO_2
+7MI1400 : Cassiterite SnO_2
+7MI1401 : Glauberite Na_2Ca(SO_4)_2
+7MI1402 : Magnesiochromite MgCr_2O_4
+7MI1403 : Aragonite CaCO3
+7MI1404 : Hematite alpha Fe_2O_3
+7MI1405 : Magnesite MgCO_3
+7MI1406 : Hematite alpha Fe_2O_3
+7MI1407 : Cerussite PbCO_3
+7MI1408 : Chromite Fe+2Cr2O4
+7MI1409 : Fluorite CaF_2
+7MI1410 : Arsenopyrite FeAsS
+7MI1411 : Heulandite (Na,Ca)2-3Al3(Al,Si)2Si13O36.12H2O
+7MI1412 : Epidote Ca_2(Al,Fe^3+)_3O.SiO_4.Si_2O_7.OH
+7MI1413 : Rutile TiO_2
+7MI1414 : Antlerite Cu_3(SO_4)(OH)_4
+7MI1415 : Corundum Al_2O_3
+7MI1416 : Analcime NaAlSi_2O_6.H_2O
+7MI1417 : Cryolite Na_3AlF_6
+7MI1418 : Fluorite CaF_2
+7MI1419 : Corundum Al_2O_3
+7MI1420 : Glaucophane Na_2(Mg,Fe^2+)_3Al_2Si_8O_22(OH)_2
+7MI1421 : Lepidolite K(Li,Al)3(Si,Al)_4O_10(F,OH)_2
+7MI1422 : Chalcopyrite CuFeS_2
+7MI1423 : Cookeite LiAl_4(Si_3Al)O_10(OH)_8
+7MI1424 : Cassiterite SnO_2
+7MI1425 : Cordierite Mg_2Al_3(Si_5Al)O_18
+7MI1426 : Fluorite CaF_2
+7MI1427 : Olivine (Fo92) (Fe+2,Mg)2SiO4
+7MI1428 : Dolomite CaMg(CO_3)_2
+7MI1429 : Riebeckite Na_2(Fe^2+,Mg)_3,Fe_2^3+Si_8O_22(OH)_2
+7MI1430 : Forsterite Mg_2SiO_4
+7MI1431 : Tourmaline Na(Mg_3,Fe_3^2+)Al_6(BO_3)_3Si_6O_18(OH)_4
+7MI1432 : Vermiculite (Mg,Fe^2+,Al)_3(Al,Si)_4O_10(OH)_2.4H_2O
+7MI1433 : Spodumene LiAlSi2O6
+7MI1434 : Anhydrite CaSO_4
+7MI1435 : Almandine Fe3+2Al2(SiO4)3
+7MI1436 : Witherite BaCO_3
+7MI1437 : Magnesiochromite MgCr_2O_4
+7MI1438 : Microcline KAlSi3O8
+7MI1439 : Fayalite Fe_2SiO_4
+7MI1440 : Zincite (Zn,Mn)O
+7MI1441 : Oligoclase (Feldspar) (NaSi,CaAl)AlSi_2O_8
+7MI1442 : Epidote Ca_2(Al,Fe^3+)_3O.SiO_4.Si_2O_7.OH
+7MI1443 : Cookeite LiAl_4(Si_3Al)O_10(OH)_8
+7MI1444 : Ulexite NaCaB_5O_6(OH)_6.5H_2O
+7MI1445 : Fluorite CaF_2
+7MI1446 : Lepidolite K(Li,Al)3(Si,Al)_4O_10(F,OH)_2
+7MI1447 : Corundum Al_2O_3
+7MI1448 : Enstatite Mg2Si2O6
+7MI1449 : Chlorite
+7MI1450 : Clinozoisite Ca_2Al_3(SiO_4)_3(OH)
+7MI1451 : Phlogopite KMg3Si3AlO10(F, OH)2
+7MI1452 : Spodumene LiAlSi2O6
+7MI1453 : Halite NaCl
+7MI1454 : Anhydrite CaSO4
+7MI1455 : Trona Na_3(CO_3)(HCO_3).2H_2O
+7MI1456 : Clinochlore (Mg,Fe+2)5Al(Si3Al)O10(OH)8
+7MI1457 : Jarosite KFe_3^3+(SO_4)_2(OH)_6
+7MI1458 : Bustamite (Mn,Ca)3Si3O9
+7MI1459 : Cummingtonite (Mg,Fe^2+)_7Si_8O_22(OH)_2
+7MI1460 : Rhodochrosite MnCO_3
+7MI1461 : Fayalite Fe_2SiO_4
+7MI1462 : Dolomite CaMg(CO_3)_2
+7MI1463 : Smithsonite PbCO_3
+7MI1464 : Nontronite Na_0.33Fe_2^3+(Si,Al)_4O_10(OH)_2.H_2O
+7MI1465 : Microcline (Feldspar) (K,Na)AlSi_3O_8
+7MI1466 : Spodumene LiAlS_2O_6
+7MI1467 : Olivine (Fo11) (Fe+2,Mg)2SiO4
+7MI1468 : Labradorite (Feldspar) (NaSi,CaAl)AlSi_2O_8
+7MI1469 : Andalusite Al2SiO5
+7MI1470 : Saponite (Ca/2,Na)0.33(Mg,Fe+2)3(Si,Al)4O10(OH)2.H2O
+7MI1471 : Orthoclase KAlSi3O8
+7MI1472 : Erionite (K2,Ca,Na2)2Al4Si14O36.15H2O
+7MI1473 : Chabazite CaAl_2Si_4O_12.6H_2O
+7MI1474 : Spessartine Mn3Al2 (SiO4)3
+7MI1475 : Sepiolite Mg_4Si_6O_15(OH)_2.6H_2O
+7MI1476 : Pyrophyllite Al_2Si_4O_10(OH)_2
+7MI1477 : Azurite Cu_3(CO_3)_2(OH)_2
+7MI1478 : Anthophyllite (Mg,Fe^2+)_7Si_8O_22(OH)_2
+7MI1479 : Topaz Al_2SiO_4(F,OH)_2
+7MI1480 : Natrojarosite NaFe_3^3+(SO_4)_2(OH)_6
+7MI1481 : Siderite Fe^2+CO_3
+7MI1482 : Anorthite (Feldspar) (NaSi,CaAl)AlSi_2O_8
+7MI1483 : Pyrite FeS_2
+7MI1484 : Ferroaxinite Ca_2Fe^2+Al_2BSi_4O_15(OH)
+7MI1485 : Cordierite Mg2Al4Si5O18
+7MI1486 : Tschermigite (NH_4)Al(SO_4)_2.12H_2O
+7MI1487 : Serpentine (Mg,Fe^2+,Ni)Si_2O_5(OH)_4
+7MI1488 : Witherite BaCO_3
+7MI1489 : Scorodite Fe^3+AsO_4.2H_2O
+7MI1490 : Actinolite Ca_2(Mg,Fe^2+)_5Si_8O_22(OH)_2
+7MI1491 : Alunite (potassium alunite) KAl3(SO4)2(OH)6
+7MI1492 : Talc Mg_3Si_4O_10(OH)_2
+7MI1493 : Ferroaxinite Ca_2Fe^2+Al_2BSi_4O_15(OH)
+7MI1494 : Zincite (Zn,Mn)O
+7MI1495 : Goethite alpha Fe^3+O(OH)
+7MI1496 : Dolomite CaMg(CO3)2
+7MI1497 : Riebeckite Na_2(Fe^2+,Mg)_3,Fe_2^3+Si_8O_22(OH)_2
+7MI1498 : Wollastonite CaSiO_3
+7MI1499 : Nontronite Na_0.33Fe_2^3+(Si,Al)_4O_10(OH)_2.H_2O
+7MI1500 : Orthoclase (Feldspar) (K,Na)AlSi_3O_8
+7MI1501 : Natrolite Na_2Al_2Si_3O_10.2H_2O
+7MI1502 : Natrolite Na2Al2Si3O10.2H2O
+7MI1503 : Topaz Al2SiO4(F,OH)2
+7MI1504 : Brucite Mg(OH)_2
+7MI1505 : Andesine (Feldspar) (NaSi,CaAl)AlSi_2O_8
+7MI1506 : Topaz Al_2SiO_4(F,OH)_2
+7MI1507 : Glaucophane Na_2(Mg,Fe^2+)_3Al_2Si_8O_22(OH)_2
+7MI1508 : Marcasite FeS_2
+7MI1509 : Kaolinite Al_2Si_2O_5(OH)_4
+7MI1510 : Topaz Al_2SiO_4(F,OH)_2
+7MI1511 : Apatite Ca_5(PO_4)_3F
+7MI1512 : Lizardite Mg3Si2O5(OH)4
+7MI1513 : Albite (Feldspar) (K,Na)AlSi_3O_8
+7MI1514 : Talc Mg3Si4O10(OH)2
+7MI1515 : Talc Mg_3Si_4O_10(OH)_2
+7MI1516 : Marcasite FeS_2
+7MI1517 : Quartz SiO_2
+7MI1518 : Muscovite KAl2(Si3Al)O10(OH,F)2
+7MI1519 : Anglesite PbSO_4
+7MI1520 : Sepiolite Mg4Si6O15(OH)2.6H2)
+7MI1521 : Tschermigite (NH_4)Al(SO_4)_2.12H_2O
+7MI1522 : Olivine (Fo92) (Fe+2,Mg)2SiO4
+7MI1523 : Vesuvianite Ca_10(Mg,Fe^2+)_2Al_4(Si_2O_7)_2(SiO_4)_5(OH,F)_4

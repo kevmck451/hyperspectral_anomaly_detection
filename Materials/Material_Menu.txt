@@ -36,6 +36,7 @@
 2WR0007 : Medium Granular Snow
 2WR0008 : Fine Snow
 2WR0009 : Sea water
+2WR0010 : Clouds
 3SL0001 : Brown loamy fine sand
 3SL0002 : 64801.34
 3SL0003 : 12030.135

@@ -1,0 +1,107 @@
+Documentation for the Recon Framework
+Created by Kevin McKenzie
+Contributors: Thomas Watson, Mazharul Hossain
+University of Memphis: 2022
+-----------------------------------------------------------------------
+Recon.py
+
+    All classes/functions for running anomaly and target detection algorithms to assist in the analysis of Hyperspectral Images for the purpose of Reconnaissance.
+
+    rx_seg():
+
+    Libraries Used: spectral
+
+-----------------------------------------------------------------------
+
+Original Material Files found at: https://speclib.jpl.nasa.gov
+The material files are found in Materials/Material Data
+You can use the Materials_Menu.txt file to easily look through the material's and their unique material ID which is used to create a material object
+
+Materials.py
+    from Materials.Materials import Material_Lib
+    from Materials.Materials import Material as m
+
+    Material_Lib class: Imports all materials as objects and organizes them by type.
+
+        filter(x_y) function: removes bands outside of the range provided
+            Arguments: x_y: list containing band range to keep (nanometers)
+            Ex: x_y = [400, 1000]
+            Removes all bands outside of 400 – 1000 nanometers
+
+    Material class: imports a material from file using the material’s ID. This can be found in the material menu.
+        Ex: concrete = m(‘1MM0029’)
+        Creates a concrete material object
+
+        Each material object has an info dictionary with all info from material’s file, band dictionary with keys being band in nanometers and values being the intensity from that band.
+        Ex: concrete.infodict		concrete.banddict
+
+        graph_material(single): Graph the raw material’s spectral profile
+            Arguments: If graphing a single material then single = True and the function will run plt.show(). If you are graphing many materials, then set single = False and include plt.show() after your loop.
+                Ex: Single Material
+                    concrete.graph_material(True)
+                Ex: Several Materials
+                    mat_lib = Material_Lib()
+                    for x in mat_lib.manmade_list:
+                        x.graph_material(False)
+                    plt.show()
+
+        map_material_to_image(image_wavelength_list) function: maps the material’s profile to the number of bands found in the image you’re using.
+            Arguments: image_wavelength_list: list containing the bands used in the image. If using the Hyperspectral class then this could be Hyperspectral.wavelengths
+
+        graph_mapped_materials(image_wavelength_list): Graph the raw material’s spectral profile and the mapped profile that fits the band from image
+            Arguments: image_wavelength_list: list containing the bands used in the image. If using the Hyperspectral class then this could be Hyperspectral.wavelengths
+            This will only work if you have already mapped a material to an image using the map_material_to_image function
+
+    Libraries Used: matplotlib.pyplt as plt, os
+    Process_Files.py: this file was used to rename the material’s file name to their material ID
+
+-----------------------------------------------------------------------
+
+Hyperspectral.py
+    from Hyperspectral import Hyperspectral as h
+
+    Hyperspectral class: imports a hyperspectral file using the file path and  creates a hyperspectral object
+        Ex: image = h(‘Documents/File’)
+        Creates hyperspectral image object
+        Currently, this class accepts files Unix Executable Files with a .hdr file with the same name
+        HDR Files specs:
+
+        Each Hyperspectral object has:
+            h.file_path = raw file path given as argument
+            h.data = array of values for each band
+            h.hdr_file_path = file path the of the hdr file
+            h.header_file_dict = dictionary with header file info
+            h.img_x = number of samples (# of pixels in x direction – left of image is 0)
+            h.img_y = number of lines (# of pixels in y direction – top of image is 0)
+            h.img_bands = number of bands used in image
+            h.wavelength_dict = dictionary of wavelengths. Keys are band # and values are band in nm
+            h.wavelengths = list of wavelengths as integers (original values rounded to nearest int)
+            h.anom_record = list of anomalies added to image
+
+        display_image(): Function to display 6 bands of the image. To adjust the bands displayed or change color scale visit the function code
+
+        display_RGB(): Function to display a Red band, Green band, Blue band and RGB overlay image
+
+        display_Veg_Index(): Function to display the Vegetation Index: NDVI and SAVI
+
+        add_anomaly_1(material, location, size, scale_factor): Function to add material anomaly without adjusting the material’s profile at all.
+            Arguments: material object, location as list with 2 coordinates which is the center of anomaly [x, y], size is the number of pixels from center the anomaly will extend, and scale_factor lets you adjust the material’s profile values linearly by increasing it to a number larger than 1.
+
+        add_anomaly_2(material, location, size): Function to add material anomaly to image. The material’s profile is stretched based on the min/max values from single pixel at the location coordinates. This is the recommended function for adding an anomaly as it seems to best match the image’s values
+
+        add_anomaly_3(material, location, size): Function to add material anomaly to image. The material’s profile is stretched based on the min/max values from the area being replaced based on the location coordinates.
+
+        export('Title'): Function to export the image to a file including copying the .hdr file from original image.
+
+        crop(dimension): Function to crop image.
+            Arguments: dimension is a list with [x1, x2, y1, y2]
+
+        graph_spectra_pixel/area(location):
+
+        create_material(location, filename, material_info):
+
+    Libraries Used: matplotlib.gridspec as gridspec, sklearn import preprocessing, matplotlib.pyplot as plt, copy import deepcopy, pandas as pd, numpy as np, shutil
+
+
+
+

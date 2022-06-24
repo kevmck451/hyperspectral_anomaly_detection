@@ -1,5 +1,6 @@
 #Hyperspectral is used to create HSI objects and functions
 
+from Materials.Materials import Material as m
 import matplotlib.gridspec as gridspec
 from sklearn import preprocessing
 import matplotlib.pyplot as plt
@@ -8,10 +9,8 @@ import pandas as pd
 import numpy as np
 import shutil
 
-
 class Hyperspectral:
-    export_tally = 0
-    anom_record = []
+
     wavelength_color_dict = {
         "visible-violet": {'lower': 365, 'upper': 450, 'color': 'violet'},
         "visible-blue": {'lower': 450, 'upper': 485, 'color': 'blue'},
@@ -25,24 +24,26 @@ class Hyperspectral:
     }
 
     def __init__(self, raw_file_path):
+        self.anom_record = []
         self.file_path = raw_file_path
         self.data = open(raw_file_path, 'rb') #with open as data
         self.data = np.frombuffer(self.data.read(), ">i2").astype(np.float32) #if with open, remove self from data
         self.hdr_file_path = raw_file_path + '.hdr'
         hdr_file = open((raw_file_path + '.hdr'), 'r', errors='ignore')
         self.header_file_dict = {}
-        for i in range(1, 19):
-            line = hdr_file.readline()
-            self.hdr_title = line
-            self.hdr_title = self.hdr_title.strip().upper()
+        for i in range(1, 20):
             if i == 1:
-                continue
-            line = line.split('=')
-            j = line[0]
-            j = j.strip()
-            k = line[1]
-            k = k.strip()
-            self.header_file_dict.update({j : k})
+                line = hdr_file.readline()
+                self.hdr_title = line
+                self.hdr_title = self.hdr_title.strip().upper()
+            if i > 1:
+                line = hdr_file.readline()
+                line = line.split('=')
+                j = line[0]
+                j = j.strip()
+                k = line[1]
+                k = k.strip()
+                self.header_file_dict.update({j : k})
 
         self.img_x = int(self.header_file_dict.get('samples'))
         self.img_y = int(self.header_file_dict.get('lines'))
@@ -58,6 +59,9 @@ class Hyperspectral:
             self.wavelengths.append(wave)
             wave = round(wave)
             self.wavelengths_dict.update({i+1 : wave})
+        hdr_file.readline()
+        hdr_file.readline()
+        #part to read the fwhm
 
         self.data = self.data.reshape(self.img_y, self.img_x, self.img_bands)
 
@@ -193,40 +197,19 @@ class Hyperspectral:
 
     # Function to display the Vegetation Index: NDVI and SAVI
     def display_Veg_Index(self):
-        # function to classify bands
-        between = lambda wavelength, region: region['lower'] < wavelength <= region['upper']
-
-        def classifier(band):
-            for region, limits in Hyperspectral.wavelength_color_dict.items():
-                if between(band, limits):
-                    return (region)
-
-        # lists of band numbers, band centers, and em classes
-        band_numbers = [i for i in range(1, len(self.wavelengths) + 1)]
-        em_regions = [classifier(b) for b in self.wavelengths]
-
-        # data frame describing bands
-        bands = pd.DataFrame({
-            "Band number": band_numbers,
-            "Band center": self.wavelengths,
-            "EM region": em_regions}, index=band_numbers).sort_index()
-
-        # function finds band in our table with wavelength nearest to input r,g,b wavelengths
-        get_band_number = lambda w: bands.iloc[(bands["Band center"] - w).abs().argsort()[1]]
-
-        scale8bit = lambda a: ((a - a.min()) * (1 / (a.max() - a.min()) * 255)).astype('uint8')
         # print(self.wavelengths_dict)
         # find bands nearest to NDVI red and nir wavelengths
-        ndvi_red, ndvi_nir = get_band_number(685), get_band_number(900)
-        ndvi_red = 36
-        ndvi_nir = 58
-        R685 = self.data[:, :, ndvi_red]
-        R900 = self.data[:, :, ndvi_nir]
-        R685, R900 = R685.astype('float64'), R900.astype('float64')
-        R685[R685 == -50.0], R900[R900 == -50.0] = np.nan, np.nan
+        # OG bands used 36 (685) / 58 (900)
+        # Trying 30-650 / 45-770
+        ndvi_red = 32
+        ndvi_nir = 52
+        RED = self.data[:, :, ndvi_red]
+        NIR = self.data[:, :, ndvi_nir]
+        RED, NIR = RED.astype('float64'), NIR.astype('float64')
+        RED[RED == -50.0], NIR[NIR == -50.0] = np.nan, np.nan
 
         # calculate ndvi
-        ndvi_array = (R900 - R685) / (R900 + R685)
+        ndvi_array = (NIR - RED) / (NIR + RED)
 
         R750_b = 43
         R705_b = 38
@@ -238,7 +221,7 @@ class Hyperspectral:
 
         L = 0.5
         # calculate savi
-        savi_array = (1 + L) * ((R900 - R685) / (R900 + R685 + L));
+        savi_array = (1 + L) * ((NIR - RED) / (NIR + RED + L));
 
         titlefont = {'fontsize': 16, 'fontweight': 2,
                      'verticalalignment': 'baseline', 'horizontalalignment': 'center'}
@@ -251,10 +234,9 @@ class Hyperspectral:
         ndvi_array_temp = np.zeros(ndvi_array.shape, dtype=float)
         ndvi_array_temp[ndvi_array >= 0.1] = ndvi_array[ndvi_array >= 0.1]
 
-        plotdict1 = {'NDVI (threshold)\n(R900-R685)/(R900+R685)': {'subplot': 0, 'array': ndvi_array_temp},
-                     'NDVI\n(R900-R685)/(R900+R685)': {'subplot': 1, 'array': ndvi_array},
-                     #  'SR\nR750/R705': { 'subplot': 1, 'array': sr_array },
-                     'SAVI\nL*(R900-R685)/(R900+R685+L)': {'subplot': 2, 'array': savi_array}}
+        plotdict1 = {'NDVI (threshold)': {'subplot': 0, 'array': ndvi_array_temp},
+                     'NDVI': {'subplot': 1, 'array': ndvi_array},
+                     'SAVI': {'subplot': 2, 'array': savi_array}}
 
         # initialize plot and add ax element for each array in plotdict
         fig2 = plt.figure()
@@ -277,7 +259,7 @@ class Hyperspectral:
 
         for i in range(0, len(mat)):
             self.data[y_list[1]:y_list[0], x_list[0]:x_list[1], i] = (mat[i]*scale_factor)
-        Hyperspectral.anom_record.append('A1_{}'.format(material.material_id))
+        self.anom_record.append('A1_{}'.format(material.material_id))
 
     # Function to add anomaly using material spectral mapping to image using image pixel
     def add_anomaly_2(self, material, location, size):
@@ -296,7 +278,7 @@ class Hyperspectral:
 
         for i in range(0, len(mat)):
             self.data[y_list[1]:y_list[0], x_list[0]:x_list[1], i] = adjusted[i]
-        Hyperspectral.anom_record.append('A2_{}'.format(material.material_id))
+        self.anom_record.append('A2_{}'.format(material.material_id))
 
     # Function to add anomaly using material spectral mapping to image using image area
     def add_anomaly_3(self, material, location, size):
@@ -315,23 +297,26 @@ class Hyperspectral:
 
         for i in range(0, len(mat)):
             self.data[y_list[1]:y_list[0], x_list[0]:x_list[1], i] = adjusted[i]
-        Hyperspectral.anom_record.append('A3_{}'.format(material.material_id))
+        self.anom_record.append('A3_{}'.format(material.material_id))
 
     # Function to export image to a file
-    def export(self):
+    def export(self, image_name):
         export_im = deepcopy(self)
         save_to = 'Anomaly Files/'
-        image_name = 'AVIRIS'
-        for x in Hyperspectral.anom_record:
-            image_name += '_' + x
-        image_name = image_name + '_' + str(Hyperspectral.export_tally)
         data = export_im.data.astype(">i2")
-
         f = open(save_to + image_name, "wb")
         f.write(data)
+        g = open(save_to + image_name + '.hdr', 'w')
+        g.writelines('ENVI\n')
+        for x, y in self.header_file_dict.items():
+            d = x, ' = ', y, '\n'
+            g.writelines(d)
+        g.writelines('wavelength = {\n')
+        for x in self.wavelengths:
+            d = str(x), ' ,\n'
+            g.writelines(d)
 
-        shutil.copyfile(self.hdr_file_path, (save_to + image_name + '.hdr'))
-        Hyperspectral.export_tally += 1
+        # shutil.copyfile(self.hdr_file_path, (save_to + image_name + '.hdr'))
 
     # Function to get metadata for single pixel in area we are going to edit
     def pixel_metadata(self, x, y):
@@ -390,5 +375,83 @@ class Hyperspectral:
         min_max_av_list = [min, max, av]
 
         return min_max_av_list
+
+    # Function to crop the image
+    def crop(self, dimension):
+        im_crop = deepcopy(self)
+
+        new_data = np.zeros(shape = (dimension[3]-dimension[2],dimension[1]-dimension[0], self.img_bands))
+
+        for i in range(self.img_bands):
+            new_data[:,:,i] = self.data[dimension[2]:dimension[3], dimension[0]:dimension[1], i]
+
+        im_crop.data = new_data
+        im_crop.img_x = dimension[1] - dimension[0]
+        im_crop.img_y = dimension[3] - dimension[2]
+        im_crop.header_file_dict['samples'] = str(im_crop.img_x)
+        im_crop.header_file_dict['lines'] = str(im_crop.img_y)
+        return im_crop
+
+    # Function to create a material from single pixel in image
+    def graph_spectra_pixel(self, location, title, single):
+        values_single = []
+        for i in range(224):
+            values_single.append(self.data[location[1], location[0], i])
+
+        plt.plot(list(self.wavelengths_dict.values()), values_single, linewidth=2, label = title)
+        plt.xlabel('Bands')
+        plt.ylabel('Values')
+        plt.title('New Material', fontsize=20)
+        plt.legend(loc='upper right')
+        if single:
+            plt.show()
+
+    # Function to create a material from area in image
+    def graph_spectra_area(self, location):
+        area_values = []
+        l = []
+        for i in range(224):
+            for j in range(location[2], location[3]):
+                for k in range(location[0], location[1]):
+                    l.append(self.data[j, k, i])
+
+            nums = np.array(l)
+            av = nums.mean()
+            area_values.append(av)
+            l = []
+
+        plt.plot(list(self.wavelengths_dict.values()), area_values, linewidth=2)
+        plt.xlabel('Bands')
+        plt.ylabel('Values')
+        plt.title('New Material', fontsize=20)
+        # plt.legend(loc='upper right')
+        plt.show()
+
+    # Function to create new material text file
+    def create_material(self, location, filename, material_info):
+        #check to see if file already exists
+
+        values_single = []
+        for i in range(224):
+            values_single.append(self.data[location[1], location[0], i])
+        g = open('Materials/Material Data/' + filename, 'w')
+        for i in range(len(m.infonames)):
+            d = m.infonames[i], ': ', material_info[i], '\n'
+            g.writelines(d)
+        g.writelines('\n')
+        wave = list(self.wavelengths_dict.values())
+        for i in range(len(self.wavelengths)):
+            d = str((wave[i]/1000)), ' ', str(values_single[i]), '\n'
+            g.writelines(d)
+        g.close()
+
+
+
+
+
+
+
+
+
 
 

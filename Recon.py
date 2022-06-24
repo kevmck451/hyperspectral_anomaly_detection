@@ -2,20 +2,10 @@
     #Anomaly Detection Algorithms
     #Algorithm Test using real and synthesizing anomalies
 
-from Materials.Materials import Material as m
-from Materials.Materials import Material_Lib
-from Hyperspectral import Hyperspectral as h
-
-import matplotlib.gridspec as gridspec
 import matplotlib.pyplot as plt
 from scipy.stats import chi2
-import pandas as pd
 import numpy as np
 import spectral
-import affine
-import json
-import math
-import re
 
 class Recon:
 

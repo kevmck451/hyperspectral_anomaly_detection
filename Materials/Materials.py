@@ -2,9 +2,8 @@ import matplotlib.pyplot as plt
 import os
 
 class Material_Lib:
-    type_list = ['manmade', 'meteorites', 'mineral', 'non photosynthetic vegetation', 'vegetation', 'rock', 'soil',
-                 'water']
-    material_type_abrev = ['MM', 'ME', 'MI', 'NV', 'VG', 'RK', 'SL', 'WR']
+    type_list = ['manmade','meteorites','mineral','non photosynthetic vegetation','vegetation','rock','soil','water','custom']
+    material_type_abrev = ['MM', 'ME', 'MI', 'NV', 'VG', 'RK', 'SL', 'WR', 'CM']
 
     def __init__(self):
 
@@ -18,12 +17,12 @@ class Material_Lib:
         self.rock_list = []
         self.soil_list = []
         self.water_list = []
-
+        self.custom_list = []
         for filename in os.listdir(directory):
             f = os.path.join(directory, filename)
             if os.path.isfile(f):
                 try:
-                    self.material_list_full.append(Material(f))
+                    self.material_list_full.append(Material(filename[:-4]))
                 except:
                     continue
 
@@ -71,6 +70,8 @@ class Material_Lib:
                 self.soil_list.append(y)
             elif z == Material_Lib.type_list[7]:
                 self.water_list.append(y)
+            elif z == Material_Lib.type_list[8]:
+                self.custom_list.append(y)
             else:
                 continue
 
@@ -80,6 +81,7 @@ class Material:
                  'First Column', 'Second Column', 'X Units', 'Y Units', 'First X Value',
                  'Last X Value', 'Number of X Values', 'Additional Info']
     directory = 'Materials/Material Data/'
+
     def __init__(self, material_id):
         self.material_id = material_id
         materialfile = open((Material.directory + material_id + '.txt'), 'r', errors='ignore')
@@ -116,6 +118,7 @@ class Material:
     #Maps the material's profile to the number of image data bands
     def map_material_to_image(self, image_wavelength_list):
         mapped_data = []
+        new_dict = {}
         for wave in image_wavelength_list:
             a = wave
             found = False

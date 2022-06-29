@@ -1,3 +1,6 @@
+#Materials is used to create a Material Library and Material Objects
+#Kevin McKenzie 2022
+
 import matplotlib.pyplot as plt
 import os
 

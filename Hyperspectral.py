@@ -1,4 +1,5 @@
 #Hyperspectral is used to create HSI objects and functions
+#Kevin McKenzie 2022
 
 from Materials.Materials import Material as m
 import matplotlib.gridspec as gridspec
@@ -8,6 +9,7 @@ from copy import deepcopy
 import pandas as pd
 import numpy as np
 import shutil
+import random
 
 class Hyperspectral:
 
@@ -55,7 +57,10 @@ class Hyperspectral:
         for i in range(0, int(self.img_bands)):
             line = hdr_file.readline()
             line = line.split(',')
-            wave = float(line[0].strip())
+            wave = line[0].strip()
+            if wave.endswith('}'):
+                line = wave.split('}')
+            wave = float(line[0])
             self.wavelengths.append(wave)
             wave = round(wave)
             self.wavelengths_dict.update({i+1 : wave})
@@ -79,7 +84,7 @@ class Hyperspectral:
         plt.figure(figsize=(18, 8))
         plt.subplot(161)
         plt.imshow(self.data[:, :, band_list[0]], cmap=plt.get_cmap(color_map), vmin=vmin, vmax=vmax)
-        plt.title('IF-Band: {} nm'.format(self.wavelengths_dict.get(band_list[0])), fontsize=font_size)
+        plt.title('IR-Band: {} nm'.format(self.wavelengths_dict.get(band_list[0])), fontsize=font_size)
         plt.axis('off')
         plt.subplot(162)
         plt.imshow(self.data[:, :, band_list[1]], cmap=plt.get_cmap(color_map), vmin=vmin, vmax=vmax)
@@ -107,36 +112,10 @@ class Hyperspectral:
 
     # Function to display the R Band, G Band, B Band, and RGB Images
     def display_RGB(self):
-
-        # function to classify bands
-        between = lambda wavelength, region: region['lower'] < wavelength <= region['upper']
-
-        def classifier(band):
-            for region, limits in Hyperspectral.wavelength_color_dict.items():
-                if between(band, limits):
-                    return (region)
-
-        # lists of band numbers, band centers, and em classes
-        band_numbers = [i for i in range(1, len(self.wavelengths) + 1)]
-        em_regions = [classifier(b) for b in self.wavelengths]
-
-        # data frame describing bands
-        bands = pd.DataFrame({
-            "Band number": band_numbers,
-            "Band center": self.wavelengths,
-            "EM region": em_regions}, index=band_numbers).sort_index()
-
-        # function finds band in our table with wavelength nearest to input r,g,b wavelengths
-        get_band_number = lambda w: bands.iloc[(bands["Band center"] - w).abs().argsort()[1]]
-
-        scale8bit = lambda a: ((a - a.min()) * (1 / (a.max() - a.min()) * 255)).astype('uint8')
         # print(self.wavelengths_dict)
-        # get band numbers. use R: 600, G: 500, B: 400
-
-        # Ri, Gi, Bi = get_band_number(667.5), get_band_number(540), get_band_number(470)
-        Ri = 25  # 35 #25 #29 #32
-        Gi = 20  # 20 #15 #17 #19
-        Bi = 15  # 17 #5 #10 #12
+        Ri = 29 #30 #25  # 35 #25 #29 #32
+        Gi = 18 #20 #20  # 20 #15 #17 #19
+        Bi = 8 #10 #15  # 17 #5 #10 #12
 
         # get r,g,b arrays
         Ra = self.data[:, :, Ri]
@@ -147,6 +126,7 @@ class Hyperspectral:
         Ra[Ra == -50], Ga[Ga == -50], Ba[Ba == -50] = 0, 0, 0
 
         # get 8bit arrays for each band
+        scale8bit = lambda a: ((a - a.min()) * (1 / (a.max() - a.min()) * 255)).astype('uint8')
         Ra8, Ga8, Ba8 = scale8bit(Ra), scale8bit(Ga), scale8bit(Ba)
 
         # set rescaled fill pixels back to 0 for each array
@@ -171,28 +151,10 @@ class Hyperspectral:
             # reshape to 2d and add back to rgb_stack
             rgb_stack[:, :, i] = b_equalized.reshape(b.shape)
 
-        # %matplotlib inline
-        titlefont = {'fontsize': 16, 'fontweight': 2,
-                     'verticalalignment': 'baseline', 'horizontalalignment': 'center'}
-
         # plot. all of this is matplotlib ---------->
-        plt.rcParams['figure.figsize'] = [12, 8]
-        gs = gridspec.GridSpec(1, 4)
-
-        plotdict = {'Red': {'subplot': 0, 'array': rgb_stack[:, :, 0], 'colormap': 'Reds_r'},
-                    'Green': {'subplot': 1, 'array': rgb_stack[:, :, 1], 'colormap': 'Greens_r'},
-                    'Blue': {'subplot': 2, 'array': rgb_stack[:, :, 2], 'colormap': 'Blues_r'},
-                    'RGB': {'subplot': 3, 'array': rgb_stack, 'colormap': None}}
-
-        # initialize plot and add ax element for each array in plotdict
-        fig1 = plt.figure()
-        for band, data in plotdict.items():
-            clim = None if band == "RGB" else (0, 255)
-            ax = fig1.add_subplot(gs[0, data['subplot']])
-            p = ax.imshow(data['array'], cmap=data['colormap'], clim=clim)
-            ax.set_title(band, pad=20, fontdict=titlefont)
-            plt.axis('off')
-        plt.imshow(rgb_stack)
+        plt.figure(figsize=(18, 8))
+        plt.imshow(rgb_stack, cmap=plt.get_cmap(None))
+        plt.axis('off')
         plt.show()
 
     # Function to display the Vegetation Index: NDVI and SAVI
@@ -211,44 +173,15 @@ class Hyperspectral:
         # calculate ndvi
         ndvi_array = (NIR - RED) / (NIR + RED)
 
-        R750_b = 43
-        R705_b = 38
-        R750 = self.data[:, :, R750_b]
-        R705 = self.data[:, :, R705_b]
-
-        # calculate sr
-        sr_array = R750 / R705
-
-        L = 0.5
-        # calculate savi
-        savi_array = (1 + L) * ((NIR - RED) / (NIR + RED + L));
-
-        titlefont = {'fontsize': 16, 'fontweight': 2,
-                     'verticalalignment': 'baseline', 'horizontalalignment': 'center'}
-
-        plt.rcParams['figure.figsize'] = [12, 8]
-
         # plot. all of this is matplotlib ---------->
-        gs = gridspec.GridSpec(1, 3)
-
         ndvi_array_temp = np.zeros(ndvi_array.shape, dtype=float)
         ndvi_array_temp[ndvi_array >= 0.1] = ndvi_array[ndvi_array >= 0.1]
 
-        plotdict1 = {'NDVI (threshold)': {'subplot': 0, 'array': ndvi_array_temp},
-                     'NDVI': {'subplot': 1, 'array': ndvi_array},
-                     'SAVI': {'subplot': 2, 'array': savi_array}}
-
-        # initialize plot and add ax element for each array in plotdict
-        fig2 = plt.figure()
-        for b, data in plotdict1.items():
-            ax = fig2.add_subplot(gs[0, data['subplot']])
-
-            p = ax.imshow(data['array'], cmap=plt.get_cmap("RdYlGn"))
-            ax.set_title(b, pad=5, fontdict=titlefont)
-            plt.colorbar(p)
-            plt.axis('off')
-
-        fig2.subplots_adjust(wspace=0, hspace=0)
+        plt.figure(figsize=(18, 8))
+        plt.imshow(ndvi_array_temp, cmap=plt.get_cmap("RdYlGn"))
+        plt.title('Vegetation Index')
+        plt.colorbar()
+        plt.axis('off')
         plt.show()
 
     # Function to add anomaly using material & image as is
@@ -256,9 +189,13 @@ class Hyperspectral:
         mat = material.map_material_to_image(list(self.wavelengths_dict.values()))
         x_list = [(location[0] - size), (location[0] + size)]
         y_list = [location[1] + size, location[1] - size]
+        adjusted = []
+        for x in mat:
+            adjusted.append(x * scale_factor)
 
+        # Add the anomaly in the right shape
         for i in range(0, len(mat)):
-            self.data[y_list[1]:y_list[0], x_list[0]:x_list[1], i] = (mat[i]*scale_factor)
+            self.data[y_list[1]:y_list[0], x_list[0]:x_list[1], i] = adjusted[i]
         self.anom_record.append('A1_{}'.format(material.material_id))
 
     # Function to add anomaly using material spectral mapping to image using image pixel
@@ -276,6 +213,7 @@ class Hyperspectral:
             x = round(x)
             adjusted.append(x)
 
+        #Add the anomaly in the right shape
         for i in range(0, len(mat)):
             self.data[y_list[1]:y_list[0], x_list[0]:x_list[1], i] = adjusted[i]
         self.anom_record.append('A2_{}'.format(material.material_id))
@@ -295,28 +233,104 @@ class Hyperspectral:
             x = round(x)
             adjusted.append(x)
 
+        # Add the anomaly in the right shape
         for i in range(0, len(mat)):
             self.data[y_list[1]:y_list[0], x_list[0]:x_list[1], i] = adjusted[i]
         self.anom_record.append('A3_{}'.format(material.material_id))
 
+    # Function to add anomaly using image's min/max values for material's % reflectivity
+    def add_anomaly_4(self, material, location, size):
+        mat = material.map_material_to_image(list(self.wavelengths_dict.values()))
+        x_list = [(location[0] - size), (location[0] + size)]
+        y_list = [location[1] + size, location[1] - size]
+        # min_max = self.image_metadata()
+        min_max = [-43, 9155, 840.4]
+        # min_max = [-50, 32767, 983.8]
+        mat_ar = np.array(mat)
+        mat_max = mat_ar.max()
+        map_max = (mat_max/100) * min_max[1]
+        map_max = round(map_max)
+        adjusted = []
+        ad = np.array(mat).reshape(-1, 1)
+        scaler = preprocessing.MinMaxScaler(feature_range=(100, map_max))
+        normalizedlist = scaler.fit_transform(ad)
+        for i in normalizedlist:
+            x = i[0]
+            x = round(x)
+            adjusted.append(x)
+
+        # Add the anomaly in the right shape
+        for i in range(0, len(mat)):
+            self.data[y_list[1]:y_list[0], x_list[0]:x_list[1], i] = adjusted[i]
+        self.anom_record.append('A4_{}'.format(material.material_id))
+
+    # Function to add anomaly using material spectral mapping to image using image pixel with noise added
+    def add_anomaly_5(self, material, location, size, variation):
+        mat = material.map_material_to_image(list(self.wavelengths_dict.values()))
+        x_list = [(location[0] - size), (location[0] + size)]
+        y_list = [location[1] + size, location[1] - size]
+        min_max = self.pixel_metadata(location[0], location[1])
+
+        for i in range(y_list[1], y_list[0]):
+            for j in range(x_list[0], x_list[1]):
+                q = round(variation * min_max[1])
+                r = random.randint(-q, q)
+                adj_max = min_max[1] + r
+                adjusted = []
+                ad = np.array(mat).reshape(-1, 1)
+                scaler = preprocessing.MinMaxScaler(feature_range=(min_max[0], adj_max))
+                normalizedlist = scaler.fit_transform(ad)
+                for l in normalizedlist:
+                    x = l[0]
+                    x = round(x)
+                    adjusted.append(x)
+
+                for k in range(0, len(mat)):
+                    self.data[i, j, k] = adjusted[k]
+
+                adjusted = []
+
+        # self.anom_record.append('A5_{}'.format(material.material_id))
+
+    #NOT COMPLETED
+    # Function to add anomaly using material spectral mapping to image using image pixel with noise added
+    def add_anomaly_6(self, location, size, variation):
+
+        x_list = [(location[0] - size), (location[0] + size)]
+        y_list = [location[1] + size, location[1] - size]
+
+        for i in range(y_list[1], y_list[0]):
+            for j in range(x_list[0], x_list[1]):
+                for k in range(0, self.img_bands):
+                    a = self.data[i, j, k]
+                    q = abs(round(variation * a))
+                    r = random.randint(-q, q)
+                    self.data[i, j, k] = a + r
+
+        # self.anom_record.append('A5_{}'.format(material.material_id))
+
     # Function to export image to a file
     def export(self, image_name):
+
+        # Export Image to File
         export_im = deepcopy(self)
         save_to = 'Anomaly Files/'
         data = export_im.data.astype(">i2")
         f = open(save_to + image_name, "wb")
         f.write(data)
-        g = open(save_to + image_name + '.hdr', 'w')
-        g.writelines('ENVI\n')
-        for x, y in self.header_file_dict.items():
-            d = x, ' = ', y, '\n'
-            g.writelines(d)
-        g.writelines('wavelength = {\n')
-        for x in self.wavelengths:
-            d = str(x), ' ,\n'
-            g.writelines(d)
 
-        # shutil.copyfile(self.hdr_file_path, (save_to + image_name + '.hdr'))
+        #Export HDR File
+        # g = open(save_to + image_name + '.hdr', 'w')
+        # g.writelines('ENVI\n')
+        # for x, y in self.header_file_dict.items():
+        #     d = x, ' = ', y, '\n'
+        #     g.writelines(d)
+        # g.writelines('wavelength = {\n')
+        # for x in self.wavelengths:
+        #     d = str(x), ' ,\n'
+        #     g.writelines(d)
+
+        shutil.copyfile(self.hdr_file_path, (save_to + image_name + '.hdr'))
 
     # Function to get metadata for single pixel in area we are going to edit
     def pixel_metadata(self, x, y):
@@ -355,16 +369,16 @@ class Hyperspectral:
         max = []
         av = []
 
-        for i in range(224):
-            for j in range(400, 2600):
-                for k in range(200, 600):
+        for i in range(self.img_bands):
+            for j in range(self.img_y):
+                for k in range(self.img_x):
                     area_values.append(self.data[j, k, i])
 
             nums = np.array(area_values)
             min.append(nums.min())
             max.append(nums.max())
             av.append(nums.mean())
-            area_values.clear()
+            area_values = []
 
         min = np.array(min)
         max = np.array(max)
@@ -372,7 +386,7 @@ class Hyperspectral:
         min_total = min.min()
         max_total = max.max()
         av_total = av.mean()
-        min_max_av_list = [min, max, av]
+        min_max_av_list = [min_total, max_total, av_total]
 
         return min_max_av_list
 
@@ -445,8 +459,38 @@ class Hyperspectral:
             g.writelines(d)
         g.close()
 
+    def reduce_bands(self):
+        #928-966 / 1104-1028 / 1321-1490 / 1768-1974
+        #img_bands
+        #wavelengths_dict / wavelengths
+
+        img = deepcopy(self)
+
+        print(self.img_bands)
+        print(self.wavelengths_dict)
+        print(self.wavelengths)
+
+        #create a list of bands to remove for whatever reason
+        #A threshold? Pattern?
+
+        #Remove bands function .remove()
 
 
+
+
+
+
+
+
+
+
+
+
+
+    class Shapes:
+
+        def __init__(self):
+            pass
 
 
 

@@ -1,6 +1,7 @@
 #Recon is used for things specfically related to reconnasance:
     #Anomaly Detection Algorithms
     #Algorithm Test using real and synthesizing anomalies
+#Kevin McKenzie 2022
 
 import matplotlib.pyplot as plt
 from scipy.stats import chi2
@@ -11,7 +12,8 @@ class Recon:
 
     def __init__(self, hdr_file_path):
         spectral.settings.envi_support_nonlowercase_params = True
-        self.img = spectral.io.envi.open(hdr_file_path)
+        # self.img = spectral.io.envi.open(hdr_file_path)
+        self.img = spectral.open_image(hdr_file_path + '.hdr')
 
     def rx_seg(self):
         data = self.img.load()
@@ -37,11 +39,12 @@ class Recon:
         nbands = data.shape[-1]
         P = chi2.ppf(0.998, nbands) #0.998
 
-        v = spectral.imshow(self.img, bands=(30, 20, 10), figsize=(6, 12), classes=(1 * (rxvals > P)))
+        v = spectral.imshow(self.img, bands=(30, 20, 10), figsize=(12, 6), classes=(1 * (rxvals > P)))
         v.set_display_mode('overlay')
-        v.class_alpha = 0.3 #how transparent the overlaid portion is
+        v.class_alpha = 0.7 #how transparent the overlaid portion is
         plt.title('RX-Seg Algorithm')
         plt.axis('off')
         plt.pause(500)
+
 
 

@@ -27,48 +27,104 @@ class Hyperspectral:
 
     def __init__(self, raw_file_path):
         self.anom_record = []
+
         self.file_path = raw_file_path
         self.data = open(raw_file_path, 'rb') #with open as data
         self.data = np.frombuffer(self.data.read(), ">i2").astype(np.float32) #if with open, remove self from data
-        self.hdr_file_path = raw_file_path + '.hdr'
-        hdr_file = open((raw_file_path + '.hdr'), 'r', errors='ignore')
-        self.header_file_dict = {}
-        for i in range(1, 20):
-            if i == 1:
-                line = hdr_file.readline()
-                self.hdr_title = line
-                self.hdr_title = self.hdr_title.strip().upper()
-            if i > 1:
-                line = hdr_file.readline()
-                line = line.split('=')
-                j = line[0]
-                j = j.strip()
-                k = line[1]
-                k = k.strip()
-                self.header_file_dict.update({j : k})
+
+        self.open_HDR()
 
         self.img_x = int(self.header_file_dict.get('samples'))
         self.img_y = int(self.header_file_dict.get('lines'))
         self.img_bands = int(self.header_file_dict.get('bands'))
+        self.data = self.data.reshape(self.img_y, self.img_x, self.img_bands)
 
+    # Function to open header files and create variables
+    def open_HDR(self):
+        self.hdr_file_path = self.file_path + '.hdr'
+        hdr_file = open(self.hdr_file_path, 'r')    #errors='ignore'
+        self.header_file_dict = {}
         self.wavelengths_dict = {}
         self.wavelengths = []
-        hdr_file.readline()
-        for i in range(0, int(self.img_bands)):
-            line = hdr_file.readline()
-            line = line.split(',')
-            wave = line[0].strip()
-            if wave.endswith('}'):
-                line = wave.split('}')
-            wave = float(line[0])
-            self.wavelengths.append(wave)
-            wave = round(wave)
-            self.wavelengths_dict.update({i+1 : wave})
-        hdr_file.readline()
-        hdr_file.readline()
-        #part to read the fwhm
+        self.fwhm_dict = {}
 
-        self.data = self.data.reshape(self.img_y, self.img_x, self.img_bands)
+        task_count = 0
+        band_num = 1
+        fwhm_num = 1
+
+        for i, line in enumerate(hdr_file):
+            if task_count == 0:
+                self.hdr_title = line.strip().upper()
+                task_count = 1
+
+            elif task_count == 1:
+                line_split = line.split('=')
+                j = line_split[0].strip()
+                k = line_split[1].strip()
+                self.header_file_dict.update({j: k})
+                if j.lower() == 'wavelength':
+                    task_count = 2
+
+            elif task_count == 2:
+                line = line.split(',')
+                wave = line[0].strip()
+                if wave.endswith('}'):
+                    line = wave.split('}')
+                    task_count = 3
+                wave = float(line[0])
+                self.wavelengths.append(wave)
+                wave = round(wave)
+                self.wavelengths_dict.update( { band_num : wave } )
+                band_num += 1
+
+            elif task_count == 3:
+                line_split = line.split('=')
+                j = line_split[0].strip()
+                k = line_split[1].strip()
+                self.header_file_dict.update({j: k})
+                task_count = 4
+
+            elif task_count == 4:
+                line = line.split(',')
+                wave = line[0].strip()
+                if wave.endswith('}'):
+                    line = wave.split('}')
+                    task_count = 5
+                wave = float(line[0])
+                band_num = 1
+                self.fwhm_dict.update({fwhm_num: wave})
+                fwhm_num += 1
+
+    # Function to write header files with current info
+    def write_HDR(self, save_to, image_name):
+
+        g = open(save_to + image_name + '.hdr', 'w')
+        g.writelines('ENVI\n')
+        for x, y in self.header_file_dict.items():
+            if x == 'fwhm':
+                for i, a in enumerate(self.wavelengths):
+                    if i == len(self.wavelengths) - 1:
+                        d = str(a), ' }\n'
+                    else:
+                        d = str(a), ' ,\n'
+                    g.writelines(d)
+                d = x, ' = ', y, '\n'
+            else:
+                if x == 'samples':
+                    y = str(self.img_x)
+                if x == 'lines':
+                    y = str(self.img_y)
+                if x == 'bands':
+                    y = str(self.img_bands)
+                d = x, ' = ', y, '\n'
+            g.writelines(d)
+
+        for i, x in enumerate(self.fwhm_dict.values()):
+            if i == len(self.fwhm_dict) - 1:
+                d = str(x), ' }\n'
+            else:
+                d = str(x), ' ,\n'
+            g.writelines(d)
 
     # Function to plot 6 bands of the HSI
     def display_image(self):
@@ -110,7 +166,7 @@ class Hyperspectral:
         # plt.colorbar(cax=cax)
         plt.show()
 
-    # Function to display the R Band, G Band, B Band, and RGB Images
+    # Function to display the RGB Image
     def display_RGB(self):
         # print(self.wavelengths_dict)
         Ri = 29 #30 #25  # 35 #25 #29 #32
@@ -157,7 +213,7 @@ class Hyperspectral:
         plt.axis('off')
         plt.show()
 
-    # Function to display the Vegetation Index: NDVI and SAVI
+    # Function to display the Vegetation Index
     def display_Veg_Index(self):
         # print(self.wavelengths_dict)
         # find bands nearest to NDVI red and nir wavelengths
@@ -264,7 +320,7 @@ class Hyperspectral:
             self.data[y_list[1]:y_list[0], x_list[0]:x_list[1], i] = adjusted[i]
         self.anom_record.append('A4_{}'.format(material.material_id))
 
-    # Function to add anomaly using material spectral mapping to image using image pixel with noise added
+    # Function to add anomaly A2 with noise added
     def add_anomaly_5(self, material, location, size, variation):
         mat = material.map_material_to_image(list(self.wavelengths_dict.values()))
         x_list = [(location[0] - size), (location[0] + size)]
@@ -292,8 +348,7 @@ class Hyperspectral:
 
         # self.anom_record.append('A5_{}'.format(material.material_id))
 
-    #NOT COMPLETED
-    # Function to add anomaly using material spectral mapping to image using image pixel with noise added
+    # Function to add noise to pixels already in image
     def add_anomaly_6(self, location, size, variation):
 
         x_list = [(location[0] - size), (location[0] + size)]
@@ -309,28 +364,129 @@ class Hyperspectral:
 
         # self.anom_record.append('A5_{}'.format(material.material_id))
 
-    # Function to export image to a file
-    def export(self, image_name):
+    # Function to add anomaly like A5 but with blurred edges
+    def add_anomaly_7(self, material, location, size, variation, weight):
+        mat = material.map_material_to_image(list(self.wavelengths_dict.values()))
+        x_list = [(location[0] - size), (location[0] + size)]
+        y_list = [location[1] + size, location[1] - size]
+        min_max = self.pixel_metadata(location[0], location[1])
 
-        # Export Image to File
-        export_im = deepcopy(self)
-        save_to = 'Anomaly Files/'
-        data = export_im.data.astype(">i2")
-        f = open(save_to + image_name, "wb")
-        f.write(data)
+        for i in range(y_list[1], y_list[0]):
+            for j in range(x_list[0], x_list[1]):
+                q = round(variation * min_max[1])
+                r = random.randint(-q, q)
+                adj_max = min_max[1] + r
+                adjusted = []
+                ad = np.array(mat).reshape(-1, 1)
+                scaler = preprocessing.MinMaxScaler(feature_range=(min_max[0], adj_max))
+                normalizedlist = scaler.fit_transform(ad)
+                for l in normalizedlist:
+                    x = l[0]
+                    x = round(x)
+                    adjusted.append(x)
 
-        #Export HDR File
-        # g = open(save_to + image_name + '.hdr', 'w')
-        # g.writelines('ENVI\n')
-        # for x, y in self.header_file_dict.items():
-        #     d = x, ' = ', y, '\n'
-        #     g.writelines(d)
-        # g.writelines('wavelength = {\n')
-        # for x in self.wavelengths:
-        #     d = str(x), ' ,\n'
-        #     g.writelines(d)
+                for k in range(0, len(mat)):
+                    self.data[i, j, k] = adjusted[k]
 
-        shutil.copyfile(self.hdr_file_path, (save_to + image_name + '.hdr'))
+                adjusted = []
+
+        for i in range(0, len(mat)):
+            # Top Edge: E1
+            y1 = y_list[1] - 1
+            a = self.data[y1, x_list[0]:x_list[1], i] #surround pixels
+            b = self.data[y_list[1], x_list[0]:x_list[1], i] #material edge
+            w1 = 1
+            for x, y in zip(a, b):
+                if x > y:
+                    w1 = 1 + weight
+                else:
+                    w1 = 1 - weight
+            q = ((w1 * a) + b) / 2
+            self.data[y_list[1], x_list[0]:x_list[1], i] = q
+
+            # Bottom Edge: E2
+            y2 = y_list[0] - 1
+            c = self.data[y2, x_list[0]:x_list[1], i]  # surround pixels
+            d = self.data[y_list[0], x_list[0]:x_list[1], i]  # material edge
+            w2 = 1
+            for x, y in zip(c, d):
+                if x > y:
+                    w2 = 1 + weight
+                else:
+                    w2 = 1 - weight
+            r = ((w2 * c) + d) / 2
+            self.data[y_list[0], x_list[0]:x_list[1], i] = r
+
+            # Left Edge: E3
+            x1 = x_list[0] - 1
+            y1 = y_list[1] + 1
+            y2 = y_list[0] + 1
+            e = self.data[ y1 : y2 , x1, i]  # surround pixels
+            f = self.data[ y1 : y2, x_list[0], i]  # material edge
+            w3 = 1
+            for x, y in zip(e, f):
+                if x > y:
+                    w3 = 1 + weight
+                else:
+                    w3 = 1 - weight
+            s = ((w3 * e) + f) / 2
+            self.data[y1 : y2 , x_list[0], i] = s
+
+            # Right Edge: E4
+            x2 = x_list[1] - 1
+            g = self.data[y1 : y2, x2, i]  # surround pixels
+            h = self.data[y1 : y2, x_list[1], i]  # material edge
+            w4 = 1
+            for x, y in zip(g, h):
+                if x > y:
+                    w4 = 1 + weight
+                else:
+                    w4 = 1 - weight
+            t = ((w4 * g) + h) / 2
+            self.data[y1 : y2, x_list[1], i] = t
+
+        # self.anom_record.append('A5_{}'.format(material.material_id))
+
+    # Function to add anomaly like A5 but to better map the material's profile to images by averaging
+    def add_anomaly_8(self, material, location, size, variation, weight):
+        mat = material.map_material_to_image(list(self.wavelengths_dict.values()))
+        x_list = [(location[0] - size), (location[0] + size)]
+        y_list = [location[1] + size, location[1] - size]
+        min_max = self.pixel_metadata(location[0], location[1])
+
+        for i in range(y_list[1], y_list[0]):
+            for j in range(x_list[0], x_list[1]):
+                q = round(variation * min_max[1])
+                r = random.randint(-q, q)
+                adj_max = min_max[1] + r
+                adjusted = []
+                ad = np.array(mat).reshape(-1, 1)
+                scaler = preprocessing.MinMaxScaler(feature_range=(min_max[0], adj_max))
+                normalizedlist = scaler.fit_transform(ad)
+                for l in normalizedlist:
+                    x = l[0]
+                    x = round(x)
+                    adjusted.append(x)
+
+                for k in range(0, len(mat)):
+                    a = self.data[i, j, k] #OG Value for the pixel about to replace
+                    b = adjusted[k]         #adjusted material value
+                    wt = weight
+                    if weight >= 1:
+                        wt = .9999999
+                    if a > b:
+                        w = 1 + wt
+                    elif a <= 0:
+                        a = .001
+                        w = 1 - wt
+                    else:
+                        w = 1 - weight
+                    q = ((w * a) + b) / 2
+                    self.data[i, j, k] = q
+
+                adjusted = []
+
+        # self.anom_record.append('A5_{}'.format(material.material_id))
 
     # Function to get metadata for single pixel in area we are going to edit
     def pixel_metadata(self, x, y):
@@ -390,26 +546,10 @@ class Hyperspectral:
 
         return min_max_av_list
 
-    # Function to crop the image
-    def crop(self, dimension):
-        im_crop = deepcopy(self)
-
-        new_data = np.zeros(shape = (dimension[3]-dimension[2],dimension[1]-dimension[0], self.img_bands))
-
-        for i in range(self.img_bands):
-            new_data[:,:,i] = self.data[dimension[2]:dimension[3], dimension[0]:dimension[1], i]
-
-        im_crop.data = new_data
-        im_crop.img_x = dimension[1] - dimension[0]
-        im_crop.img_y = dimension[3] - dimension[2]
-        im_crop.header_file_dict['samples'] = str(im_crop.img_x)
-        im_crop.header_file_dict['lines'] = str(im_crop.img_y)
-        return im_crop
-
     # Function to create a material from single pixel in image
     def graph_spectra_pixel(self, location, title, single):
         values_single = []
-        for i in range(224):
+        for i in range(self.img_bands):
             values_single.append(self.data[location[1], location[0], i])
 
         plt.plot(list(self.wavelengths_dict.values()), values_single, linewidth=2, label = title)
@@ -424,7 +564,7 @@ class Hyperspectral:
     def graph_spectra_area(self, location):
         area_values = []
         l = []
-        for i in range(224):
+        for i in range(self.img_bands):
             for j in range(location[2], location[3]):
                 for k in range(location[0], location[1]):
                     l.append(self.data[j, k, i])
@@ -459,30 +599,65 @@ class Hyperspectral:
             g.writelines(d)
         g.close()
 
-    def reduce_bands(self):
-        #928-966 / 1104-1028 / 1321-1490 / 1768-1974
-        #img_bands
-        #wavelengths_dict / wavelengths
+    # Function to crop the image
+    def crop(self, dimension):
+        im_crop = deepcopy(self)
+
+        new_data = np.zeros(shape = (dimension[3]-dimension[2],dimension[1]-dimension[0], self.img_bands))
+
+        for i in range(self.img_bands):
+            new_data[:,:,i] = self.data[dimension[2]:dimension[3], dimension[0]:dimension[1], i]
+
+        im_crop.data = new_data
+        im_crop.img_x = dimension[1] - dimension[0]
+        im_crop.img_y = dimension[3] - dimension[2]
+        im_crop.header_file_dict['samples'] = str(im_crop.img_x)
+        im_crop.header_file_dict['lines'] = str(im_crop.img_y)
+        return im_crop
+
+    # Function to change the number of bands
+    def reduce_bands(self, bottom, top):
 
         img = deepcopy(self)
+        new_wave_dict = {}
+        new_wavelengths = []
+        new_fwhm_dict = {}
 
-        print(self.img_bands)
-        print(self.wavelengths_dict)
-        print(self.wavelengths)
+        new_b = 0
 
-        #create a list of bands to remove for whatever reason
-        #A threshold? Pattern?
+        for x in self.wavelengths:
+            if top < x < bottom:
+                new_wavelengths.append(x)
+                new_b += 1
 
-        #Remove bands function .remove()
+        new_data = np.zeros(shape=(self.img_y, self.img_x, new_b))
 
+        b = 0
+        for i, ((x, y), z) in enumerate(zip(self.wavelengths_dict.items(), self.fwhm_dict.values())):
+            if top < y < bottom:
+                new_wave_dict.update( { (b+1) : y } )
+                new_data[:, :, b] = self.data[:, :, x]
+                new_fwhm_dict.update({(b + 1): z})
+                b += 1
 
+        img.header_file_dict['bands'] = str(new_b)
+        img.img_bands = new_b
+        img.wavelengths_dict = new_wave_dict
+        img.wavelengths = new_wavelengths
+        img.fwhm_dict = new_fwhm_dict
+        img.data = new_data
 
+        return img
 
+    # Function to export image to a file
+    def export(self, image_name):
+        export_im = deepcopy(self)
+        save_to = 'Anomaly Files/'
+        data = export_im.data.astype(">i2")
+        f = open(save_to + image_name, "wb")
+        f.write(data)
 
-
-
-
-
+        self.write_HDR(save_to, image_name)
 
 
 

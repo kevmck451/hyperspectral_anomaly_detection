@@ -63,3 +63,11 @@ material_steel = m('1MM0003')
 # plt.show()
 
 
+'''Adding Custom Created Material back into Image'''
+
+
+
+
+
+
+

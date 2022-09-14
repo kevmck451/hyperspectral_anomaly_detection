@@ -1,5 +1,5 @@
 '''Examples for Creating Anomalies'''
-#Do not try to run scripts in this folder, copy cody sections to test.py
+#Do not try to run scripts in this folder, copy cody sections to Anom-Syn-main.py
 
 from Materials.Materials import Material as m
 from Materials.Materials import Material_Lib

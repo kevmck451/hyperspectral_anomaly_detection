@@ -10,10 +10,9 @@ from Materials.Materials import Material_Lib
 from Hyperspectral import Hyperspectral as h
 from Recon import Recon as rc
 
-# A_file_path = 'AVIRIS/f100704t01p00r06rdn_b_sc01_ort_img'
+# A_file_path = 'Datasets/AVIRIS/f100704t01p00r06rdn_b_sc01_ort_img'
 # A_file_path = 'Anomaly Files/AV-Crop'
 # A_file_path = 'Anomaly Files/AV-Crop2'
-# A_file_path = 'Anomaly Files/AV-Cropped-1'
 # A_file_path = 'Anomaly Files/Test_Image'
 # A_file_path = 'Anomaly Files/Test_Image-2'
 
@@ -29,23 +28,62 @@ from Recon import Recon as rc
 # A_file_path = 'Anomaly Files/AV-Crop-3A-S-68B'
 # A_file_path = 'Anomaly Files/AV-Crop-7A-68B'
 # A_file_path = 'Anomaly Files/AV-Crop-8A-68B'
-A_file_path = 'Anomaly Files/AV-Crop-9A-68B'
+# A_file_path = 'Anomaly Files/AV-Crop-9A-68B'
+
+# A_file_path = 'Datasets/Botswana/Botswana.mat'
+A_file_path = 'Datasets/Kennedy Space/KSC.mat'
+# A_file_path = 'Datasets/Indian Pines/Indian_pines.mat'
+
+# A_file_path = 'Datasets/ABU/abu-airport-2.mat'
+
+# A_file_path = 'Datasets/92AV3C.lan'
+# A_file_path = 'Datasets/Pika/d_mosaic.bil'
+
+file_list = ['Datasets/ABU/abu-airport-2.mat',
+             'Datasets/ABU/abu-airport-3.mat',
+             'Datasets/ABU/abu-airport-4.mat',
+             'Datasets/ABU/abu-beach-1.mat',
+             'Datasets/ABU/abu-beach-2.mat',
+             'Datasets/ABU/abu-beach-3.mat',
+             'Datasets/ABU/abu-urban-1.mat',
+             'Datasets/ABU/abu-urban-2.mat',
+             'Datasets/ABU/abu-urban-3.mat',
+             'Datasets/ABU/abu-urban-4.mat',
+             'Datasets/ABU/abu-urban-5.mat' ]
+
+# for file in file_list:
+#     image = h(file)
+    # image.display_RGB()
+    # image.display_NDVI()
+    # image.display_NDWI()
+    # image.display_categories()
+    # image.categorize_pixels('S', 20, 50)
+    # image.display_image()
+    # image.graph_spectra_all_pixels()
 
 image = h(A_file_path) #a hyperspectral image object using hyperspectral
-
+image = image.reduce_bands() #no arguments will reduce to ~300 - 1000nm range
 # image.display_RGB()
+# image.display_NDVI()
+# image.display_NDWI()
+# image.display_categories()
+# image.display_image()
+# image.graph_spectra_all_pixels()
+image.categorize_pixels()
+image.categorize_pixels('S', 10, 50)
 
-# image1 = image.crop([300, 720, 1700, 2250])
-# image1 = image.reduce_bands(1000, 300)
-# image1.display_RGB()
-# image1.export('AV-Crop-9A-68B')
-
-# recon_1 = rc()
-# recon_1.rx_seg(A_file_path)
 
 
 #---------------------------------------------------------------------
+# CROP AN IMAGE - ONLY CURRENTLY WORKS FOR EVNI FILES
+#---------------------------------------------------------------------
 
+# image1 = image.crop([300, 720, 1700, 2250])
+# image1 = image.crop([100, 200, 100, 200])
+
+#---------------------------------------------------------------------
+# COMMON MATERIALS
+#---------------------------------------------------------------------
 # material_brick = m('1MM0008') #a material object using material
 # material_lumber_paint_green = m('1MM0015')
 # material_concrete = m('1MM0029')
@@ -53,6 +91,9 @@ image = h(A_file_path) #a hyperspectral image object using hyperspectral
 # material_loam = m('3SL0060')
 # material_rock = m('4RK0415')
 
+#---------------------------------------------------------------------
+# ADDING ANOMALIES
+#---------------------------------------------------------------------
 # image.add_anomaly_6([103, 279], 5, .03)
 # image.add_anomaly_6([394, 234], 4, .02)
 # image.add_anomaly_6([380, 99], 3, .01)
@@ -75,7 +116,7 @@ image = h(A_file_path) #a hyperspectral image object using hyperspectral
 # plt.show()
 
 # image.display_RGB()
-# image.display_Veg_Index()
+# image.display_NDVI()
 
 # image.export('AV-Crop-7A')
 
@@ -83,8 +124,10 @@ image = h(A_file_path) #a hyperspectral image object using hyperspectral
 
 #Anomaly Detection from Scratch
 
+# image = rc()
+# image.rx(A_file_path)
 
-
+#---------------------------------------------------------------------
 
 
 

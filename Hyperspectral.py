@@ -6,6 +6,7 @@ import matplotlib.gridspec as gridspec
 from sklearn import preprocessing
 import matplotlib.pyplot as plt
 from copy import deepcopy
+from envi_io import Cube
 import pandas as pd
 import numpy as np
 import scipy.io
@@ -13,6 +14,61 @@ import shutil
 import random
 import time
 import math
+
+
+AV_Full = 'Datasets/AVIRIS/f100704t01p00r06rdn_b_sc01_ort_img'
+Pika_C = 'Datasets/Pika/c_mosaic.bil'
+Pika_D = 'Datasets/Pika/d_mosaic.bil'
+AV_Crop_3A_L = 'Anomaly Files/AV-Crop-3Anom-L'
+AV_Crop_3A_M = 'Anomaly Files/AV-Crop-3Anom-M'
+AV_Crop_7A = 'Anomaly Files/AV-Crop-7A'
+AV_Crop_8A = 'Anomaly Files/AV-Crop2-8A'
+
+files = ['Anomaly Files/AV-Crop',
+         'Anomaly Files/AV-Crop2',
+         'Anomaly Files/AV-Crop-3Anom-S',
+         'Anomaly Files/AV-Crop2-9A',
+         'Datasets/Botswana/Botswana.mat',
+         'Datasets/Kennedy Space/KSC.mat',
+         'Datasets/Indian Pines/Indian_pines.mat',
+         'Datasets/Pavia/Pavia.mat',
+         'Datasets/Pavia/PaviaU.mat',
+         'Datasets/Salinas/Salinas.mat',
+         'Datasets/ABU/abu-airport-1.mat', 'Datasets/ABU/abu-airport-2.mat', 'Datasets/ABU/abu-airport-3.mat',
+         'Datasets/ABU/abu-beach-1.mat', 'Datasets/ABU/abu-beach-2.mat', 'Datasets/ABU/abu-beach-3.mat',
+         'Datasets/ABU/abu-urban-1.mat', 'Datasets/ABU/abu-urban-2.mat', 'Datasets/ABU/abu-urban-3.mat',
+         'Datasets/ABU/abu-urban-4.mat', 'Datasets/ABU/abu-urban-5.mat' ]
+
+def show_all_files():
+    print('0: AV-Crop')
+    print('1: AV-Crop2')
+    print('2: AV-Crop-3Anom-S')
+    print('3: AV-Crop2-9A')
+    print('4: Botswana')
+    print('5: KSC')
+    print('6: Indian_pines')
+    print('7: Pavia')
+    print('8: PaviaU')
+    print('9: Salinas')
+    print('10: ABU-Airport 1')
+    print('11: ABU-Airport 2')
+    print('12: ABU-Airport 3')
+    print('13: ABU-Beach 1')
+    print('14: ABU-Beach 2')
+    print('15: ABU-Beach 3')
+    print('16: ABU-Urban 1')
+    print('17: ABU-Urban 2')
+    print('18: ABU-Urban 3')
+    print('19: ABU-Urban 4')
+    print('20: ABU-Urban 5')
+
+def compare_all_files():
+
+    for file in files:
+        image = Hyperspectral(file)
+        image = image.reduce_bands()
+        image.compare(display=False, save=True)
+
 
 class Hyperspectral:
 
@@ -37,8 +93,38 @@ class Hyperspectral:
             file = raw_file_path.split('.')
             self.file_type = file[1]
 
+            try:
+                file_name = file[0].split('/')
+                self.file_name = file_name[-1]
+                print(file_name[-1])
+            except:
+                pass
         except:
             self.file_type = 'envi'
+            try:
+                file_name = raw_file_path.split('/')
+                self.file_name = file_name[-1]
+                print(file_name[-1])
+            except:
+                pass
+
+
+        if self.file_type == 'bil':
+            data = Cube.from_path(self.file_path)
+            data = data.read()  # load into memory in native format as numpy array
+            # or load as memory map by adding as_mmap=True
+            # then only the parts of the cube you access will be read into memory
+            # if you need just a small part this can be much faster
+            # print(data)
+            data = np.array(data).astype(np.float32)
+
+            self.img_x = int(data.shape[2])
+            self.img_y = int(data.shape[0])
+            self.img_bands = int(data.shape[1])
+
+            # reshape_data = np.zeros((self.img_y, self.img_x, self.img_bands), dtype=float)
+            self.data = data.transpose((0,2,1))
+            self.open_HDR()
 
         if self.file_type == 'mat':
             data = scipy.io.loadmat(self.file_path)
@@ -511,7 +597,6 @@ class Hyperspectral:
             plt.plot(x_a, values_single, linewidth=2, label=title)
         plt.xlabel('Bands')
         plt.ylabel('Values')
-        plt.title('New Material', fontsize=20)
         # plt.legend(loc='upper right')
         if single:
             plt.show()
@@ -524,7 +609,59 @@ class Hyperspectral:
 
         for i in x_list:
             for j in y_list:
-                self.graph_spectra_pixel([0, int(i), 0, int(j)], 'Full', False)
+                self.graph_spectra_pixel([int(i), int(j)], 'Full', False)
+        plt.show()
+
+    # Function to graph all spectral signature for every pixel in image
+    def graph_single_subcategory(self, subcategory):
+
+        print('Subcat Num: {} has {} pixels in it'.format(subcategory, self.subcategory_data_dict.get(subcategory)))
+
+        index = int
+        for i, subcat in zip(range(len(self.subcat_master_list)), self.subcat_master_list):
+            if subcat.subcat_num == subcategory:
+                index = i
+
+        for i, pixel in zip(range(len(self.subcat_master_list[index].pixel_list)), self.subcat_master_list[index].pixel_list):
+            title = 'Subcateogry {}: {} Pixels'.format(subcategory, self.subcategory_data_dict.get(subcategory))
+            if self.subcategory_data_dict.get(subcategory) > 5000:
+                if (i % 20) == 0:
+                    location = pixel.location
+                    values_single = []
+                    for i in range(self.img_bands):
+                        values_single.append(self.data[location[1], location[0], i])
+
+                    x_a = np.linspace(0, self.img_bands, num=self.img_bands)
+                    plt.plot(x_a, values_single, linewidth=2)
+                    plt.xlabel('Bands')
+                    plt.ylabel('Values')
+                    plt.title(title, fontsize=20)
+                else: continue
+            elif self.subcategory_data_dict.get(subcategory) > 1000:
+                if (i%10) == 0:
+                    location = pixel.location
+                    values_single = []
+                    for i in range(self.img_bands):
+                        values_single.append(self.data[location[1], location[0], i])
+
+                    x_a = np.linspace(0, self.img_bands, num=self.img_bands)
+                    plt.plot(x_a, values_single, linewidth=2)
+                    plt.xlabel('Bands')
+                    plt.ylabel('Values')
+                    plt.title(title, fontsize=20)
+                else:
+                    continue
+            else:
+                location = pixel.location
+                values_single = []
+                for i in range(self.img_bands):
+                    values_single.append(self.data[location[1], location[0], i])
+
+                x_a = np.linspace(0, self.img_bands, num=self.img_bands)
+                plt.plot(x_a, values_single, linewidth=2)
+                plt.xlabel('Bands')
+                plt.ylabel('Values')
+                plt.title(title, fontsize=20)
         plt.show()
 
     # Function to create a material from area in image
@@ -703,7 +840,7 @@ class Hyperspectral:
         plt.show()
 
     # Function to display the RGB Image
-    def display_RGB(self):
+    def display_RGB(self, display):
         # print(self.wavelengths_dict)
         Ri = 29 #30 #25  # 35 #25 #29 #32
         Gi = 18 #20 #20  # 20 #15 #17 #19
@@ -744,19 +881,28 @@ class Hyperspectral:
             rgb_stack[:, :, i] = b_equalized.reshape(b.shape)
 
         # plot. all of this is matplotlib ---------->
-        plt.figure(figsize=(18, 8))
-        plt.imshow(rgb_stack, cmap=plt.get_cmap(None))
-        plt.axis('off')
-        plt.show()
+
+        if display == True:
+            plt.figure(figsize=(18, 8))
+            plt.imshow(rgb_stack, cmap=plt.get_cmap(None))
+            plt.axis('off')
+            plt.show()
+        else:
+            self.rgb_graph = rgb_stack
 
     # Function to display the NDVI
-    def display_NDVI(self):
+    def display_NDVI(self, display):
         # print(self.wavelengths_dict)
         # find bands nearest to NDVI red and nir wavelengths
         # OG bands used 36 (685) / 58 (900)
         # Trying 30-650 / 45-770
-        ndvi_red = 32
-        ndvi_nir = 52
+        if self.file_name.lower() == 'botswana':
+            ndvi_nir = 28
+            ndvi_red = 20
+        else:
+            ndvi_nir = 52
+            ndvi_red = 32
+
         RED = self.data[:, :, ndvi_red]
         NIR = self.data[:, :, ndvi_nir]
         RED, NIR = RED.astype('float64'), NIR.astype('float64')
@@ -769,12 +915,15 @@ class Hyperspectral:
         ndvi_array_temp = np.zeros(ndvi_array.shape, dtype=float)
         ndvi_array_temp[ndvi_array >= 0.1] = ndvi_array[ndvi_array >= 0.1]
 
-        plt.figure(figsize=(10, 15))
-        plt.imshow(ndvi_array_temp, cmap=plt.get_cmap("RdYlGn"))
-        plt.title('NDVI')
-        plt.colorbar()
-        plt.axis('off')
-        plt.show()
+        if display:
+            # plt.figure(figsize=(10, 15))
+            plt.imshow(ndvi_array_temp, cmap=plt.get_cmap("RdYlGn"))
+            plt.title('NDVI')
+            plt.colorbar()
+            plt.axis('off')
+            plt.show()
+        else:
+            self.graph_ndvi = ndvi_array_temp
 
     # Function to display the VARI
     def display_VARI(self):
@@ -799,7 +948,7 @@ class Hyperspectral:
         vari_array_temp = np.zeros(vari_array.shape, dtype=float)
         vari_array_temp[vari_array >= 0.1] = vari_array[vari_array >= 0.1]
 
-        plt.figure(figsize=(18, 8))
+        # plt.figure(figsize=(18, 8))
         plt.imshow(vari_array, cmap=plt.get_cmap("RdYlGn"))
         plt.title('VARI')
         plt.colorbar()
@@ -826,7 +975,7 @@ class Hyperspectral:
         ndvi_array_temp = np.zeros(ndvi_array.shape, dtype=float)
         ndvi_array_temp[ndvi_array >= 0.1] = ndvi_array[ndvi_array >= 0.1]
 
-        plt.figure(figsize=(18, 8))
+        # plt.figure(figsize=(18, 8))
         plt.imshow(ndvi_array_temp, cmap=plt.get_cmap("RdYlGn"))
         plt.title('NDVI')
         plt.colorbar()
@@ -855,13 +1004,13 @@ class Hyperspectral:
 
         # plt.figure(figsize=(10, 15))
         plt.imshow(ndwi_array_temp, cmap=plt.get_cmap("Blues"))
-        plt.title('WDVI')
+        plt.title('NDWI')
         plt.colorbar()
         plt.axis('off')
         plt.show()
 
     # Function to overlay categorized colors onto image
-    def display_categories(self):
+    def display_indices(self, display):
 
         # Vegetation & Water ----------------------------
         ndwi_green = 17
@@ -897,34 +1046,32 @@ class Hyperspectral:
         water[ndwi_array_temp == 0] = np.nan
         water[ndwi_array_temp > 0] = 1
 
-        # plt.figure(figsize=(10, 10))
-        og = plt.imshow(self.data[:, :, 50], cmap = 'gray')
-        veg = plt.imshow(vegetation, cmap='Greens')
-        wat = plt.imshow(water, cmap='Blues')
-        plt.title('Category Overlay')
-        plt.colorbar(og, cmap='gray')
-        plt.colorbar(veg, cmap='Greens')
-        plt.colorbar(wat, cmap='Blues')
-        plt.axis('off')
-        plt.show()
+        if display == True:
+            # plt.figure(figsize=(10, 10))
+            og = plt.imshow(self.data[:, :, 50], cmap = 'gray')
+            veg = plt.imshow(vegetation, cmap='Greens')
+            wat = plt.imshow(water, cmap='Blues')
+            plt.colorbar(og, cmap='gray')
+            plt.colorbar(veg, cmap='Greens')
+            plt.colorbar(wat, cmap='Blues')
+            plt.title('Category Overlay')
+            plt.axis('off')
+            plt.show()
+
+        else:
+            self.graph_indicies = [self.data[:, :, 50], vegetation, water]
 
     # Function to create a material from single pixel in image
-    def categorize_pixels(self, band = 'S', variation = 20, iterations = 50):
+    def subcategorize_pixels_1(self, band = 'L', variation = 15, iterations = 100):
 
         if band == 'S': bands = [4, 10, 18, 24, 34, 42, 52, 66] #reduced bands
         elif band == 'M': bands = [2, 6, 10, 14, 18, 22, 34, 42, 52, 56, 66] #reduced bands
         elif band == 'aviris': bands = [14, 23, 32, 47, 69, 98, 131, 184] #aviris images
         elif band == 'mat': bands = [10, 18, 26, 40, 55, 70, 95, 124, 160] #.mat images
         elif band == 'bot': bands = [13, 20, 36, 41, 52, 70, 90, 121] # bot image
-        else: bands = [1, 4, 8, 12, 16, 20, 24, 28, 36, 40, 48, 52, 56, 60, 66] #reduced bands
+        else: bands = [4, 8, 12, 16, 20, 24, 28, 36, 40, 48, 52, 56, 64, 66] #reduced bands
 
-        # PIXEL CLASS TO STORE LOCATION, VALUES, AND CATEGORY
-        class pixel_class:
-            def __init__(self, location, values):
-                self.location = location
-                self.values = values
-                self.category = 0
-                self.subcat = 0
+        #----------------------
 
         cll = (variation / 100) - 1
         clh = (variation / 100) + 1
@@ -940,7 +1087,7 @@ class Hyperspectral:
             bands.pop()
 
         # INITIATE ALL PIXEL OBJECTS AND SAMPLE VALUES AT POINTS
-        self.master_list = []
+        self.pixel_master_list = []
         pixel_values = []
         for i in x_list:
             for j in y_list:
@@ -948,23 +1095,10 @@ class Hyperspectral:
                     pixel_values.append(self.data[j, i, k])
 
                 p = pixel_class([i,j], np.asarray(pixel_values))
-                self.master_list.append(p)
+                self.pixel_master_list.append(p)
                 pixel_values = []
 
         # CATEGORIZE ALL PIXELS BASED ON SIMILARITY
-
-        class category:
-            category_list = ['unknown', 'natural', 'manmade', 'noise']
-            natural_sub_list = ['unknown', 'vegetation', 'water', 'soil', 'rock']
-            manmade_sub_list = ['unknown', 'metal', 'plastic', 'path', 'wood', 'concrete']
-            def __init__(self):
-                self.cat_num = 0
-                self.category = category.category_list[0]
-                self.name = 'untitled'
-                self.sub_category = category.category_list[0]
-                self.total_num = 0
-
-
         def is_similar(compare_list, list):
             similar = [1] * len(compare_list)
             comp = []
@@ -979,100 +1113,292 @@ class Hyperspectral:
 
         def check_uncat():
             # print('Checking if any Uncategorized')
-            for pixel in self.master_list:
-                if pixel.category == 0:
+            for pixel in self.pixel_master_list:
+                if pixel.subcat_num == 0:
                     # print('Found a 0')
                     return True
             # print('Everything is Categorized')
             return False
 
-        # print('Categorizing')
-        cat_num = 1
+        # Categorizing ------------------------------------------
+        print('Subcategorizing')
+        self.subcat_master_list = []
+        subcat_num = 1
+        c = category_class()
+        c.subcat_num = subcat_num
+        self.subcat_master_list.append(c)
         f = True
         comp = []
-        for pixel in self.master_list:
+        for pixel in self.pixel_master_list:
             if f:
                 comp = pixel.values
-                pixel.category = cat_num
+                pixel.subcat_num = subcat_num
+                c.pixel_list.append(pixel)
+                pixel.subcategory = c
                 f = False
                 continue
             if is_similar(comp, pixel.values):
                 # print('Similar')
-                pixel.category = cat_num
+                pixel.subcat_num = subcat_num
+                c.pixel_list.append(pixel)
+                pixel.subcategory = c
 
-        # While Loop -------------------------------------------------------------------------
+        category_class.max_subcategories = 1
+        # print('Subcat Num: {}'.format(subcat_num))
 
+        # While Loop ------------------
         while check_uncat():
-            print('Cat Num: {}'. format(cat_num))
-            cat_num += 1
+            subcat_num += 1
+            c = category_class()
+            c.subcat_num = subcat_num
+            self.subcat_master_list.append(c)
             comp_w = []
-            for pixel in self.master_list:
-                if pixel.category == 0:
+            for pixel in self.pixel_master_list:
+                if pixel.subcat_num == 0:
                     comp_w = pixel.values
-                    pixel.category = cat_num
+                    pixel.subcat_num = subcat_num
+                    c.pixel_list.append(pixel)
+                    pixel.subcategory = c
                     break
-            for pixel in self.master_list:
-                if pixel.category == 0 and is_similar(comp_w, pixel.values):
-                    pixel.category = cat_num
-            if cat_num > iterations:
-                break
-
-        # End of While Loop -------------------------------------------------------------------------
-
+            for pixel in self.pixel_master_list:
+                if pixel.subcat_num == 0 and is_similar(comp_w, pixel.values):
+                    pixel.subcat_num = subcat_num
+                    c.pixel_list.append(pixel)
+                    pixel.subcategory = c
+            if subcat_num > iterations:
+                for pixel in self.pixel_master_list:
+                    if pixel.subcat_num == 0:
+                        pixel.subcat_num = subcat_num
+                        c.pixel_list.append(pixel)
+                        pixel.subcategory = c
+                        break
+            category_class.max_subcategories += 1
+            # print('Subcat Num: {}'.format(subcat_num))
+        # End of While Loop ---------------
+        # print(f'Total Categories: {subcat_num}')
         # Everything is Categorized
 
-        cat_list = []
-        for pixel in self.master_list:
-            cat_list.append(pixel.category)
+        self.subcategory_data_dict = None
+        def cat_tally_sort():
 
-        # Create dict of category numbers
-        cat_dict = {}
-        for i in range(1, cat_num):
-            cat_dict.update( { i : cat_list.count(i) } )
+            subcat_list = []
+            for pixel in self.pixel_master_list:
+                subcat_list.append(pixel.subcat_num)
+            # Create dict of category numbers
+            subcat_dict = {}
+            for i in range(1, subcat_num+1):
+                # print(i)
+                subcat_dict.update( { i : subcat_list.count(i) } )
+            # print(cat_dict)
+            # Sort dict in reverse order based on values
+            subcat_dict = dict(sorted(subcat_dict.items(), key=lambda item: item[1], reverse=True))
+            # print(cat_dict)
 
-        # Sort dict in reverse order based on values
-        cat_dict = dict(sorted(cat_dict.items(), key=lambda item: item[1], reverse=True))
-        # print(cat_dict)
+            new_subcat_num_dict = {}
+            for i, x in zip(range(1, len(subcat_dict)+1), subcat_dict.keys()):
+                new_subcat_num_dict.update( { x : i } )
 
-        new_cat_num_dict = {}
-        for i, x in zip(range(1, len(cat_dict)+1), cat_dict.keys()):
-            new_cat_num_dict.update( { x : i } )
+            # print(new_cat_num_dict)
 
-        # print(new_cat_num_dict)
+            for pixel in self.pixel_master_list:
+                # print(pixel.cat_num, new_cat_num_dict.get(pixel.category))
+                if pixel.subcat_num != new_subcat_num_dict.get(pixel.subcat_num):
+                    pixel.subcat_num = new_subcat_num_dict.get(pixel.subcat_num)
 
-        for pixel in self.master_list:
-            if pixel.category != new_cat_num_dict.get(pixel.category):
-                pixel.category = new_cat_num_dict.get(pixel.category)
+            subcat_list = []
+            for pixel in self.pixel_master_list:
+                subcat_list.append(pixel.subcat_num)
 
-        cat_list = []
-        for pixel in self.master_list:
-            cat_list.append(pixel.category)
+            # Create dict of category numbers
+            subcat_dict = {}
+            for i in range(1, subcat_num+1):
+                subcat_dict.update({i: subcat_list.count(i)})
 
-        # Create dict of category numbers
-        cat_dict = {}
-        for i in range(1, cat_num):
-            cat_dict.update({i: cat_list.count(i)})
+            # Sort dict in reverse order based on values
+            self.subcategory_data_dict = dict(sorted(subcat_dict.items(), key=lambda item: item[1], reverse=True))
+            print(self.subcategory_data_dict)
 
-        # Sort dict in reverse order based on values
-        self.category_data_dict = dict(sorted(cat_dict.items(), key=lambda item: item[1], reverse=True))
-        # print(category_data_dict)
+            for subcat in self.subcat_master_list:
+                if subcat.subcat_num != new_subcat_num_dict.get(subcat.subcat_num):
+                    subcat.subcat_num = new_subcat_num_dict.get(subcat.subcat_num)
 
+        cat_tally_sort()
 
-        # Create Array with pixels xy with cat valuee
+        print('Averaging Subcategories')
+        average = []
+        first = True
+
+        for item in self.subcategory_data_dict.items():
+            # print(f'Averaging Subcategory {item[0]}')
+            for subcat in self.subcat_master_list:
+                if subcat.subcat_num == item[0]:
+                    for pix in subcat.pixel_list:
+                        values_single = []
+                        for i in range(self.img_bands):
+                            values_single.append(self.data[pix.location[1], pix.location[0], i])
+                        if item[1] == 1:
+                            average = values_single
+                            continue
+                        else:
+                            if first:
+                                average = values_single
+                            new_list = []
+                            for a, b in zip(average, values_single):
+                                new_list.append((a + b) / 2)
+                            average = new_list
+                    subcat.average_values = average
+                    average = []
+
+    # Function to display all subcategories
+    def display_subcategories(self, display, cutoff_percent=100):
+
+        # Create Array with pixels xy with cat value
         cat_array = np.zeros((self.data.shape[0], self.data.shape[1], 1), dtype=float)
-        for pixel in self.master_list:
-            cat_array[pixel.location[1], pixel.location[0], 0] = pixel.category
+        cutoff = (len(self.subcategory_data_dict) + 1) * (cutoff_percent / 100)
+        cutoff = int((len(self.subcategory_data_dict) + 1) - cutoff)
+        # print(cutoff)
+
+        for pixel in self.pixel_master_list:
+
+            if pixel.subcat_num > cutoff:
+                cat_array[pixel.location[1], pixel.location[0], 0] = pixel.subcat_num
+            else:
+                cat_array[pixel.location[1], pixel.location[0], 0] = 0
 
         # Display Image with Categorized Pixels
         # plt.figure(figsize=(10, 10))
         # og = plt.imshow(self.data[:, :, 50], cmap='gray')
 
-        plt.imshow(cat_array, cmap='nipy_spectral')
-        plt.title('Category Overlay')
-        plt.colorbar()
-        plt.axis('off')
+        if display == True:
+            plt.imshow(cat_array, cmap='nipy_spectral')
+            plt.title('Category Overlay')
+            plt.colorbar()
+            plt.axis('off')
+            plt.show()
+        else:
+            self.graph_subcat = cat_array
+
+    # Function to graph the average values from each subcategory
+    def graph_average_subcat(self):
+
+        title = 'Subcateogry Averages'
+        for subcat in self.subcat_master_list:
+            x_a = np.linspace(0, self.img_bands, num=self.img_bands)
+            plt.plot(x_a, subcat.average_values, linewidth=2, label=f'Cat {subcat.subcat_num}')
+            plt.xlabel('Bands')
+            plt.ylabel('Values')
+            plt.legend(loc='upper right')
+        plt.title(title, fontsize=20)
         plt.show()
 
+    # Function to group subcategories
+    def group_subcat(self):
+        pass
+
+    # Function to be able to perform multiple operations on images at with one process
+    def analysis(self):
+        run = True
+        self.subcategorize_pixels_1()
+
+        while run:
+            command = input('Enter Command: ')
+            command.lower()
+
+            try:
+                if command == 'rgb':
+                    self.display_RGB()
+                elif command == 'ndvi':
+                    self.display_NDVI()
+                elif command == 'ndwi':
+                    self.display_NDWI()
+                elif command == 'index':
+                    self.display_indices()
+                elif command == 'graph':
+                    self.graph_spectra_all_pixels()
+                elif command == 'subcat':
+                    self.display_subcategories()
+                elif command == 'gasc':
+                    self.graph_average_subcat()
+                elif command == 'compare':
+                    self.compare()
+                elif command == 'help':
+                    print('rgb: Display RGB Image')
+                    print('ndvi: Display Diff Norm Veg Index')
+                    print('ndwi: Display Diff Norm Water Index')
+                    print('index: Display Indicies')
+                    print('graph: Graph all pixels in image')
+                    print('subcat: Display the Subcategories')
+                    print('gasc: Graph Average values of each Subcategory')
+                elif command == 'x':
+                    run = False
+                else: print('Input Not Recognized')
+
+            except:
+                print('Error Running Function - Try Another')
+
+    # Function to be able to perform multiple operations on images at with one process
+    def compare(self,display, save):
+        self.subcategorize_pixels_1()
+        self.display_RGB(False)
+        self.display_indices(False)
+        self.display_subcategories(display=False, cutoff_percent=100)
+        self.display_NDVI(False)
+
+        plt.figure(figsize=(15, 8))
+        plt.suptitle(f'{self.file_name} Comparison')
+
+        plt.subplot(2, 3, 1)
+        plt.imshow(self.rgb_graph, cmap=plt.get_cmap(None))
+        plt.title('RGB')
+        plt.axis('off')
+
+        plt.subplot(2, 3, 2)
+        plt.imshow(self.graph_ndvi, cmap=plt.get_cmap("RdYlGn"))
+        plt.title('NDVI')
+        # plt.colorbar()
+        plt.axis('off')
+
+        plt.subplot(2, 3, 3)
+        og = plt.imshow(self.graph_indicies[0], cmap='gray')
+        veg = plt.imshow(self.graph_indicies[1], cmap='Greens')
+        wat = plt.imshow(self.graph_indicies[2], cmap='Blues')
+        c1 = plt.colorbar(og, cmap='gray')
+        c2 = plt.colorbar(veg, cmap='Greens')
+        c3 = plt.colorbar(wat, cmap='Blues')
+        c1.remove()
+        c2.remove()
+        c3.remove()
+        plt.title('Indicies')
+        plt.axis('off')
+
+        plt.subplot(2, 3, 4)
+        plt.imshow(self.graph_subcat, cmap='nipy_spectral')
+        plt.title('Subcategories')
+        plt.axis('off')
+
+        plt.subplot(2, 3, 5)
+        plt.title('All Pixels')
+        x_list = np.linspace(0, (self.img_x - 1), 100)
+        y_list = np.linspace(0, (self.img_y - 1), 100)
+
+        for i in x_list:
+            for j in y_list:
+                self.graph_spectra_pixel([int(i), int(j)], 'Full', False)
+
+        plt.subplot(2, 3, 6)
+        plt.title('Average Subcategories')
+        for subcat in self.subcat_master_list:
+            x_a = np.linspace(0, self.img_bands, num=self.img_bands)
+            plt.plot(x_a, subcat.average_values, linewidth=2)
+            # plt.xlabel('Bands')
+            # plt.ylabel('Values')
+
+        if save:
+            saveas = (f'../../Dropbox/2 Work/1 Optics Lab/1 Anomaly Detection/_Cassification/Autosaves/{self.file_name}-Compare')
+            plt.savefig(saveas)
+            plt.close()
+        if display:
+            plt.show()
 
 
 
@@ -1081,6 +1407,32 @@ class Hyperspectral:
 
 
 
+# PIXEL CLASS TO STORE LOCATION, VALUES, AND CATEGORY
+class pixel_class:
+    def __init__(self, location, values):
+        self.location = location
+        self.values = values
+        self.cat_num = 0
+        self.subcat_num = 0
+        self.subcategory = object
+
+# CATEGORY CLASS TO STORE CAT, SUBCAT, CAT TYPE, SUBCAT TYPE, CAT AV VALUE
+class category_class:
+    category_list = ['unknown', 'natural', 'manmade', 'noise']
+    natural_sub_list = ['unknown', 'vegetation', 'water', 'soil', 'rock']
+    manmade_sub_list = ['unknown', 'metal', 'plastic', 'path', 'wood', 'concrete']
+
+    max_subcategories = 0
+
+    def __init__(self):
+        self.cat_num = 0
+        self.subcat_num = 0
+        self.subcat_group = 0
+        self.category_type = category_class.category_list[0]
+        self.sub_category_type = category_class.natural_sub_list[0]
+        self.total_num = 0
+        self.average_values = []
+        self.pixel_list = []
 
 
 

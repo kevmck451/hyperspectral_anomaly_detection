@@ -8,6 +8,7 @@ from MapIR import MapIRChromTest as mct
 
 
 raw_file_path = 'RGN Files/727 Section.png'
+# raw_file_path = 'RGN Files/818 Large Area.png'
 # raw_file_path = 'RGN Files/727 Section-Cal.png'
 # raw_file_path = 'RGN Files/818 Section.png'
 # raw_file_path = 'RGN Files/MonoChrom Test/650.jpg'
@@ -16,11 +17,12 @@ image = mir(raw_file_path)
 # print(image.data)
 # image.display_image()
 
+image.NDVI_Mm(max_val=0.50)
 # image.NDVI()
 # image.SAVI(0.5)
 # image.SAVI(0)
 # image.EVI_2()
-image.MSAVI()
+# image.MSAVI()
 
 '''
 location = [300, 300]

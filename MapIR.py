@@ -47,6 +47,30 @@ class MapIR:
         plt.show()
 
     # Function to display the Normalized Difference Veg Index
+    def NDVI_Mm(self, max_val=0.55):
+        NIR = self.data[:, :, self.NIR_index] #2
+        RED = self.data[:, :, self.R_index] #1
+        RED, NIR = RED.astype('float32'), NIR.astype('float32')
+        RED[RED == 0], NIR[NIR == 0] = np.nan, np.nan
+
+        # calculate ndvi
+        ndvi_array = (NIR - RED) / (NIR + RED)
+
+        # plot. all of this is matplotlib ---------->
+        ndvi_array_temp = np.zeros(ndvi_array.shape, dtype=float)
+        ndvi_array_temp[ndvi_array >= 0.1] = ndvi_array[ndvi_array >= 0.1]
+
+        # array_max = np.amax(ndvi_array_temp)
+        # print(array_max)
+
+        plt.figure(figsize=(18, 8))
+        plt.imshow(ndvi_array_temp, vmax=max_val, cmap=plt.get_cmap("RdYlGn"))
+        plt.title('NDVI')
+        plt.colorbar()
+        plt.axis('off')
+        plt.show()
+
+    # Function to display the Normalized Difference Veg Index
     def NDVI(self):
         NIR = self.data[:, :, self.NIR_index] #2
         RED = self.data[:, :, self.R_index] #1

@@ -12,10 +12,10 @@ import Hyperspectral as hs
 from Recon import Recon as rc
 
 # hs.show_all_files()
-hs.compare_all_files()
+# hs.compare_all_files(hs.avc_set)
 
 
-# file = hs.AV_Crop_7A
+# file = hs.AV_Full
 
 # file = hs.files[4]
 # image = h(file) #a hyperspectral image object using hyperspectral
@@ -31,8 +31,15 @@ hs.compare_all_files()
 #---------------------------------------------------------------------
 # CROP AN IMAGE - ONLY CURRENTLY WORKS FOR EVNI FILES
 #---------------------------------------------------------------------
-# image1 = image.crop([300, 720, 1700, 2250])
-# image1 = image.crop([100, 200, 100, 200])
+# x1 = 97
+# y1 = 2360
+# x2 = x1 + 200
+# y2 = y1 + 200
+
+# image.crop_many()
+# image = image.crop([x1, x2, y1, y2])
+# image.display_RGB(display=True)
+# image.export('AVC-16')
 
 #---------------------------------------------------------------------
 # COMMON MATERIALS
@@ -73,14 +80,6 @@ hs.compare_all_files()
 
 # image.export('AV-Crop-7A')
 
-#---------------------------------------------------------------------
-
-#Anomaly Detection from Scratch
-
-# image = rc()
-# image.rx(A_file_path)
-
-#---------------------------------------------------------------------
 
 
 

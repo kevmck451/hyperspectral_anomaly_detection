@@ -39,6 +39,15 @@ files = ['Anomaly Files/AV-Crop',
          'Datasets/ABU/abu-urban-1.mat', 'Datasets/ABU/abu-urban-2.mat', 'Datasets/ABU/abu-urban-3.mat',
          'Datasets/ABU/abu-urban-4.mat', 'Datasets/ABU/abu-urban-5.mat' ]
 
+avc_set = ['Datasets/AVC Set/AVC-1', 'Datasets/AVC Set/AVC-2',
+           'Datasets/AVC Set/AVC-3', 'Datasets/AVC Set/AVC-4',
+           'Datasets/AVC Set/AVC-5', 'Datasets/AVC Set/AVC-6',
+           'Datasets/AVC Set/AVC-7', 'Datasets/AVC Set/AVC-8',
+           'Datasets/AVC Set/AVC-9', 'Datasets/AVC Set/AVC-10',
+           'Datasets/AVC Set/AVC-11', 'Datasets/AVC Set/AVC-12',
+           'Datasets/AVC Set/AVC-13', 'Datasets/AVC Set/AVC-14',
+           'Datasets/AVC Set/AVC-15', 'Datasets/AVC Set/AVC-16']
+
 def show_all_files():
     print('0: AV-Crop')
     print('1: AV-Crop2')
@@ -62,12 +71,21 @@ def show_all_files():
     print('19: ABU-Urban 4')
     print('20: ABU-Urban 5')
 
-def compare_all_files():
+# Function to compare all files in a set
+def compare_all_files(file):
 
-    for file in files:
-        image = Hyperspectral(file)
+    for f in file:
+        image = Hyperspectral(f)
         image = image.reduce_bands()
         image.compare(display=False, save=True)
+
+# Function to graph all files from Monochromator
+def mapir_graph_all():
+    pika_f = np.arange(400, 880, 10)
+    for band in pika_f:
+        file = f'RGN Files/Pika T2/{band}nm.bil'
+        image = Hyperspectral(file)  # a hyperspectral image object using hyperspectral
+        image.graph_mapir_pika(display=False, save=True)
 
 
 class Hyperspectral:
@@ -180,37 +198,32 @@ class Hyperspectral:
                 k = line_split[1].strip()
                 self.header_file_dict.update({j: k})
                 if j.lower() == 'wavelength':
-                    task_count = 2
-
-            elif task_count == 2:
-                line = line.split(',')
-                wave = line[0].strip()
-                if wave.endswith('}'):
-                    line = wave.split('}')
+                    k = k.strip('}')
+                    k = k.strip('{')
+                    wave = k.split(',')
+                    for w in wave:
+                        val = float(w)
+                        self.wavelengths.append(val)
+                        val = round(val)
+                        self.wavelengths_dict.update({band_num: val})
+                        band_num += 1
                     task_count = 3
-                wave = float(line[0])
-                self.wavelengths.append(wave)
-                wave = round(wave)
-                self.wavelengths_dict.update( { band_num : wave } )
-                band_num += 1
 
             elif task_count == 3:
                 line_split = line.split('=')
                 j = line_split[0].strip()
                 k = line_split[1].strip()
                 self.header_file_dict.update({j: k})
-                task_count = 4
-
-            elif task_count == 4:
-                line = line.split(',')
-                wave = line[0].strip()
-                if wave.endswith('}'):
-                    line = wave.split('}')
-                    task_count = 5
-                wave = float(line[0])
-                band_num = 1
-                self.fwhm_dict.update({fwhm_num: wave})
-                fwhm_num += 1
+                if j.lower() == 'jwhm':
+                    line = line.split(',')
+                    wave = line[0].strip()
+                    if wave.endswith('}'):
+                        line = wave.split('}')
+                        task_count = 5
+                    wave = float(line[0])
+                    band_num = 1
+                    self.fwhm_dict.update({fwhm_num: wave})
+                    fwhm_num += 1
 
     # Function to write header files with current info
     def write_HDR(self, save_to, image_name):
@@ -590,8 +603,11 @@ class Hyperspectral:
         for i in range(self.img_bands):
             values_single.append(self.data[location[1], location[0], i])
 
+        # print(self.wavelengths_dict.values())
+
         try:
-            plt.plot(list(self.wavelengths_dict.values()), values_single, linewidth=2, label = title)
+            plt.plot(list(self.wavelengths_dict.values()), values_single, linewidth=2, label=title)
+
         except:
             x_a = np.linspace(0, self.img_bands, num=self.img_bands)
             plt.plot(x_a, values_single, linewidth=2, label=title)
@@ -611,6 +627,34 @@ class Hyperspectral:
             for j in y_list:
                 self.graph_spectra_pixel([int(i), int(j)], 'Full', False)
         plt.show()
+
+    # Function to graph all spectral signature for every pixel in image
+    def graph_mapir_pika(self, display, save):
+
+        x_list = np.linspace(0, (self.img_x - 1))
+        y_list = np.linspace(0, (self.img_y - 1))
+
+        for i in x_list:
+            for j in y_list:
+                values_single = []
+                for k in range(self.img_bands):
+                    values_single.append(self.data[int(j), int(i), k])
+                plt.plot(list(self.wavelengths_dict.values()), values_single, linewidth=2)
+                plt.ylim((0,50))
+                plt.xlabel('Bands')
+                plt.ylabel('Values')
+
+        band = self.file_name
+        band = int(band[0:3])
+        plt.vlines(x=[band], colors='black', ls='--', lw=1, ymin=0, ymax=50)
+        plt.title(self.file_name)
+
+        if save:
+            saveas = (f'../../Dropbox/2 Work/1 Optics Lab/2 Projects/MapIR/Autosaves/{self.file_name}-Graph')
+            plt.savefig(saveas)
+            plt.close()
+        if display:
+            plt.show()
 
     # Function to graph all spectral signature for every pixel in image
     def graph_single_subcategory(self, subcategory):
@@ -797,7 +841,7 @@ class Hyperspectral:
         f.write(data)
 
         self.write_HDR(save_to, image_name)
-        self.write_record_file(save_to, image_name)
+        # self.write_record_file(save_to, image_name)
 
     # Function to plot 6 bands of the HSI
     def display_image(self):
@@ -1400,10 +1444,26 @@ class Hyperspectral:
         if display:
             plt.show()
 
+    # Function to crop many images from single image
+    def crop_many(self):
+        name = input('Base Name: ')
+        width = int(input('Width: '))
+        height = int(input('Height: '))
 
+        while True:
+            num = 1
+            x1 = int(input('x1 = '))
+            x2 = x1 + width
+            y1 = int(input('y1 = '))
+            y2 = y1 + height
 
-
-
+            image = self.crop([x1, x2, y1, y2])
+            # image.display_RGB(display=True)
+            image.export(f'{name}-{num}')
+            num+=1
+            exit = input('Crop Another? ')
+            if exit == 'n':
+                break
 
 
 

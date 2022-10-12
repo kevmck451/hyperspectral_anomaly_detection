@@ -186,9 +186,9 @@ class MapIR:
 
 class MapIRChromTest:
 
-    def __init__(self):
+    def __init__(self, dir):
 
-        directory = 'RGN Files/MonoChrom Test'
+        directory = dir
         self.image_list_all = []
         self.band_list = []
 
@@ -224,7 +224,7 @@ class MapIRChromTest:
             self.green_values.append(self.green_list[i][1])
             self.nir_values.append(self.nir_list[i][1])
 
-    #Function to create list of values from single pixel
+    #Function to create list of values from sampled area of pixel
     def get_values_area(self, area):
 
         # another for loop to go through all the pixel coordinates
@@ -292,6 +292,6 @@ class MapIRChromTest:
                    label='MapIR Bands')
         plt.xlabel('Bands')
         plt.ylabel('Values')
-        plt.title('MapIR Monochromator Test 1', fontsize=20)
+        plt.title('MapIR Monochromator Test', fontsize=20)
         plt.legend(loc='upper left')
         plt.show()

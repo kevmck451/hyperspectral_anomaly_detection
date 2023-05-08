@@ -1,9 +1,9 @@
 '''Examples for Creating Anomalies'''
-#Do not try to run scripts in this folder, copy cody sections to Anom-Syn-main.py
+#Do not try to run scripts in this folder, copy cody sections to Hyp_MatSyn.py
 
 from Materials.Materials import Material as m
 from Materials.Materials import Material_Lib
-from Hyperspectral import Hyperspectral as h
+from Hyperspectral_1_0 import Hyperspectral as h
 from Recon import Recon as rc
 import matplotlib.pyplot as plt
 

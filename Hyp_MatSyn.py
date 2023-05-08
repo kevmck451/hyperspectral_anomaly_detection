@@ -7,26 +7,15 @@ import random
 
 from Materials.Materials import Material as m
 from Materials.Materials import Material_Lib
-from Hyperspectral import Hyperspectral as h
-import Hyperspectral as hs
-from Recon import Recon as rc
+from Hyperspectral_1_0 import Hyperspectral as h
+import Hyperspectral_1_0 as hs
 
-# hs.show_all_files()
-# hs.compare_all_files(hs.avc_set)
+# file = hs.Pika_C
 
-
-# file = hs.AV_Full
-
-# file = hs.files[4]
-# image = h(file) #a hyperspectral image object using hyperspectral
+file = hs.files[0]
+image = h(file) #a hyperspectral image object using hyperspectral
+# image.display_RGB(display=True)
 # image = image.reduce_bands() #no arguments will reduce to ~300 - 1000nm range
-# image.compare(display=True, save=False)
-
-# image.compare(display=True, save=True)
-
-# image.analysis()
-# image.display_NDVI(display=True)
-# image.graph_single_subcategory(2)
 
 #---------------------------------------------------------------------
 # CROP AN IMAGE - ONLY CURRENTLY WORKS FOR EVNI FILES
@@ -57,9 +46,12 @@ from Recon import Recon as rc
 # image.add_anomaly_6([103, 279], 5, .03)
 # image.add_anomaly_6([394, 234], 4, .02)
 # image.add_anomaly_6([380, 99], 3, .01)
-#
-# image.add_anomaly_8(material_loam, [301, 221], 6, .2, 0)
-# image.add_anomaly_8(material_concrete, [107, 68], 12, .2, .1)
+
+# image.add_anomaly_3(material_loam, [247, 216], 215)
+# image.add_anomaly_5(material_loam, [247, 216], 215, .2)
+# image.add_anomaly_8(material_loam, [150, 150], 100, .2, 0)
+# image.add_anomaly_8(material_concrete, [209, 225], 150, .2, .1)
+# image.add_anomaly_8(material_loam, [209, 225], 150, .2, .1)
 # image.add_anomaly_8(material_brick, [257, 123], 3, .2, .2)
 
 # for i in range(28):
@@ -75,8 +67,13 @@ from Recon import Recon as rc
 #         image.graph_spectra_pixel([x, y], ' ', False) #outer edge
 # plt.show()
 
-# image.display_RGB()
+# image.display_RGB(display=True)
 # image.display_NDVI()
+
+# x1, x2, y1, y2 = 150, 350, 150, 350
+# image = image.crop([x1, x2, y1, y2])
+
+# image.display_RGB(display=True)
 
 # image.export('AV-Crop-7A')
 

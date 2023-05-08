@@ -2,19 +2,24 @@
 #Kevin McKenzie 2022
 
 from Materials.Materials import Material as m
-import matplotlib.gridspec as gridspec
 from sklearn import preprocessing
 import matplotlib.pyplot as plt
+from scipy.stats import chi2
 from copy import deepcopy
-from envi_io import Cube
+import concurrent.futures
+from Hyp_envi import Cube
+import imageio.v3 as iio
+from PIL import Image
 import pandas as pd
 import numpy as np
 import scipy.io
-import shutil
+import spectral
 import random
 import time
 import math
+import os
 
+# with concurrent.futures.ProcessPoolExecutor() as executor:
 
 AV_Full = 'Datasets/AVIRIS/f100704t01p00r06rdn_b_sc01_ort_img'
 Pika_C = 'Datasets/Pika/c_mosaic.bil'
@@ -38,7 +43,27 @@ files = ['Anomaly Files/AV-Crop',
          'Datasets/ABU/abu-beach-1.mat', 'Datasets/ABU/abu-beach-2.mat', 'Datasets/ABU/abu-beach-3.mat',
          'Datasets/ABU/abu-urban-1.mat', 'Datasets/ABU/abu-urban-2.mat', 'Datasets/ABU/abu-urban-3.mat',
          'Datasets/ABU/abu-urban-4.mat', 'Datasets/ABU/abu-urban-5.mat' ]
-
+files_dict = {'AV Crop 1' :'Anomaly Files/AV-Crop',
+                'AV Crop 2' : 'Anomaly Files/AV-Crop2',
+                'AV Crop 1: 3A S' : 'Anomaly Files/AV-Crop-3Anom-S',
+                'AV Crop 2: 9A' : 'Anomaly Files/AV-Crop2-9A',
+                'Botswana' : 'Datasets/Botswana/Botswana.mat',
+                'Kennedy Space' : 'Datasets/Kennedy Space/KSC.mat',
+                'Indian Pines' : 'Datasets/Indian Pines/Indian_pines.mat',
+                'Pavia' : 'Datasets/Pavia/Pavia.mat',
+                'PaviaU' : 'Datasets/Pavia/PaviaU.mat',
+                'Salinas' : 'Datasets/Salinas/Salinas.mat',
+                'ABU Airport 1' : 'Datasets/ABU/abu-airport-1.mat',
+                'ABU Airport 2' : 'Datasets/ABU/abu-airport-2.mat',
+                'ABU Airport 3' : 'Datasets/ABU/abu-airport-3.mat',
+                'ABU Beach 1' : 'Datasets/ABU/abu-beach-1.mat',
+                'ABU Beach 2' : 'Datasets/ABU/abu-beach-2.mat',
+                'ABU Beach 3' : 'Datasets/ABU/abu-beach-3.mat',
+                'ABU Urban 1' : 'Datasets/ABU/abu-urban-1.mat',
+                'ABU Urban 2' : 'Datasets/ABU/abu-urban-2.mat',
+                'ABU Urban 3' : 'Datasets/ABU/abu-urban-3.mat',
+                'ABU Urban 4' : 'Datasets/ABU/abu-urban-4.mat',
+                'ABU Urban 5' : 'Datasets/ABU/abu-urban-5.mat' }
 avc_set = ['Datasets/AVC Set/AVC-1', 'Datasets/AVC Set/AVC-2',
            'Datasets/AVC Set/AVC-3', 'Datasets/AVC Set/AVC-4',
            'Datasets/AVC Set/AVC-5', 'Datasets/AVC Set/AVC-6',
@@ -81,13 +106,63 @@ def compare_all_files(file):
 
 # Function to graph all files from Monochromator
 def mapir_graph_all():
-    pika_f = np.arange(400, 880, 10)
+    pika_f = np.arange(500, 880, 10)
     for band in pika_f:
-        file = f'RGN Files/Pika T2/{band}nm.bil'
+        file = f'RGN Files/MonoChrom Test 4/pika/radiance/{band}nm.bip'
         image = Hyperspectral(file)  # a hyperspectral image object using hyperspectral
-        image.graph_mapir_pika(display=False, save=True)
+        image.graph_mapir_pika(display=True, save=False)
 
+# Function to graph all files from Monochromator
+def mapir_cor_max(display, save):
+    pika_f = np.arange(400, 880, 10)
+    max_dict = {}
+    for band in pika_f:
+        file = f'RGN Files/PikaC T3/{band}nm-Radiance From Raw Data.bip'
+        image = Hyperspectral(file)  # a hyperspectral image object using hyperspectral
+        list = image.image_metadata()
+        max_dict.update( {list[1]:band } )
 
+    if display:
+        plt.scatter(max_dict.values(),max_dict.keys())
+        plt.title('Pika-Corrected: Max Values')
+        plt.xlabel('Bands')
+        plt.ylabel('Values')
+        plt.show()
+
+    if save:
+        saveas = (f'../../Dropbox/2 Work/1 Optics Lab/2 Projects/MapIR/Autosaves/Pika-Corrected Max Values Dict.txt')
+        with open(saveas, 'w') as f:
+            for x,y in max_dict.items():
+                line = f'{str(y)} : {str(x)}\n'
+                f.write(line)
+            f.close()
+
+# Function to graph all files from Monochromator
+def mapir_cor_av(display, save):
+    pika_f = np.arange(400, 880, 10)
+    max_dict = {}
+    for band in pika_f:
+        file = f'RGN Files/PikaC T3/{band}nm-Radiance From Raw Data.bip'
+        image = Hyperspectral(file)  # a hyperspectral image object using hyperspectral
+        list = image.image_metadata()
+        max_dict.update( {list[2]:band } )
+
+    if display:
+        plt.scatter(max_dict.values(),max_dict.keys())
+        plt.title('Pika-Corrected: Mean Values')
+        plt.xlabel('Bands')
+        plt.ylabel('Values')
+        plt.show()
+
+    if save:
+        saveas = (f'../../Dropbox/2 Work/1 Optics Lab/2 Projects/MapIR/Autosaves/Pika-Corrected Mean Values Dict.txt')
+        with open(saveas, 'w') as f:
+            for x,y in max_dict.items():
+                line = f'{str(y)} : {str(x)}\n'
+                f.write(line)
+            f.close()
+
+# HYPERSPECTRAL CLASS FOR VIEWING, PROCESSING, AND ANALYZING HSI
 class Hyperspectral:
 
     wavelength_color_dict = {
@@ -102,6 +177,9 @@ class Hyperspectral:
         "shortwave-infrared": {'lower': 1100, 'upper': 2500, 'color': 'white'}
     }
 
+    #-------------------------------------------------------------------------------
+    # LOGISTIC FUNCTIONS
+    # -------------------------------------------------------------------------------
     def __init__(self, raw_file_path):
 
         self.edit_record = []
@@ -126,7 +204,6 @@ class Hyperspectral:
             except:
                 pass
 
-
         if self.file_type == 'bil':
             data = Cube.from_path(self.file_path)
             data = data.read()  # load into memory in native format as numpy array
@@ -142,6 +219,23 @@ class Hyperspectral:
 
             # reshape_data = np.zeros((self.img_y, self.img_x, self.img_bands), dtype=float)
             self.data = data.transpose((0,2,1))
+            self.open_HDR()
+
+        if self.file_type == 'bip':
+            data = Cube.from_path(self.file_path)
+            data = data.read()  # load into memory in native format as numpy array
+            # or load as memory map by adding as_mmap=True
+            # then only the parts of the cube you access will be read into memory
+            # if you need just a small part this can be much faster
+            # print(data)
+            data = np.array(data).astype(np.float32)
+
+            self.img_x = int(data.shape[1])
+            self.img_y = int(data.shape[0])
+            self.img_bands = int(data.shape[2])
+
+            # reshape_data = np.zeros((self.img_y, self.img_x, self.img_bands), dtype=float)
+            self.data = data.transpose((0,1,2))
             self.open_HDR()
 
         if self.file_type == 'mat':
@@ -183,38 +277,88 @@ class Hyperspectral:
         self.wavelengths = []
         self.fwhm_dict = {}
 
-        task_count = 0
-        band_num = 1
-        fwhm_num = 1
+        if self.file_type == 'bil' or self.file_type == 'bip':
+            task_count = 0
+            band_num = 1
+            fwhm_num = 1
 
-        for i, line in enumerate(hdr_file):
-            if task_count == 0:
-                self.hdr_title = line.strip().upper()
-                task_count = 1
+            for i, line in enumerate(hdr_file):
+                if task_count == 0:
+                    self.hdr_title = line.strip().upper()
+                    task_count = 1
 
-            elif task_count == 1:
-                line_split = line.split('=')
-                j = line_split[0].strip()
-                k = line_split[1].strip()
-                self.header_file_dict.update({j: k})
-                if j.lower() == 'wavelength':
-                    k = k.strip('}')
-                    k = k.strip('{')
-                    wave = k.split(',')
-                    for w in wave:
-                        val = float(w)
-                        self.wavelengths.append(val)
-                        val = round(val)
-                        self.wavelengths_dict.update({band_num: val})
-                        band_num += 1
-                    task_count = 3
+                elif task_count == 1:
+                    line_split = line.split('=')
+                    j = line_split[0].strip()
+                    k = line_split[1].strip()
+                    self.header_file_dict.update({j: k})
+                    if j.lower() == 'wavelength':
+                        k = k.strip('}')
+                        k = k.strip('{')
+                        wave = k.split(',')
+                        for w in wave:
+                            val = float(w)
+                            self.wavelengths.append(val)
+                            val = round(val)
+                            self.wavelengths_dict.update({band_num: val})
+                            band_num += 1
+                        task_count = 3
 
-            elif task_count == 3:
-                line_split = line.split('=')
-                j = line_split[0].strip()
-                k = line_split[1].strip()
-                self.header_file_dict.update({j: k})
-                if j.lower() == 'jwhm':
+                elif task_count == 3:
+                    line_split = line.split('=')
+                    j = line_split[0].strip()
+                    k = line_split[1].strip()
+                    self.header_file_dict.update({j: k})
+                    if j.lower() == 'jwhm':
+                        line = line.split(',')
+                        wave = line[0].strip()
+                        if wave.endswith('}'):
+                            line = wave.split('}')
+                            task_count = 5
+                        wave = float(line[0])
+                        band_num = 1
+                        self.fwhm_dict.update({fwhm_num: wave})
+                        fwhm_num += 1
+
+        else:
+            task_count = 0
+            band_num = 1
+            fwhm_num = 1
+
+            for i, line in enumerate(hdr_file):
+                if task_count == 0:
+                    self.hdr_title = line.strip().upper()
+                    task_count = 1
+
+                elif task_count == 1:
+                    line_split = line.split('=')
+                    j = line_split[0].strip()
+                    k = line_split[1].strip()
+                    self.header_file_dict.update({j: k})
+                    if j.lower() == 'wavelength':
+                        task_count = 2
+
+                elif task_count == 2:
+                    line = line.split(',')
+                    wave = line[0].strip()
+                    if wave.endswith('}'):
+                        line = wave.split('}')
+                        task_count = 3
+                    wave = float(line[0])
+                    self.wavelengths.append(wave)
+                    wave = round(wave)
+                    self.wavelengths_dict.update({band_num: wave})
+
+                    band_num += 1
+
+                elif task_count == 3:
+                    line_split = line.split('=')
+                    j = line_split[0].strip()
+                    k = line_split[1].strip()
+                    self.header_file_dict.update({j: k})
+                    task_count = 4
+
+                elif task_count == 4:
                     line = line.split(',')
                     wave = line[0].strip()
                     if wave.endswith('}'):
@@ -263,14 +407,182 @@ class Hyperspectral:
         for record in self.edit_record:
             g.writelines(record + '\n')
 
+    # -------------------------------------------------------------------------------
+    # EDITING FUNCTIONS
+    # -------------------------------------------------------------------------------
+    # Function to get metadata for single pixel in area we are going to edit
+    def pixel_metadata(self, x, y):
+        values_single = []
+        for i in range(224):
+            values_single.append(self.data[y, x, i])
+
+        nums = np.array(values_single)
+        min = nums.min()
+        max = nums.max()
+        av = nums.mean()
+        min_max_av_list = [min, max, av]
+
+        return min_max_av_list
+
+    # Function to get metadata for all pixels we are going to edit to see if they are in similar ranges
+    def area_metadata(self, y1, y2, x1, x2):
+        area_values = []
+        for i in range(224):
+            for j in range(y1, y2):
+                for k in range(x1, x2):
+                    area_values.append(self.data[j, k, i])
+
+        nums = np.array(area_values)
+        min = nums.min()
+        max = nums.max()
+        av = nums.mean()
+        min_max_av_list = [min, max, av]
+
+        return min_max_av_list
+
+    # Function to get metadata for all pixels in the image
+    def image_metadata(self):
+        area_values = []
+        min = []
+        max = []
+        av = []
+
+        for i in range(self.img_bands):
+            for j in range(self.img_y):
+                for k in range(self.img_x):
+                    area_values.append(self.data[j, k, i])
+
+            nums = np.array(area_values)
+            min.append(nums.min())
+            max.append(nums.max())
+            av.append(nums.mean())
+            area_values = []
+
+        min = np.array(min)
+        max = np.array(max)
+        av = np.array(av)
+        min_total = min.min()
+        max_total = max.max()
+        av_total = av.mean()
+        min_max_av_list = [min_total, max_total, av_total]
+
+        image = self.file_path.split('/')
+        image = image[-1]
+
+        record = 'Image Metadata: image = {}, min = {}, max = {}, average = {}'.format(
+            image, min_total, max_total, av_total)
+        self.edit_record.append(record)
+
+        return min_max_av_list
+
+    # Function to crop the image
+    def crop(self, dimension):
+        im_crop = deepcopy(self)
+
+        new_data = np.zeros(shape = (dimension[3]-dimension[2],dimension[1]-dimension[0], self.img_bands))
+
+        for i in range(self.img_bands):
+            new_data[:,:,i] = self.data[dimension[2]:dimension[3], dimension[0]:dimension[1], i]
+
+        im_crop.data = new_data
+        im_crop.img_x = dimension[1] - dimension[0]
+        im_crop.img_y = dimension[3] - dimension[2]
+
+        if self.file_type == 'envi':
+            im_crop.header_file_dict['samples'] = str(im_crop.img_x)
+            im_crop.header_file_dict['lines'] = str(im_crop.img_y)
+
+        image = self.file_path.split('/')
+        image = image[-1]
+
+        record = 'Image Edit: edit = crop, image = {}, dimensions = {}'.format(
+            image, dimension)
+        self.edit_record.append(record)
+
+        return im_crop
+
+    # Function to crop many images from single image
+    def crop_many(self):
+        name = input('Base Name: ')
+        width = int(input('Width: '))
+        height = int(input('Height: '))
+
+        while True:
+            num = 1
+            x1 = int(input('x1 = '))
+            x2 = x1 + width
+            y1 = int(input('y1 = '))
+            y2 = y1 + height
+
+            image = self.crop([x1, x2, y1, y2])
+            # image.display_RGB(display=True)
+            image.export(f'{name}-{num}')
+            num+=1
+            exit = input('Crop Another? ')
+            if exit == 'n':
+                break
+
+    # Function to change the number of bands
+    def reduce_bands(self, bands = (300, 1000), index = 66):
+
+        try:
+            bottom, top = bands[1], bands[0]
+            img = deepcopy(self)
+            new_wave_dict = {}
+            new_wavelengths = []
+            new_fwhm_dict = {}
+
+            new_b = 0
+
+            for x in self.wavelengths:
+                if top < x < bottom:
+                    new_wavelengths.append(x)
+                    new_b += 1
+
+            new_data = np.zeros(shape=(self.img_y, self.img_x, new_b))
+
+            b = 0
+            for i, ((x, y), z) in enumerate(zip(self.wavelengths_dict.items(), self.fwhm_dict.values())):
+                if top < y < bottom:
+                    new_wave_dict.update( { (b+1) : y } )
+                    new_data[:, :, b] = self.data[:, :, x]
+                    new_fwhm_dict.update({(b + 1): z})
+                    b += 1
+
+            img.header_file_dict['bands'] = str(new_b)
+            img.img_bands = new_b
+            img.wavelengths_dict = new_wave_dict
+            img.wavelengths = new_wavelengths
+            img.fwhm_dict = new_fwhm_dict
+            img.data = new_data
+
+            image = self.file_path.split('/')
+            image = image[-1]
+
+            record = 'Image Edit: edit = reduce bands, image = {}, bottom = {}, top = {}'.format(
+                image, bottom, top)
+            self.edit_record.append(record)
+
+            return img
+
+        except:
+            img = deepcopy(self)
+            new_data = np.zeros(shape=(self.img_y, self.img_x, index))
+
+            for i in range(index):
+                new_data[:, :, i] = self.data[:, :, i]
+
+            img.img_bands = index
+            img.data = new_data
+
+            return img
+
     # Function to add anomaly using material & image as is
     def add_anomaly_1(self, material, location, size, scale_factor):
         mat = material.map_material_to_image(list(self.wavelengths_dict.values()))
         x_list = [(location[0] - size), (location[0] + size)]
         y_list = [location[1] + size, location[1] - size]
-        adjusted = []
-        for x in mat:
-            adjusted.append(x * scale_factor)
+        adjusted = [(x * scale_factor) for x in mat]
 
         # Add the anomaly in the right shape
         for i in range(0, len(mat)):
@@ -285,17 +597,13 @@ class Hyperspectral:
         mat = material.map_material_to_image(list(self.wavelengths_dict.values()))
         x_list = [(location[0] - size), (location[0] + size)]
         y_list = [location[1] + size, location[1] - size]
-        min_max = self.pixel_metadata(location[0],location[1])
-        adjusted = []
+        min_max = self.pixel_metadata(location[0], location[1])
         ad = np.array(mat).reshape(-1, 1)
         scaler = preprocessing.MinMaxScaler(feature_range=(min_max[0], min_max[1]))
         normalizedlist = scaler.fit_transform(ad)
-        for i in normalizedlist:
-            x = i[0]
-            x = round(x)
-            adjusted.append(x)
+        adjusted = [round(i[0]) for i in normalizedlist]
 
-        #Add the anomaly in the right shape
+        # Add the anomaly in the right shape
         for i in range(0, len(mat)):
             self.data[y_list[1]:y_list[0], x_list[0]:x_list[1], i] = adjusted[i]
 
@@ -336,7 +644,7 @@ class Hyperspectral:
         # min_max = [-50, 32767, 983.8]
         mat_ar = np.array(mat)
         mat_max = mat_ar.max()
-        map_max = (mat_max/100) * min_max[1]
+        map_max = (mat_max / 100) * min_max[1]
         map_max = round(map_max)
         adjusted = []
         ad = np.array(mat).reshape(-1, 1)
@@ -435,8 +743,8 @@ class Hyperspectral:
         for i in range(0, len(mat)):
             # Top Edge: E1
             y1 = y_list[1] - 1
-            a = self.data[y1, x_list[0]:x_list[1], i] #surround pixels
-            b = self.data[y_list[1], x_list[0]:x_list[1], i] #material edge
+            a = self.data[y1, x_list[0]:x_list[1], i]  # surround pixels
+            b = self.data[y_list[1], x_list[0]:x_list[1], i]  # material edge
             w1 = 1
             for x, y in zip(a, b):
                 if x > y:
@@ -463,8 +771,8 @@ class Hyperspectral:
             x1 = x_list[0] - 1
             y1 = y_list[1] + 1
             y2 = y_list[0] + 1
-            e = self.data[ y1 : y2 , x1, i]  # surround pixels
-            f = self.data[ y1 : y2, x_list[0], i]  # material edge
+            e = self.data[y1: y2, x1, i]  # surround pixels
+            f = self.data[y1: y2, x_list[0], i]  # material edge
             w3 = 1
             for x, y in zip(e, f):
                 if x > y:
@@ -472,12 +780,12 @@ class Hyperspectral:
                 else:
                     w3 = 1 - weight
             s = ((w3 * e) + f) / 2
-            self.data[y1 : y2 , x_list[0], i] = s
+            self.data[y1: y2, x_list[0], i] = s
 
             # Right Edge: E4
             x2 = x_list[1] - 1
-            g = self.data[y1 : y2, x2, i]  # surround pixels
-            h = self.data[y1 : y2, x_list[1], i]  # material edge
+            g = self.data[y1: y2, x2, i]  # surround pixels
+            h = self.data[y1: y2, x_list[1], i]  # material edge
             w4 = 1
             for x, y in zip(g, h):
                 if x > y:
@@ -485,7 +793,7 @@ class Hyperspectral:
                 else:
                     w4 = 1 - weight
             t = ((w4 * g) + h) / 2
-            self.data[y1 : y2, x_list[1], i] = t
+            self.data[y1: y2, x_list[1], i] = t
 
         # self.anom_record.append('A5_{}'.format(material.material_id))
 
@@ -511,8 +819,8 @@ class Hyperspectral:
                     adjusted.append(x)
 
                 for k in range(0, len(mat)):
-                    a = self.data[i, j, k] #OG Value for the pixel about to replace
-                    b = adjusted[k]         #adjusted material value
+                    a = self.data[i, j, k]  # OG Value for the pixel about to replace
+                    b = adjusted[k]  # adjusted material value
                     wt = weight
                     if weight >= 1:
                         wt = .9999999
@@ -532,71 +840,38 @@ class Hyperspectral:
             material.material_id, size, location, variation, weight)
         self.edit_record.append(record)
 
-    # Function to get metadata for single pixel in area we are going to edit
-    def pixel_metadata(self, x, y):
+    # Function to create new material text file
+    def create_material(self, location, filename, material_info):
+        # check to see if file already exists
+
         values_single = []
         for i in range(224):
-            values_single.append(self.data[y, x, i])
+            values_single.append(self.data[location[1], location[0], i])
+        g = open('Materials/Material Data/' + filename, 'w')
+        for i in range(len(m.infonames)):
+            d = m.infonames[i], ': ', material_info[i], '\n'
+            g.writelines(d)
+        g.writelines('\n')
+        wave = list(self.wavelengths_dict.values())
+        for i in range(len(self.wavelengths)):
+            d = str((wave[i] / 1000)), ' ', str(values_single[i]), '\n'
+            g.writelines(d)
+        g.close()
 
-        nums = np.array(values_single)
-        min = nums.min()
-        max = nums.max()
-        av = nums.mean()
-        min_max_av_list = [min, max, av]
+    # Function to export image to a file
+    def export(self, image_name = 'Untitled'):
+        export_im = deepcopy(self)
+        save_to = 'Anomaly Files/'
+        data = export_im.data.astype(">i2")
+        f = open(save_to + image_name, "wb")
+        f.write(data)
 
-        return min_max_av_list
+        self.write_HDR(save_to, image_name)
+        # self.write_record_file(save_to, image_name)
 
-    # Function to get metadata for all pixels we are going to edit to see if they are in similar ranges
-    def area_metadata(self, y1, y2, x1, x2):
-        area_values = []
-        for i in range(224):
-            for j in range(y1, y2):
-                for k in range(x1, x2):
-                    area_values.append(self.data[j, k, i])
-
-        nums = np.array(area_values)
-        min = nums.min()
-        max = nums.max()
-        av = nums.mean()
-        min_max_av_list = [min, max, av]
-
-        return min_max_av_list
-
-    # Function to get metadata for all pixels in the image
-    def image_metadata(self):
-        area_values = []
-        min = []
-        max = []
-        av = []
-
-        for i in range(self.img_bands):
-            for j in range(self.img_y):
-                for k in range(self.img_x):
-                    area_values.append(self.data[j, k, i])
-
-            nums = np.array(area_values)
-            min.append(nums.min())
-            max.append(nums.max())
-            av.append(nums.mean())
-            area_values = []
-
-        min = np.array(min)
-        max = np.array(max)
-        av = np.array(av)
-        min_total = min.min()
-        max_total = max.max()
-        av_total = av.mean()
-        min_max_av_list = [min_total, max_total, av_total]
-
-        image = self.file_path.split('/')
-        image = image[-1]
-
-        record = 'Image Metadata: image = {}, min = {}, max = {}, average = {}'.format(
-            image, min_total, max_total, av_total)
-        self.edit_record.append(record)
-
-        return min_max_av_list
-
+    # -------------------------------------------------------------------------------
+    # EXPLORE FUNCTIONS
+    # -------------------------------------------------------------------------------
     # Function to create a material from single pixel in image
     def graph_spectra_pixel(self, location, title, single):
         values_single = []
@@ -639,22 +914,68 @@ class Hyperspectral:
                 values_single = []
                 for k in range(self.img_bands):
                     values_single.append(self.data[int(j), int(i), k])
-                plt.plot(list(self.wavelengths_dict.values()), values_single, linewidth=2)
-                plt.ylim((0,50))
+
+                plt.plot(list(self.wavelengths_dict.values()), values_single, linewidth=1)
+                # plt.ylim((0,50))
                 plt.xlabel('Bands')
-                plt.ylabel('Values')
+                plt.ylabel('Counts')
+
+        pika_band = 0
+        max_val = 0
+        for k in range(self.img_bands):
+            values_single = []
+            for i in x_list:
+                for j in y_list:
+                    values_single.append(self.data[int(j), int(i), k])
+            max_l = np.max(values_single)
+            if max_l > max_val:
+                pika_band = k
+                max_val = max_l
+
+        wl_list = list(self.wavelengths_dict.values())
+        pika_band = wl_list[pika_band]
 
         band = self.file_name
         band = int(band[0:3])
-        plt.vlines(x=[band], colors='black', ls='--', lw=1, ymin=0, ymax=50)
-        plt.title(self.file_name)
+        plt.vlines(x=[band], colors='black', ls='--', lw=1, ymin=0, ymax=100)
+        plt.title(f'MC: {self.file_name} / Pika: {pika_band}nm')
 
         if save:
-            saveas = (f'../../Dropbox/2 Work/1 Optics Lab/2 Projects/MapIR/Autosaves/{self.file_name}-Graph')
+            saveas = (f'../../Dropbox/2 Work/1 Optics Lab/2 MapIR/Autosaves/{self.file_name}-Graph')
             plt.savefig(saveas)
             plt.close()
         if display:
             plt.show()
+
+    def mono_pika_comp(self):
+
+        x_list = np.linspace(0, (self.img_x - 1))
+        y_list = np.linspace(0, (self.img_y - 1))
+
+        pika_band = 0
+        max_val = 0
+
+        for k in range(self.img_bands):
+            values_single = []
+            for i in x_list:
+                for j in y_list:
+                    values_single.append(self.data[int(j), int(i), k])
+            max_l = np.max(values_single)
+            if max_l > max_val:
+                pika_band = k
+                max_val = max_l
+
+        wl_list = list(self.wavelengths_dict.values())
+        pika_band = wl_list[pika_band]
+
+        mono_band = self.file_name
+        mono_band = int(mono_band[0:3])
+        diff = abs(pika_band - mono_band)
+        if print: print(f'Mono Band: {mono_band} / Pika: {pika_band} / Diff = {diff}')
+
+        return diff
+
+
 
     # Function to graph all spectral signature for every pixel in image
     def graph_single_subcategory(self, subcategory):
@@ -733,115 +1054,18 @@ class Hyperspectral:
         # plt.legend(loc='upper right')
         plt.show()
 
-    # Function to create new material text file
-    def create_material(self, location, filename, material_info):
-        #check to see if file already exists
+    # Function to graph the average values from each subcategory
+    def graph_average_subcat(self):
 
-        values_single = []
-        for i in range(224):
-            values_single.append(self.data[location[1], location[0], i])
-        g = open('Materials/Material Data/' + filename, 'w')
-        for i in range(len(m.infonames)):
-            d = m.infonames[i], ': ', material_info[i], '\n'
-            g.writelines(d)
-        g.writelines('\n')
-        wave = list(self.wavelengths_dict.values())
-        for i in range(len(self.wavelengths)):
-            d = str((wave[i]/1000)), ' ', str(values_single[i]), '\n'
-            g.writelines(d)
-        g.close()
-
-    # Function to crop the image
-    def crop(self, dimension):
-        im_crop = deepcopy(self)
-
-        new_data = np.zeros(shape = (dimension[3]-dimension[2],dimension[1]-dimension[0], self.img_bands))
-
-        for i in range(self.img_bands):
-            new_data[:,:,i] = self.data[dimension[2]:dimension[3], dimension[0]:dimension[1], i]
-
-        im_crop.data = new_data
-        im_crop.img_x = dimension[1] - dimension[0]
-        im_crop.img_y = dimension[3] - dimension[2]
-
-        if self.file_type == 'envi':
-            im_crop.header_file_dict['samples'] = str(im_crop.img_x)
-            im_crop.header_file_dict['lines'] = str(im_crop.img_y)
-
-        image = self.file_path.split('/')
-        image = image[-1]
-
-        record = 'Image Edit: edit = crop, image = {}, dimensions = {}'.format(
-            image, dimension)
-        self.edit_record.append(record)
-
-        return im_crop
-
-    # Function to change the number of bands
-    def reduce_bands(self, bands = (300, 1000), index = 66):
-
-        try:
-            bottom, top = bands[1], bands[0]
-            img = deepcopy(self)
-            new_wave_dict = {}
-            new_wavelengths = []
-            new_fwhm_dict = {}
-
-            new_b = 0
-
-            for x in self.wavelengths:
-                if top < x < bottom:
-                    new_wavelengths.append(x)
-                    new_b += 1
-
-            new_data = np.zeros(shape=(self.img_y, self.img_x, new_b))
-
-            b = 0
-            for i, ((x, y), z) in enumerate(zip(self.wavelengths_dict.items(), self.fwhm_dict.values())):
-                if top < y < bottom:
-                    new_wave_dict.update( { (b+1) : y } )
-                    new_data[:, :, b] = self.data[:, :, x]
-                    new_fwhm_dict.update({(b + 1): z})
-                    b += 1
-
-            img.header_file_dict['bands'] = str(new_b)
-            img.img_bands = new_b
-            img.wavelengths_dict = new_wave_dict
-            img.wavelengths = new_wavelengths
-            img.fwhm_dict = new_fwhm_dict
-            img.data = new_data
-
-            image = self.file_path.split('/')
-            image = image[-1]
-
-            record = 'Image Edit: edit = reduce bands, image = {}, bottom = {}, top = {}'.format(
-                image, bottom, top)
-            self.edit_record.append(record)
-
-            return img
-
-        except:
-            img = deepcopy(self)
-            new_data = np.zeros(shape=(self.img_y, self.img_x, index))
-
-            for i in range(index):
-                new_data[:, :, i] = self.data[:, :, i]
-
-            img.img_bands = index
-            img.data = new_data
-
-            return img
-
-    # Function to export image to a file
-    def export(self, image_name = 'Untitled'):
-        export_im = deepcopy(self)
-        save_to = 'Anomaly Files/'
-        data = export_im.data.astype(">i2")
-        f = open(save_to + image_name, "wb")
-        f.write(data)
-
-        self.write_HDR(save_to, image_name)
-        # self.write_record_file(save_to, image_name)
+        title = 'Subcateogry Averages'
+        for subcat in self.subcat_master_list:
+            x_a = np.linspace(0, self.img_bands, num=self.img_bands)
+            plt.plot(x_a, subcat.average_values, linewidth=2, label=f'Cat {subcat.subcat_num}')
+            plt.xlabel('Bands')
+            plt.ylabel('Values')
+            plt.legend(loc='upper right')
+        plt.title(title, fontsize=20)
+        plt.show()
 
     # Function to plot 6 bands of the HSI
     def display_image(self):
@@ -854,33 +1078,12 @@ class Hyperspectral:
         band_list = [50, 39, 24, 18, 12, 8]
         font_size = 12
 
-        plt.figure(figsize=(18, 8))
-        plt.subplot(161)
-        plt.imshow(self.data[:, :, band_list[0]], cmap=plt.get_cmap(color_map), vmin=vmin, vmax=vmax)
-        plt.title('IR-Band: {} nm'.format(self.wavelengths_dict.get(band_list[0])), fontsize=font_size)
+        # plt.figure(figsize=(18, 8))
+        # plt.subplot(161)
+        plt.imshow(self.data[:, :, 0], cmap=plt.get_cmap(color_map))
+        # plt.title('IR-Band: {} nm'.format(self.wavelengths_dict.get(band_list[0])), fontsize=font_size)
         plt.axis('off')
-        plt.subplot(162)
-        plt.imshow(self.data[:, :, band_list[1]], cmap=plt.get_cmap(color_map), vmin=vmin, vmax=vmax)
-        plt.title('R-Band: {} nm'.format(self.wavelengths_dict.get(band_list[1])), fontsize=font_size)
-        plt.axis('off')
-        plt.subplot(163)
-        plt.imshow(self.data[:, :, band_list[2]], cmap=plt.get_cmap(color_map), vmin=vmin, vmax=vmax)
-        plt.title('Y-Band: {} nm'.format(self.wavelengths_dict.get(band_list[2])), fontsize=font_size)
-        plt.axis('off')
-        plt.subplot(164)
-        plt.imshow(self.data[:, :, band_list[3]], cmap=plt.get_cmap(color_map), vmin=vmin, vmax=vmax)
-        plt.title('G-Band: {} nm'.format(self.wavelengths_dict.get(band_list[3])), fontsize=font_size)
-        plt.axis('off')
-        plt.subplot(165)
-        plt.imshow(self.data[:, :, band_list[4]], cmap=plt.get_cmap(color_map), vmin=vmin, vmax=vmax)
-        plt.title('B-Band: {} nm'.format(self.wavelengths_dict.get(band_list[4])), fontsize=font_size)
-        plt.axis('off')
-        plt.subplot(166)
-        plt.imshow(self.data[:, :, band_list[5]], cmap=plt.get_cmap(color_map), vmin=vmin, vmax=vmax)
-        plt.title('P-Band: {} nm'.format(self.wavelengths_dict.get(band_list[5])), fontsize=font_size)
-        plt.axis('off')
-        # cax = plt.axes([0.915, 0.15, 0.02, 0.685]) #left right / up down / width size / length size
-        # plt.colorbar(cax=cax)
+
         plt.show()
 
     # Function to display the RGB Image
@@ -925,9 +1128,8 @@ class Hyperspectral:
             rgb_stack[:, :, i] = b_equalized.reshape(b.shape)
 
         # plot. all of this is matplotlib ---------->
-
         if display == True:
-            plt.figure(figsize=(18, 8))
+            # plt.figure(figsize=(18, 8))
             plt.imshow(rgb_stack, cmap=plt.get_cmap(None))
             plt.axis('off')
             plt.show()
@@ -961,7 +1163,7 @@ class Hyperspectral:
 
         if display:
             # plt.figure(figsize=(10, 15))
-            plt.imshow(ndvi_array_temp, cmap=plt.get_cmap("RdYlGn"))
+            plt.imshow(ndvi_array_temp, vmax=1, cmap=plt.get_cmap("RdYlGn"))
             plt.title('NDVI')
             plt.colorbar()
             plt.axis('off')
@@ -1047,7 +1249,7 @@ class Hyperspectral:
         ndwi_array_temp[ndwi_array >= 0.1] = ndwi_array[ndwi_array >= 0.1]
 
         # plt.figure(figsize=(10, 15))
-        plt.imshow(ndwi_array_temp, cmap=plt.get_cmap("Blues"))
+        plt.imshow(ndwi_array_temp, vmax=1, cmap=plt.get_cmap("Blues"))
         plt.title('NDWI')
         plt.colorbar()
         plt.axis('off')
@@ -1093,8 +1295,8 @@ class Hyperspectral:
         if display == True:
             # plt.figure(figsize=(10, 10))
             og = plt.imshow(self.data[:, :, 50], cmap = 'gray')
-            veg = plt.imshow(vegetation, cmap='Greens')
-            wat = plt.imshow(water, cmap='Blues')
+            veg = plt.imshow(vegetation, cmap='Greens', vmin = 0, vmax= 1, alpha=.5)
+            wat = plt.imshow(water, cmap='Blues', vmin = 0, vmax=1, alpha=.5)
             plt.colorbar(og, cmap='gray')
             plt.colorbar(veg, cmap='Greens')
             plt.colorbar(wat, cmap='Blues')
@@ -1105,55 +1307,89 @@ class Hyperspectral:
         else:
             self.graph_indicies = [self.data[:, :, 50], vegetation, water]
 
+    # Function to display all subcategories
+    def display_subcategories(self, display, cutoff_percent=100):
+
+        # Create Array with pixels xy with cat value
+        cat_array = np.zeros((self.data.shape[0], self.data.shape[1], 1), dtype=float)
+        cutoff = (len(self.subcategory_data_dict) + 1) * (cutoff_percent / 100)
+        cutoff = int((len(self.subcategory_data_dict) + 1) - cutoff)
+        # print(cutoff)
+
+        for pixel in self.pixel_master_list:
+
+            if pixel.subcat_num > cutoff:
+                cat_array[pixel.location[1], pixel.location[0], 0] = pixel.subcat_num
+            else:
+                cat_array[pixel.location[1], pixel.location[0], 0] = 0
+
+        # Display Image with Categorized Pixels
+        # plt.figure(figsize=(10, 10))
+        # og = plt.imshow(self.data[:, :, 50], cmap='gray')
+
+        if display == True:
+            plt.imshow(cat_array, cmap='nipy_spectral')
+            plt.title('Category Overlay')
+            plt.colorbar()
+            plt.axis('off')
+            plt.show()
+        else:
+            self.graph_subcat = cat_array
+
     # Function to create a material from single pixel in image
-    def subcategorize_pixels_1(self, band = 'L', variation = 15, iterations = 100):
+    def subcategorize_pixels_1(self, band='M', variation=20, iterations=15, av=False):
+        total_start_time = time.time()
+        if band == 'S':
+            bands = [4, 10, 18, 24, 34, 42, 52, 66]  # reduced bands
+        elif band == 'M':
+            bands = [2, 6, 10, 14, 18, 22, 34, 42, 52, 56, 66]  # reduced bands
+        elif band == 'aviris':
+            bands = [14, 23, 32, 47, 69, 98, 131, 184]  # aviris images
+        elif band == 'mat':
+            bands = [10, 18, 26, 40, 55, 70, 95, 124, 160]  # .mat images
+        elif band == 'bot':
+            bands = [13, 20, 36, 41, 52, 70, 90, 121]  # bot image
+        else:
+            bands = [4, 8, 12, 16, 20, 24, 28, 36, 40, 48, 52, 56, 64, 66]  # reduced bands
 
-        if band == 'S': bands = [4, 10, 18, 24, 34, 42, 52, 66] #reduced bands
-        elif band == 'M': bands = [2, 6, 10, 14, 18, 22, 34, 42, 52, 56, 66] #reduced bands
-        elif band == 'aviris': bands = [14, 23, 32, 47, 69, 98, 131, 184] #aviris images
-        elif band == 'mat': bands = [10, 18, 26, 40, 55, 70, 95, 124, 160] #.mat images
-        elif band == 'bot': bands = [13, 20, 36, 41, 52, 70, 90, 121] # bot image
-        else: bands = [4, 8, 12, 16, 20, 24, 28, 36, 40, 48, 52, 56, 64, 66] #reduced bands
-
-        #----------------------
+        # ----------------------
 
         cll = (variation / 100) - 1
         clh = (variation / 100) + 1
-        # x_list = np.linspace(0, (self.img_x - 1), self.img_x, dtype=int)
-        # y_list = np.linspace(0, (self.img_y - 1), self.img_y, dtype=int)
-        x_list = []
-        y_list = []
+        x_list = [i for i in range(self.img_x)]
+        y_list = [i for i in range(self.img_y)]
         # print(self.img_x, self.img_y)
-        for i in range(self.img_x): x_list.append(i)
-        for i in range(self.img_y): y_list.append(i)
+
         # if there are bands outside the max num bands, remove
-        while np.max(bands) >= self.img_bands:
-            bands.pop()
+        while np.max(bands) >= self.img_bands: bands.pop()
 
         # INITIATE ALL PIXEL OBJECTS AND SAMPLE VALUES AT POINTS
+        print('Initializing Pixel Objects')
+        # print(f'Estimated Time: {((len(x_list) * len(y_list)) / 400_500) / 60} mins')
+        t3 = time.time()
+        pixel_values = [[[self.data[j, i, k] for k in bands] for j in y_list] for i in x_list]
         self.pixel_master_list = []
-        pixel_values = []
         for i in x_list:
             for j in y_list:
-                for k in bands:
-                    pixel_values.append(self.data[j, i, k])
-
-                p = pixel_class([i,j], np.asarray(pixel_values))
+                p = pixel_class([i, j], np.asarray(pixel_values[i][j]))
                 self.pixel_master_list.append(p)
-                pixel_values = []
+
+        # print(f'Pixel Ob Time: {(time.time() - t3) / 60} mins')
+        # print(f'Pix / s: {(len(x_list)*len(y_list) / (time.time() - t3))}')
 
         # CATEGORIZE ALL PIXELS BASED ON SIMILARITY
         def is_similar(compare_list, list):
             similar = [1] * len(compare_list)
             comp = []
-            for x,y in zip(compare_list, list):
-                a, b = (x*cll), (x*clh)
-                # print('{} <= {} <= {}'.format(a, y, b))
-                if a <= y <= b: comp.append(1)
-                else: comp.append(0)
-            # print('{} vs {}'.format(comp, similar))
-            if comp == similar: return True
-            else: return False
+            for x, y in zip(compare_list, list):
+                if (x * cll) <= y <= (x * clh):
+                    comp.append(1)
+                else:
+                    comp.append(0)
+            if comp == similar:
+                return True
+            else:
+                return False
 
         def check_uncat():
             # print('Checking if any Uncategorized')
@@ -1215,7 +1451,7 @@ class Hyperspectral:
                         pixel.subcat_num = subcat_num
                         c.pixel_list.append(pixel)
                         pixel.subcategory = c
-                        break
+                break
             category_class.max_subcategories += 1
             # print('Subcat Num: {}'.format(subcat_num))
         # End of While Loop ---------------
@@ -1223,6 +1459,7 @@ class Hyperspectral:
         # Everything is Categorized
 
         self.subcategory_data_dict = None
+
         def cat_tally_sort():
 
             subcat_list = []
@@ -1230,17 +1467,17 @@ class Hyperspectral:
                 subcat_list.append(pixel.subcat_num)
             # Create dict of category numbers
             subcat_dict = {}
-            for i in range(1, subcat_num+1):
+            for i in range(1, subcat_num + 1):
                 # print(i)
-                subcat_dict.update( { i : subcat_list.count(i) } )
+                subcat_dict.update({i: subcat_list.count(i)})
             # print(cat_dict)
             # Sort dict in reverse order based on values
             subcat_dict = dict(sorted(subcat_dict.items(), key=lambda item: item[1], reverse=True))
             # print(cat_dict)
 
             new_subcat_num_dict = {}
-            for i, x in zip(range(1, len(subcat_dict)+1), subcat_dict.keys()):
-                new_subcat_num_dict.update( { x : i } )
+            for i, x in zip(range(1, len(subcat_dict) + 1), subcat_dict.keys()):
+                new_subcat_num_dict.update({x: i})
 
             # print(new_cat_num_dict)
 
@@ -1255,7 +1492,7 @@ class Hyperspectral:
 
             # Create dict of category numbers
             subcat_dict = {}
-            for i in range(1, subcat_num+1):
+            for i in range(1, subcat_num + 1):
                 subcat_dict.update({i: subcat_list.count(i)})
 
             # Sort dict in reverse order based on values
@@ -1268,76 +1505,30 @@ class Hyperspectral:
 
         cat_tally_sort()
 
-        print('Averaging Subcategories')
-        average = []
-        first = True
+        if av:
+            print('Averaging Subcategories')
+            average = []
+            first = True
 
-        for item in self.subcategory_data_dict.items():
-            # print(f'Averaging Subcategory {item[0]}')
-            for subcat in self.subcat_master_list:
-                if subcat.subcat_num == item[0]:
-                    for pix in subcat.pixel_list:
-                        values_single = []
-                        for i in range(self.img_bands):
-                            values_single.append(self.data[pix.location[1], pix.location[0], i])
-                        if item[1] == 1:
-                            average = values_single
-                            continue
-                        else:
-                            if first:
+            for item in self.subcategory_data_dict.items():
+                # print(f'Averaging Subcategory {item[0]}')
+                for subcat in self.subcat_master_list:
+                    if subcat.subcat_num == item[0]:
+                        for pix in subcat.pixel_list:
+                            values_single = [self.data[pix.location[1], pix.location[0], i] for i in
+                                             range(self.img_bands)]
+                            if item[1] == 1:
                                 average = values_single
-                            new_list = []
-                            for a, b in zip(average, values_single):
-                                new_list.append((a + b) / 2)
-                            average = new_list
-                    subcat.average_values = average
-                    average = []
+                                continue
+                            else:
+                                if first:
+                                    average = values_single
+                                new_list = [((a + b) / 2) for a, b in zip(average, values_single)]
+                                average = new_list
+                        subcat.average_values = average
+                        average = []
 
-    # Function to display all subcategories
-    def display_subcategories(self, display, cutoff_percent=100):
-
-        # Create Array with pixels xy with cat value
-        cat_array = np.zeros((self.data.shape[0], self.data.shape[1], 1), dtype=float)
-        cutoff = (len(self.subcategory_data_dict) + 1) * (cutoff_percent / 100)
-        cutoff = int((len(self.subcategory_data_dict) + 1) - cutoff)
-        # print(cutoff)
-
-        for pixel in self.pixel_master_list:
-
-            if pixel.subcat_num > cutoff:
-                cat_array[pixel.location[1], pixel.location[0], 0] = pixel.subcat_num
-            else:
-                cat_array[pixel.location[1], pixel.location[0], 0] = 0
-
-        # Display Image with Categorized Pixels
-        # plt.figure(figsize=(10, 10))
-        # og = plt.imshow(self.data[:, :, 50], cmap='gray')
-
-        if display == True:
-            plt.imshow(cat_array, cmap='nipy_spectral')
-            plt.title('Category Overlay')
-            plt.colorbar()
-            plt.axis('off')
-            plt.show()
-        else:
-            self.graph_subcat = cat_array
-
-    # Function to graph the average values from each subcategory
-    def graph_average_subcat(self):
-
-        title = 'Subcateogry Averages'
-        for subcat in self.subcat_master_list:
-            x_a = np.linspace(0, self.img_bands, num=self.img_bands)
-            plt.plot(x_a, subcat.average_values, linewidth=2, label=f'Cat {subcat.subcat_num}')
-            plt.xlabel('Bands')
-            plt.ylabel('Values')
-            plt.legend(loc='upper right')
-        plt.title(title, fontsize=20)
-        plt.show()
-
-    # Function to group subcategories
-    def group_subcat(self):
-        pass
+        print(f'Total Time: {(time.time() - total_start_time) / 60} mins')
 
     # Function to be able to perform multiple operations on images at with one process
     def analysis(self):
@@ -1444,27 +1635,90 @@ class Hyperspectral:
         if display:
             plt.show()
 
-    # Function to crop many images from single image
-    def crop_many(self):
-        name = input('Base Name: ')
-        width = int(input('Width: '))
-        height = int(input('Height: '))
+    # -------------------------------------------------------------------------------
+    # ANOMALY DETECTOR FUNCTIONS
+    # -------------------------------------------------------------------------------
 
-        while True:
-            num = 1
-            x1 = int(input('x1 = '))
-            x2 = x1 + width
-            y1 = int(input('y1 = '))
-            y2 = y1 + height
+    def RX_Spectral(self):
 
-            image = self.crop([x1, x2, y1, y2])
-            # image.display_RGB(display=True)
-            image.export(f'{name}-{num}')
-            num+=1
-            exit = input('Crop Another? ')
-            if exit == 'n':
-                break
+        try:
+            spectral.settings.envi_support_nonlowercase_params = True
+            # self.img = spectral.io.envi.open(hdr_file_path)
+            self.img = spectral.open_image(self.file_path + '.hdr')
+            self.data = self.img.load()
+            self.data = np.where(self.data < 0, 0, self.data)
 
+            # Water Vapour Absorption Band, Water Vapour Absorption Band, Not Illuminated
+            if 105 < self.img.nbands < 225:
+                w_bands = list(range(105, 120)) + list(range(150, 171)) + list(range(215, 224))
+                self.data = np.delete(self.data, w_bands, axis=2)
+
+            inc = 500
+
+            rxvals = None
+            for i in range(0, self.data.shape[0], inc):
+                rxrow = None
+
+                for j in range(0, self.data.shape[1], inc):
+                    d = self.data[i:i + inc, j:j + inc, :]
+                    rxcol = spectral.rx(d)  # spectral.rx(data, window=(5,211))  Local RX
+                    rxrow = np.append(rxrow, rxcol, axis=1) if rxrow is not None else rxcol
+                rxvals = np.vstack((rxvals, rxrow)) if rxvals is not None else rxrow
+
+            nbands = self.data.shape[-1]
+            P = chi2.ppf(0.999, nbands)  # 0.998
+
+            v = spectral.imshow(self.img, bands=(30, 20, 10), figsize=(12, 6), classes=(1 * (rxvals > P)))
+            v.set_display_mode('overlay')
+            v.class_alpha = 0.7  # how transparent the overlaid portion is
+            plt.title('RX-Seg Algorithm')
+            plt.axis('off')
+            plt.pause(500)
+
+        except:
+            print('Not an ENVI File')
+
+    def Anomaly_Custom(self):
+        from sklearn.ensemble import IsolationForest
+        import matplotlib.colors
+
+        self.display_RGB(False)
+        # Reshape the data array
+        data = self.data.reshape(-1, self.data.shape[-1])
+
+        # Create an instance of the RX anomaly detector and fit it to the data
+        detector = IsolationForest(contamination=0.1)
+        #default is 0.1: 10% will be anomalous
+        detector.fit(data)
+
+        # Use the detector to predict anomalies in the data
+        labels = detector.predict(data)
+
+        # Create a new image containing only the anomalous points
+        anomalous_image = data[labels == -1]
+
+        # Create a new array with the same shape as the original data array
+        result = np.zeros_like(data)
+
+        # Copy the anomalous points from the anomalous_image array into the result array
+        result[labels == -1] = anomalous_image
+
+        # Take the mean of all bands for each pixel
+        result = result.mean(axis=-1)
+
+        # Reshape the result array to the original shape of the data
+        result = result.reshape(self.data.shape[0], self.data.shape[1])
+
+        # Create a color map with red for anomalous pixels and white for normal pixels
+        cmap = matplotlib.colors.ListedColormap(['white', 'red'])
+
+        # Display the result array using the color map
+        plt.imshow(self.rgb_graph, cmap=plt.get_cmap(None))
+        plt.title('RGB')
+        plt.axis('off')
+        plt.imshow(result, cmap=cmap)
+        plt.colorbar()
+        plt.show()
 
 
 # PIXEL CLASS TO STORE LOCATION, VALUES, AND CATEGORY
@@ -1475,6 +1729,7 @@ class pixel_class:
         self.cat_num = 0
         self.subcat_num = 0
         self.subcategory = object
+
 
 # CATEGORY CLASS TO STORE CAT, SUBCAT, CAT TYPE, SUBCAT TYPE, CAT AV VALUE
 class category_class:

@@ -1,5 +1,6 @@
-AVIRIS/
-Anomaly Files/
+Datasets/
+App/
+Materials/Material Data
 __pycache__/
 .idea/
 .DS_Store

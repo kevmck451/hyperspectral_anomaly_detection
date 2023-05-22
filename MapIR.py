@@ -10,6 +10,7 @@ import numpy as np
 import math
 import time
 import os
+import cv2
 
 
 
@@ -99,7 +100,7 @@ class MapIR_RAW:
             # print(self.band)
 
             self.debayer()
-            # self.correct()
+            self.correct()
 
             # self.white_balance()
             # self.render_RGB()
@@ -165,7 +166,7 @@ class MapIR_RAW:
         self.data[self.data >= 65535] = 65535
 
     # Function to display the data
-    def render_RGB(self):
+    def render_RGB(self, hist=False):
         Ra = self.data[:, :, 0]
         Ga = self.data[:, :, 1]
         Ba = self.data[:, :, 2]
@@ -180,6 +181,22 @@ class MapIR_RAW:
         # make rgb stack
         rgb_stack = np.zeros((self.img_y, self.img_x, 3), 'uint8')
         rgb_stack[..., 0], rgb_stack[..., 1], rgb_stack[..., 2] = Ra8, Ga8, Ba8
+
+        # apply histogram equalization to each band
+        if hist:
+            for i in range(rgb_stack.shape[2]):
+                # band i
+                b = rgb_stack[:, :, i]
+                # histogram from flattened (1d) image
+                b_histogram, bins = np.histogram(b.flatten(), 256)
+                # cumulative distribution function
+                b_cumdistfunc = b_histogram.cumsum()
+                # normalize
+                b_cumdistfunc = 255 * b_cumdistfunc / b_cumdistfunc[-1]
+                # get new values by linear interpolation of cdf
+                b_equalized = np.interp(b.flatten(), bins[:-1], b_cumdistfunc)
+                # reshape to 2d and add back to rgb_stack
+                rgb_stack[:, :, i] = b_equalized.reshape(b.shape)
 
         self.rgb_render = rgb_stack
 
@@ -321,10 +338,63 @@ class MapIR_RAW:
             plt.show()
 
     # Function to export processed data
-    def export(self, directory):
-        save_name = f'{directory}/{self.file_name}_corrected.RAW'
+    def export(self):
 
-        # Make folder inside directory for corrected files
+        directory = '/'.join(self.file_path.split('/')[:-1])
+        directory = f'{directory}/Corr'
+        save_name = f'{self.file_name}_C.png'
+        self.render_RGB()
+        data = self.rgb_render
+
+        # Ensure directory exists, if not create it
+        if not os.path.exists(directory):
+            os.makedirs(directory)
+
+        # Define the path to save the image
+        path = os.path.join(directory, save_name)
+
+        # Write the image data to a file
+        image = Image.fromarray(data)
+        image.save(path)
+
+    # Function to export processed data
+    def export_all(self):
+
+        directory = '/'.join(self.file_path.split('/')[:-1])
+        directory_ndvi = f'{directory}/NDVI'
+        directory = f'{directory}/Corr'
+        save_name = f'{self.file_name}_C.png'
+        save_name_ndvi = f'{self.file_name}_NDVI.png'
+        self.render_RGB()
+        data = self.rgb_render
+        self.NDVI(display=False, save=False)
+        data_ndvi = self.ndvi
+
+        # Ensure directory exists, if not create it
+        if not os.path.exists(directory):
+            os.makedirs(directory)
+
+        # Define the path to save the image
+        path = os.path.join(directory, save_name)
+
+        # Write the image data to a file
+        image = Image.fromarray(data)
+        image.save(path)
+
+        # Ensure directory exists, if not create it
+        if not os.path.exists(directory_ndvi):
+            os.makedirs(directory_ndvi)
+
+        # Define the path to save the image
+        path = os.path.join(directory_ndvi, save_name_ndvi)
+
+        # Write the image data to a file
+        plt.imshow(data_ndvi, cmap=plt.get_cmap("RdYlGn"))
+        plt.title(f'NDVI')
+        plt.axis('off')
+        plt.tight_layout(pad=1)
+        plt.savefig(path)
+        plt.close()
 
     # Function to display the Normalized Difference Veg Index
     def NDVI(self, display, save):
@@ -340,6 +410,7 @@ class MapIR_RAW:
         ndvi_array = np.divide(top, bottom)
         ndvi_array[ndvi_array < 0] = 0
         ndvi_array[ndvi_array > 1] = 1
+        self.ndvi = ndvi_array
 
         plt.imshow(ndvi_array, cmap=plt.get_cmap("RdYlGn"))
         plt.title(f'NDVI')

@@ -3,11 +3,11 @@
 from MapIR import MapIR_RAW as mraw
 import os
 
-directory = '/Volumes/KM1TBS/Orlando Files/MapIR/Decoy RAW'
+directory = '/Volumes/KM1TBS/Orlando Files/MapIR/Decoy Middle Select'
 
 def main():
 
-    print('Directory: ')
+    print('Processing...')
     # directory = input()
 
     file: str

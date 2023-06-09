@@ -3,7 +3,8 @@
 from MapIR import MapIR_RAW as mraw
 import os
 
-directory = '/Volumes/KM1TBS/Orlando Files/MapIR/Decoy Middle Select'
+# directory = '/Volumes/KM1TBS/Orlando Files/MapIR/Decoy Middle Select'
+directory = 'Datasets/'
 
 def main():
 

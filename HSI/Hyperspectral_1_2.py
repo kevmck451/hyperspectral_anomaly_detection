@@ -41,41 +41,7 @@ AZ_22_Pro = [f'Datasets/Arizona/Processed/az_cube_{x} Processed.bip' for x in ra
 
 save_to_location = '../1 Anomaly Detection/Autosaves'
 
-#-------------------------------------------------------------------------------
-# PIPELINE FUNCTIONS
-# -------------------------------------------------------------------------------
-# Function to Rename Data Files
-def data_process(filepath):
-    pass
 
-# Function to preprocess all images and export
-def preprocess(dataset):
-    i = 1
-    for file in dataset:
-        print(f'------------------ Cube {i} ------------------')
-        runtime_preprocess = time_class('Preprocess & Export')
-        image = Hyperspectral(file, stats=False)
-        image.smooth_average()
-        image.reduce_bands(bands=(410, 900))
-        image.check_values()
-        image.export('Processed')
-        runtime_preprocess.stats()
-        i += 1
-
-# Function to generate overview files for all files
-def overview_all(dataset):
-    i = 1
-    for file in dataset:
-        print(f'------------------ Cube {i} ------------------')
-        image = Hyperspectral(file, stats=False)
-        image.overview(display=False, save=True)
-        i += 1
-
-# Function for cropping
-def crop_export(file, bounds, iteration):
-    image = Hyperspectral(file, stats=False)
-    image.crop(bounds)
-    image.export(iteration)
 
 # HYPERSPECTRAL CLASS FOR VIEWING, PROCESSING, AND ANALYZING HSI
 class Hyperspectral:
@@ -3909,3 +3875,40 @@ def wavelength_correct():
             print('No File')
 
     return diff
+
+
+#-------------------------------------------------------------------------------
+# PIPELINE FUNCTIONS
+# -------------------------------------------------------------------------------
+# Function to Rename Data Files
+def data_process(filepath):
+    pass
+
+# Function to preprocess all images and export
+def preprocess(dataset):
+    i = 1
+    for file in dataset:
+        print(f'------------------ Cube {i} ------------------')
+        runtime_preprocess = time_class('Preprocess & Export')
+        image = Hyperspectral(file, stats=False)
+        image.smooth_average()
+        image.reduce_bands(bands=(410, 900))
+        image.check_values()
+        image.export('Processed')
+        runtime_preprocess.stats()
+        i += 1
+
+# Function to generate overview files for all files
+def overview_all(dataset):
+    i = 1
+    for file in dataset:
+        print(f'------------------ Cube {i} ------------------')
+        image = Hyperspectral(file, stats=False)
+        image.overview(display=False, save=True)
+        i += 1
+
+# Function for cropping
+def crop_export(file, bounds, iteration):
+    image = Hyperspectral(file, stats=False)
+    image.crop(bounds)
+    image.export(iteration)

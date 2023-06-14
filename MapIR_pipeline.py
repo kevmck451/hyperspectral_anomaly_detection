@@ -6,7 +6,7 @@ import os
 
 
 def main():
-    base_directory = '../Data/AC Summer 23/Wheat Field/6-8'
+    base_directory = '../Data/MapIR/AC Summer 23/Wheat Field/6-8'
 
     # Create a new directory to contain processed files if doesnt exist
     processed_directory = base_directory + '/_processed'

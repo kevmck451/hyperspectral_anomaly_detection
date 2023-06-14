@@ -7,11 +7,13 @@ import imageio.v3 as iio
 from PIL import Image
 from PIL.ExifTags import GPSTAGS, TAGS
 import numpy as np
-import tifffile as tiff
+import tifffile
 import time
 import cv2
 import os
 from pathlib import Path
+import piexif
+import base64
 
 save_to_location = '../2 MapIR/Autosaves'
 
@@ -25,21 +27,7 @@ class MapIR_RAW:
 
         path = Path(raw_file_path)
         self.file_name = path.stem
-
-        # Get File Type
-        try:
-            file = raw_file_path.split('.')
-            self.file_type = file[1]
-
-            try:
-                file_name = file[0].split('/')
-                self.file_name = file_name[-1]
-                # print(file_name[-1])
-            except:
-                self.file_name = file[0]
-        except:
-            # print('No File Type')
-            pass
+        self.file_type = path.suffix
 
         with open(raw_file_path, "rb") as f:
             self.data = f.read()
@@ -107,6 +95,20 @@ class MapIR_RAW:
             # self.white_balance()
             # self.render_RGB()
 
+            # Load the image as a numpy array
+            data = self.data
+
+            # normalize to 0-1 range
+            data_norm = (data - np.min(data)) / (np.max(data) - np.min(data))
+
+            # now scale to 0-65535 range (which is the range of uint16)
+            data_scaled = data_norm * 65535
+
+            # finally, convert to uint16
+            self.data = data_scaled.astype(np.uint16)
+
+            # print(image_array)
+            # print(image_array.dtype)
 
             if stats:
                 print(f'Y: {self.img_y} / X: {self.img_x} / Bands: {self.img_bands}')
@@ -419,9 +421,10 @@ class MapIR_RAW:
         ndvi_array[ndvi_array > 1] = 1
         self.ndvi = ndvi_array
 
+
         plt.imshow(ndvi_array, cmap=plt.get_cmap("RdYlGn"))
-        plt.title(f'NDVI')
-        plt.colorbar()
+        plt.title(f'NDVI: {self.file_name}')
+        # plt.colorbar()
         plt.axis('off')
         plt.tight_layout(pad=1)
 
@@ -497,11 +500,87 @@ class MapIR_RAW:
 
     # Function to extract GPS metadata from corresponding jpg image
     def extract_GPS(self):
+
         path = Path(self.file_path)
-        jpg_num = int(self.file_name) + 1
+        jpg_num = int(path.stem) + 1
         if len(str(jpg_num)) != 3:
             jpg_num = '0' + str(jpg_num)
         jpg_filepath = f'{path.parent}/{jpg_num}.jpg'
         image = Image.open(jpg_filepath)
 
-        # code to extract gps from jpg
+        exif_data = piexif.load(image.info["exif"])
+
+        # Extract the GPS data from the GPS portion of the metadata
+        geolocation = exif_data["GPS"]
+
+        # Create a new NumPy array with float32 data type and copy the geolocation data
+        geolocation_array = np.zeros((3,), dtype=np.float32)
+        if geolocation:
+            latitude = geolocation[piexif.GPSIFD.GPSLatitude]
+            longitude = geolocation[piexif.GPSIFD.GPSLongitude]
+            altitude = geolocation.get(piexif.GPSIFD.GPSAltitude, [0, 1])  # Add this line
+
+            if latitude and longitude and altitude:  # Add altitude check here
+                lat_degrees = latitude[0][0] / latitude[0][1]
+                lat_minutes = latitude[1][0] / latitude[1][1]
+                lat_seconds = latitude[2][0] / latitude[2][1]
+
+                lon_degrees = longitude[0][0] / longitude[0][1]
+                lon_minutes = longitude[1][0] / longitude[1][1]
+                lon_seconds = longitude[2][0] / longitude[2][1]
+
+                altitude_val = altitude[0] / altitude[1]  # altitude calculation
+
+                geolocation_array[0] = lat_degrees + (lat_minutes / 60) + (lat_seconds / 3600)
+                geolocation_array[1] = lon_degrees + (lon_minutes / 60) + (
+                            lon_seconds / 3600)  # updated with lon minutes and seconds
+                geolocation_array[2] = altitude_val  # assign altitude to array
+
+
+            # Append the image geolocation to the geo.txt file
+            file_path = os.path.join(path.parent, '_processed', 'geo.txt')
+
+            # Check if the file exists
+            if not os.path.exists(file_path):
+                # If the file doesn't exist, it is the first time it is being opened
+                # Write the header "EPSG:4326"
+                with open(file_path, 'w') as f:
+                    f.write('EPSG:4326\n')
+
+            # Append the data to the file
+            with open(file_path, 'a') as f:
+                f.write(f'{path.stem}.tif\t-{geolocation_array[1]}\t{geolocation_array[0]}\t{geolocation_array[2]}\n')
+
+
+    def export_tiff(self):
+        path = Path(self.file_path)
+        # Convert the image array to TIFF format
+        saveas = f'{path.parent}/_processed/{path.stem}.tif'
+        # print(saveas)
+        tifffile.imsave(saveas, self.data)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

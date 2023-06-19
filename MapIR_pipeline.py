@@ -40,8 +40,9 @@ def main():
         if file.suffix == '.RAW':
             if not p.exists():
                 image = MapIR_RAW(file, stats=False)
-                image.extract_GPS()
+                image.extract_GPS('png')
                 # image.export_tiff()
+                image.export_png()
 
 
 

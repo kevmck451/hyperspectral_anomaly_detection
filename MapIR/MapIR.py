@@ -3,17 +3,15 @@
 
 import matplotlib.pyplot as plt
 from copy import deepcopy
-import imageio.v3 as iio
 from PIL import Image
-from PIL.ExifTags import GPSTAGS, TAGS
 import numpy as np
 import tifffile
-import time
 import cv2
 import os
 from pathlib import Path
 import piexif
-import base64
+import imageio
+
 
 save_to_location = '../2 MapIR/Autosaves'
 
@@ -499,7 +497,7 @@ class MapIR_RAW:
             plt.close()
 
     # Function to extract GPS metadata from corresponding jpg image
-    def extract_GPS(self):
+    def extract_GPS(self, file_type):
 
         path = Path(self.file_path)
         jpg_num = int(path.stem) + 1
@@ -549,20 +547,19 @@ class MapIR_RAW:
 
             # Append the data to the file
             with open(file_path, 'a') as f:
-                f.write(f'{path.stem}.tif\t-{geolocation_array[1]}\t{geolocation_array[0]}\t{geolocation_array[2]}\n')
+                f.write(f'{path.stem}.{file_type}\t-{geolocation_array[1]}\t{geolocation_array[0]}\t{geolocation_array[2]}\n')
 
-
+    # Function to export image as tiff
     def export_tiff(self):
         path = Path(self.file_path)
-        # Convert the image array to TIFF format
-        saveas = f'{path.parent}/_processed/{path.stem}.tif'
-        # print(saveas)
-        tifffile.imsave(saveas, self.data)
+        save_as = f'{path.parent}/_processed/{path.stem}.tiff'
+        imageio.imsave(save_as, self.data, format='tiff')
 
-
-
-
-
+    # Function to export image as 16-bit png
+    def export_png(self):
+        path = Path(self.file_path)
+        save_as = path.parent/"_processed"/(path.stem+".png")
+        imageio.imwrite(save_as, self.data, 'PNG-FI')
 
 
 
